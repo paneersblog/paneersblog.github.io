@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>DOS常用命令</title>
+    <link href="/56201.html"/>
+    <url>/56201.html</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="DOS常用命令-cmd-exe"><a href="#DOS常用命令-cmd-exe" class="headerlink" title="DOS常用命令(cmd.exe)"></a>DOS常用命令(cmd.exe)</h1><span id="more"></span><h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><table><thead><tr><th align="left">命令</th><th align="left">备注</th></tr></thead><tbody><tr><td align="left">cd\</td><td align="left">返回到根目录</td></tr><tr><td align="left">cd..</td><td align="left">返回上一级目录</td></tr><tr><td align="left">cd d:</td><td align="left">切换盘符</td></tr><tr><td align="left">cd a</td><td align="left">进入a目录</td></tr><tr><td align="left">md</td><td align="left">建立目录(即新建文件夹)</td></tr><tr><td align="left">rd</td><td align="left">删除目录</td></tr><tr><td align="left">dir</td><td align="left">显示目录</td></tr><tr><td align="left">dir &#x2F;b</td><td align="left">显示目录只显示文件名</td></tr><tr><td align="left">dir &#x2F;p</td><td align="left">分页显示目录</td></tr><tr><td align="left">copy</td><td align="left">复制文件</td></tr><tr><td align="left">ren</td><td align="left">更改文件名</td></tr><tr><td align="left">cls</td><td align="left">清除屏幕</td></tr><tr><td align="left">del</td><td align="left">删除文件</td></tr><tr><td align="left">time</td><td align="left">显示时间</td></tr><tr><td align="left">date</td><td align="left">显示日期</td></tr></tbody></table><h2 id="命令管道符-“-”"><a href="#命令管道符-“-”" class="headerlink" title="命令管道符 “|”"></a>命令管道符 “|”</h2><p>格式：</p><figure class="highlight cmd"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs cmd">命令<span class="hljs-number">1</span> | 命令<span class="hljs-number">2</span> | 命令<span class="hljs-number">3</span> |...  <br></code></pre></td></tr></table></figure><p>管道命令能够将一个命令的执行结果进行筛选，只保留我们需要的信息。如：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">dir</span> c:/ | <span class="hljs-built_in">find</span> &quot;txt&quot;<br></code></pre></td></tr></table></figure><h2 id="查看文件夹目录结构"><a href="#查看文件夹目录结构" class="headerlink" title="查看文件夹目录结构"></a>查看文件夹目录结构</h2><p>顾名思义，通过“tree”来实现，如以下所示，其中“&#x2F;f”可以显示文件目录结构的同时显示文件。“&gt;”的意义详见下文。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">tree</span> &gt; list.txt<br><span class="hljs-built_in">tree</span> /f &gt; list.txt<br></code></pre></td></tr></table></figure><h2 id="“-lt-”、”-gt-”、”-lt-lt-”、”-gt-gt-”等"><a href="#“-lt-”、”-gt-”、”-lt-lt-”、”-gt-gt-”等" class="headerlink" title="“&lt;”、”&gt;”、”&lt;&lt;”、”&gt;&gt;”等"></a>“&lt;”、”&gt;”、”&lt;&lt;”、”&gt;&gt;”等</h2><table><thead><tr><th align="left">命令</th><th align="left">备注</th></tr></thead><tbody><tr><td align="left">&gt;</td><td align="left">输出重定向</td></tr><tr><td align="left">&lt;</td><td align="left">输入重定向</td></tr><tr><td align="left">&lt;&lt;</td><td align="left">输入追加</td></tr><tr><td align="left">&gt;&gt;</td><td align="left">输出追加</td></tr></tbody></table><p>用法如下：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">sort</span> &lt;<span class="hljs-number">1</span>.txt<br></code></pre></td></tr></table></figure><p>其作用是将“sort”得到的结果输出在“1.txt”文件中  </p><p>备注：  </p><ul><li>&gt;： 将命令输出写入到文件或设备（例如打印机）中，而不是写在命令提示符窗口中。</li><li>&lt;：从文件中而不是从键盘中读入命令输入。</li><li>&gt;&gt;： 将命令输出添加到文件末尾而不删除文件中的信息。</li><li>&gt;&amp;： 将一个句柄的输出写入到另一个句柄的输入中。</li><li>&lt;&amp;： 从一个句柄读取输入并将其写入到另一个句柄输出中。</li><li>|： 从一个命令中读取输出并将其写入另一个命令的输入中。也称作管道。</li></ul><hr><p><em><strong>不定期更新，欢迎评论区补充～</strong></em></p><hr><p>参考视频<a href="https://www.bilibili.com/video/BV19v411g7h7?from=search&seid=5443457631883777453&spm_id_from=333.337.0.0">地址</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>DOS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Python入门笔记（五）</title>
     <link href="/52970.html"/>
     <url>/52970.html</url>
