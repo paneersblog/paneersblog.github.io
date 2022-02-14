@@ -1,0 +1,771 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/IMG_4556.JPG">
+  <link rel="icon" href="/img/IMG_4556.JPG">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Paneer &amp; Emily">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="虽然我用的unix，但不妨碍我对Linux的热爱！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux之shell入门">
+<meta property="og:url" content="http://paneersblog.github.io/60132.html">
+<meta property="og:site_name" content="Panner&amp;Emily’s paradise!">
+<meta property="og:description" content="虽然我用的unix，但不妨碍我对Linux的热爱！">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-14T14:55:15.000Z">
+<meta property="article:modified_time" content="2022-02-14T14:57:48.532Z">
+<meta property="article:author" content="Paneer &amp; Emily">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>Linux之shell入门 - Panner&amp;Emily’s paradise!</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"paneersblog.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Paradise</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Linux之shell入门">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-14 22:55" pubdate>
+        2022年2月14日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      29 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux之shell入门</h1>
+            
+            <div class="markdown-body">
+              <h1 id="虽然我用的unix，但不妨碍我对Linux的热爱！"><a href="#虽然我用的unix，但不妨碍我对Linux的热爱！" class="headerlink" title="虽然我用的unix，但不妨碍我对Linux的热爱！"></a>虽然我用的unix，但不妨碍我对Linux的热爱！</h1><span id="more"></span>
+
+<p>先附上<a target="_blank" rel="noopener" href="https://www.linuxcool.com/">Linux命令大全(手册)</a>,可以查寻命令哦～</p>
+<h2 id="Linux之shell速查表-基础版"><a href="#Linux之shell速查表-基础版" class="headerlink" title="Linux之shell速查表(基础版)"></a>Linux之shell速查表(基础版)</h2><table>
+<thead>
+<tr>
+<th align="left">指令</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">whatis</td>
+<td align="left">查看命令的简短描述</td>
+</tr>
+<tr>
+<td align="left">ls</td>
+<td align="left">列出当前目录下的内容</td>
+</tr>
+<tr>
+<td align="left">cd</td>
+<td align="left">改变工作目录</td>
+</tr>
+<tr>
+<td align="left">pwd</td>
+<td align="left">打印当前目录</td>
+</tr>
+<tr>
+<td align="left">cp</td>
+<td align="left">复制文件或文件夹</td>
+</tr>
+<tr>
+<td align="left">less</td>
+<td align="left">查看文件</td>
+</tr>
+<tr>
+<td align="left">head&#x2F;tail</td>
+<td align="left">查看文件开头&#x2F;结尾</td>
+</tr>
+<tr>
+<td align="left">find</td>
+<td align="left">查找过滤文件</td>
+</tr>
+<tr>
+<td align="left">date</td>
+<td align="left">查看系统时间</td>
+</tr>
+<tr>
+<td align="left">cat</td>
+<td align="left">合并多个文件</td>
+</tr>
+<tr>
+<td align="left">cal</td>
+<td align="left">显示当前日历</td>
+</tr>
+<tr>
+<td align="left">which</td>
+<td align="left">定位程序的储存位置</td>
+</tr>
+<tr>
+<td align="left">whereis</td>
+<td align="left">定位程序</td>
+</tr>
+<tr>
+<td align="left">touch</td>
+<td align="left">修改时间属性(文件不存在则创建文件)</td>
+</tr>
+<tr>
+<td align="left">top</td>
+<td align="left">实时显示进程动态</td>
+</tr>
+<tr>
+<td align="left">rm</td>
+<td align="left">删除文件和文件夹</td>
+</tr>
+<tr>
+<td align="left">mv</td>
+<td align="left">剪切文件和文件夹</td>
+</tr>
+<tr>
+<td align="left">mkdir</td>
+<td align="left">创建目录</td>
+</tr>
+</tbody></table>
+<h2 id="Linux之shell命令-详细版"><a href="#Linux之shell命令-详细版" class="headerlink" title="Linux之shell命令(详细版)"></a>Linux之shell命令(详细版)</h2><h3 id="文件、目录操作命令"><a href="#文件、目录操作命令" class="headerlink" title="文件、目录操作命令"></a>文件、目录操作命令</h3><h4 id="写在前面：命令参数表"><a href="#写在前面：命令参数表" class="headerlink" title="写在前面：命令参数表"></a>写在前面：命令参数表</h4><table>
+<thead>
+<tr>
+<th>命令参数</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>若目标文件已存在，则会直接覆盖原文件</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>若目标文件已存在，则会询问是否覆盖</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>保留源文件或目录的所有属性</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>递归复制文件和目录</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>对源文件建立硬连接，而非复制文件</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>对源文件建立符号连接，而非复制文件</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>覆盖已存在的文件目标前将目标文件备份</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>详细显示cp命令执行的操作过程</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>等价于“dpr”选项</td>
+</tr>
+</tbody></table>
+<h4 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h4><p>功能：显示文件和目录的信息  </p>
+<p><code>ls</code>　以默认方式显示当前目录文件列表  </p>
+<p><code>ls -a</code> 显示所有文件包括隐藏文件。例如：.file   文件名称前面带小数点为隐藏文件。  </p>
+<p><code>ls -l</code> 显示文件属性，包括大小，日期，符号连接，是否可读写及是否可执行  </p>
+<p><code>ls -lh</code> 显示文件的大小</p>
+<p><code>ls -lt</code> 显示文件，按照修改时间排序</p>
+<h4 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h4><p>功能：改名目录</p>
+<p><code>cd dir</code>　切换到当前目录下的dir目录</p>
+<p><code>cd /</code>　切换到根目录</p>
+<p><code>cd ..</code>　切换到到上一级目录</p>
+<p><code>cd ../..</code>　切换到上二级目录</p>
+<p><code>cd ~</code>　切换到用户目录，若是root用户，则切换到&#x2F;root下</p>
+<h4 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h4><p>功能：copy文件</p>
+<p><code>cp a b</code>　将文件a复制为b</p>
+<p><code>cp /root /a .</code>　将&#x2F;root下的文件a复制到当前目录</p>
+<p><code>cp –av a_dir b_dir</code>　将整个目录复制，两目录完全一样</p>
+<h4 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h4><p>功能：删除文件或目录</p>
+<p><code>rm file</code>　删除某一个文件</p>
+<p><code>rm -f file</code> 删除时候不进行提示。可以于r参数配合使用</p>
+<p><code>rm -rf dir</code>　删除当前目录下叫dir的整个目录</p>
+<h4 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h4><p>功能：将文件移动走，或者改名，在uinx下面没有改名的命令，如果想改名，可以使用该命令</p>
+<p><code>mv a b</code>　将文件a更名为b</p>
+<h4 id="diff命令"><a href="#diff命令" class="headerlink" title="diff命令"></a>diff命令</h4><p>功能：比较文件内容</p>
+<p><code>diff dir1 dir2</code>　比较目录1与目录2的文件列表是否相同，但不比较文件的实际内容，不同则列出</p>
+<p><code>diff file1 file2</code>　比较文件1与文件2的内容是否相同，如果是文本格式的文件，则将不相同的内容显示，如果是二进制代码则只表示两个文件是不同的</p>
+<p><code>comm file1 file2</code>　比较文件，显示两个文件不相同的内容</p>
+<p><code>comm -12 file1 file2</code> 就只显示在两个文件中都存在的行</p>
+<p><code>comm -23 file1 file2</code> 只显示在第一个文件中出现而未在第二个文件中出现的行</p>
+<p><code>comm -13 file1 file2</code> 只显示在第一个文件中未出现而出现在第二个文件中的行</p>
+<blockquote>
+<p>其中参数意义：<br>    -1   不显示只在第1个文件里出现过的列。(suppress lines unique to FILE1)<br>    -2   不显示只在第2个文件里出现过的列。(suppress lines unique to FILE2)<br>    -3   不显示在第1和第2个文件里都出现过的列。(suppress lines that appear in both files)</p>
+</blockquote>
+<h4 id="ln命令"><a href="#ln命令" class="headerlink" title="ln命令"></a>ln命令</h4><p>功能：建立链接。windows的快捷方式就是根据链接的原理来实现的</p>
+<p><code>ln source_path target_path</code> 硬连接</p>
+<p><code>ln -s source_path target_path</code> 软连接</p>
+<p>ln是linux中又一个非常重要命令，它的功能是为某一个文件在另外一个位置建立一个同不的链接，这个命令最常用的参数是-s，具体用法是：ln –s 源文件 目标文件。  </p>
+<p>当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在其它的目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间。<br>例如：ln –s &#x2F;bin&#x2F;A &#x2F;usr&#x2F;local&#x2F;bin&#x2F;A</p>
+<h3 id="查看文件内容命令"><a href="#查看文件内容命令" class="headerlink" title="查看文件内容命令"></a>查看文件内容命令</h3><h4 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h4><p>显示文件的内容，和DOS的type相同</p>
+<div class="code-wrapper"><pre><code class="hljs">cat file　
+</code></pre></div>
+<h4 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h4><p>功能：分页显示命令</p>
+<div class="code-wrapper"><pre><code class="hljs">more　file
+</code></pre></div>
+<p>more命令也可以通过管道符(|)与其他的命令一起使用,例如：</p>
+<div class="code-wrapper"><pre><code class="hljs">ps ux|more
+
+ls|more
+</code></pre></div>
+<h4 id="tail-命令"><a href="#tail-命令" class="headerlink" title="tail 命令"></a>tail 命令</h4><p>功能：显示文件的最后几行</p>
+<div class="code-wrapper"><pre><code class="hljs">tail -n 100 aaa.txt
+</code></pre></div>
+<p> 显示文件aaa.txt文件的最后100行</p>
+<p>4、vi命令(vim)</p>
+<div class="code-wrapper"><pre><code class="hljs">vi file
+</code></pre></div>
+<p>编辑文件file(按“i”键进行编辑模式，Esc退出编辑，此时可使用下文提及命令)</p>
+<p>vi 原基本使用及命令：</p>
+<p>输入命令的方式为先按<code>[ESC]</code>键，然后输入:</p>
+<ol>
+<li>:w(写入文件)</li>
+<li>:w!(不询问方式写入文件）</li>
+<li>:wq保存并退出</li>
+<li>:q退出</li>
+<li>q!不保存退出</li>
+</ol>
+<p>5、touch命令</p>
+<p>ouch命令有两个功能：一是创建新的空文件，二是改变已有文件的时间戳属性。</p>
+<p>touch命令会根据当前的系统时间更新指定文件的访问时间和修改时间。如果文件不存在，将会创建新的空文件，除非指定了”-c”或”-h”选项。</p>
+<p>语法格式：</p>
+<div class="code-wrapper"><pre><code class="hljs">touch [参数] [文件]
+</code></pre></div>
+<p>附：常用参数</p>
+<blockquote>
+<p>-a ：改变档案的读取时间记录<br>-m ：改变档案的修改时间记录<br>-r ：使用参考档的时间记录，与 –file 的效果一样<br>-c ：不创建新文件<br>-d ：设定时间与日期，可以使用各种不同的格式<br>-t ：设定档案的时间记录，格式与 date 命令相同<br>–no-create ：不创建新文件<br>–help ：显示帮助信息<br>–version ：列出版本讯息  </p>
+</blockquote>
+<p>注意：在修改文件的时间属性的时候，用户必须是文件的属主，或拥有写文件的访问权限。</p>
+<h3 id="基本系统命令"><a href="#基本系统命令" class="headerlink" title="基本系统命令"></a>基本系统命令</h3><h4 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a>man命令</h4><p>功能：查看某个命令的帮助，如果你不知道某个命令的用法不懂，可以问他，他知道就回告诉你</p>
+<p><code>man -f</code> 等同于 <code>whatis</code></p>
+<h4 id="w命令"><a href="#w命令" class="headerlink" title="w命令"></a>w命令</h4><p>功能：显示登录用户的详细信息</p>
+<h4 id="who命令"><a href="#who命令" class="headerlink" title="who命令"></a>who命令</h4><p>功能：显示登录用户</p>
+<h4 id="last命令"><a href="#last命令" class="headerlink" title="last命令"></a>last命令</h4><p>功能：查看最近那些用户登录系统</p>
+<h4 id="date命令"><a href="#date命令" class="headerlink" title="date命令"></a>date命令</h4><p>功能：系统日期设定</p>
+<div class="code-wrapper"><pre><code class="hljs">date -s 20:30:30　设置系统时间为20:30:30
+
+date -s 2002-3-5　设置系统时期为2003-3-5
+
+date -s &quot;060520 06:00:00&quot;　设置系统时期为2006年5月20日6点整。
+</code></pre></div>
+<h4 id="clock命令"><a href="#clock命令" class="headerlink" title="clock命令"></a>clock命令</h4><p>功能：时钟设置</p>
+<div class="code-wrapper"><pre><code class="hljs">clock –r　对系统Bios中读取时间参数
+
+clock –w　将系统时间(如由date设置的时间)写入Bios
+</code></pre></div>
+<h4 id="uname命令"><a href="#uname命令" class="headerlink" title="uname命令"></a>uname命令</h4><p>功能：查看系统版本</p>
+<div class="code-wrapper"><pre><code class="hljs">uname -R　显示操作系统内核的version
+</code></pre></div>
+<h4 id="关闭和重新启动系统命令"><a href="#关闭和重新启动系统命令" class="headerlink" title="关闭和重新启动系统命令"></a>关闭和重新启动系统命令</h4><div class="code-wrapper"><pre><code class="hljs">reboot  重新启动计算机
+
+shutdown -r now  重新启动计算机，停止服务后重新启动计算机
+
+shutdown -h now  关闭计算机，停止服务后再关闭系统
+
+halt  关闭计算机
+</code></pre></div>
+<h4 id="su命令"><a href="#su命令" class="headerlink" title="su命令"></a>su命令</h4><p>功能：切换用户</p>
+<p>su -  切换到root用户</p>
+<p>su - paneer 切换到用户paneer</p>
+<blockquote>
+<p>注意：“-”很关键，使用“-”，将使用用户的环境变量</p>
+</blockquote>
+<h3 id="监视系统状态命令"><a href="#监视系统状态命令" class="headerlink" title="监视系统状态命令"></a>监视系统状态命令</h3><h4 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h4><p>功能：查看系统cpu、内存等使用情况</p>
+<h4 id="free命令"><a href="#free命令" class="headerlink" title="free命令"></a>free命令</h4><p>功能：查看内存和swap分区使用情况</p>
+<h4 id="uptime"><a href="#uptime" class="headerlink" title="uptime"></a>uptime</h4><p>功能：现在的时间 ，系统开机运转到现在经过的时间，连线的使用者数量，最近一分钟，五分钟和十五分钟的系统负载</p>
+<h4 id="vmstat"><a href="#vmstat" class="headerlink" title="vmstat"></a>vmstat</h4><p>功能：监视虚拟内存使用情况</p>
+<h4 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h4><p>功能：显示进程信息</p>
+<div class="code-wrapper"><pre><code class="hljs">ps ux 显示当前用户的进程
+
+ps uxwww 显示当前用户的进程的详细信息
+
+ps aux 显示所有用户的进程
+
+ps ef 显示系统所有进程信息
+</code></pre></div>
+<h4 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h4><p>功能：干掉某个进程，进程号可以通过ps命令得到</p>
+<div class="code-wrapper"><pre><code class="hljs">kill -9 1001　将进程编号为1001的程序干掉
+
+kill all -9 apache　将所有名字为apapche的程序杀死
+</code></pre></div>
+<hr>
+<p>eeeeeee<br>好困啊不想写了，估计也没人看到这。。。</p>
+<hr>
+<p>想认真学的小伙伴，<br>推荐看一下大厂鱼皮的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ev411G7VE/?spm_id_from=333.788.recommend_more_video.0">最快Linux入门教程+最新学习路线！程序员必备组合拳</a><br>真的很赞哦～～～</p>
+<hr>
+<p>随缘填坑吧</p>
+<p>参考blog：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/LH0912666/article/details/87897629">https://blog.csdn.net/LH0912666/article/details/87897629</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/56201.html">
+                        <span class="hidden-mobile">DOS常用命令</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://blog-comment-mk0f7063p-paneersblog.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Paneer</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Emily</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
