@@ -1,0 +1,573 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/IMG_4556.JPG">
+  <link rel="icon" href="/img/IMG_4556.JPG">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Paneer &amp; Emily">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="demo2 靶的混合和溅射">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SRIM入门（二）">
+<meta property="og:url" content="http://paneersblog.github.io/19550.html">
+<meta property="og:site_name" content="Panner&amp;Emily’s paradise!">
+<meta property="og:description" content="demo2 靶的混合和溅射">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-16T15:29:36.000Z">
+<meta property="article:modified_time" content="2022-02-16T15:35:14.427Z">
+<meta property="article:author" content="Paneer &amp; Emily">
+<meta property="article:tag" content="SRIM">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>SRIM入门（二） - Panner&amp;Emily’s paradise!</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"paneersblog.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Paradise</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="SRIM入门（二）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-16 23:29" pubdate>
+        2022年2月16日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      45 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">SRIM入门（二）</h1>
+            
+            <div class="markdown-body">
+              <h2 id="demo2-靶的混合和溅射"><a href="#demo2-靶的混合和溅射" class="headerlink" title="demo2 靶的混合和溅射"></a>demo2 靶的混合和溅射</h2><span id="more"></span>
+
+<p>demo1主要介绍了如何设置TRIM，如何确定一个n型井的注入离子和能量以及如何估算在注入过程中的损伤。此demo2将介绍其他粒子与固体的相互作用。</p>
+<h3 id="界面混合和溅射"><a href="#界面混合和溅射" class="headerlink" title="界面混合和溅射"></a>界面混合和溅射</h3><p><strong>界面混合</strong>是原子从一层靶被输运到另一层靶的过程。<br>通常这是不希望产生的效应。我们已经看到了离子如何将大量的能量转移给反冲原子并使其移动很长的距离,产生显著的级联碰撞。当一个反冲原子穿过一个靶层进入另一个时，该靶层就被污染了。  </p>
+<p>然而有一些特例是特意应用反冲混合进行材料改性，这个过程被叫做“反冲注入”。这个技术用于一些操作起来很难或者具有危险性的材料的注入，例如包含放射性物质材料的合成。<br>例如将很薄的一层钙沉积在硅靶上，然后将其放置在一个核反应堆中使钙转化成射性同位素。之后硅靶被放置在离子注入机中并将大剂量的氙（Xe）注入到钙层中去。氙离子就会将一些放射性物质撞击到硅靶中去并使其停留于其中。在移除所有剩余在表面的钙原子后，含有放射性钙的硅靶就可以被安全地处理了。若需要提供一个能释放出放射性离子（此处来自于钙原子）而危险性又远低于纯的放射性钙靶的样品,这样的一个靶是很合适的。</p>
+<p><strong>溅射</strong>是和反冲注入相反的一个过程。<br>表面原子通过产生的级联反冲往回冲出靶，并具有足够的能量能够离开靶并脱离靶表面。表面会施加给原子一种结合力，即所谓表面结合能E<sub>surf</sub>。由于靶表面的原子并不是在一个面上被束缚住的，因而要使它从其晶格中移位所需的能量比它在固体内部被其他原子围绕时要小。一个表面原子所受到的电子约束更小。对固体而言，E<sub>surf</sub>通常小于移位能E<sub>disp</sub>。</p>
+<p>此时我们可以借助TRIM中自带的demo来进行更好的理解。<br>接下来我们以其中几个例子来讲述靶混合与靶溅射。</p>
+<blockquote>
+<ul>
+<li>打开SRIM软件  </li>
+<li>进入TRIM Calation 窗口  </li>
+<li>点击位于界面左上角的 TRIM DEMO</li>
+<li>此时你会看到12个示例的设置，他们展示了在不同的应用中 TRIM 可以如何被使用。</li>
+<li>我们以 Xe into Si&#x2F;Pt&#x2F;Si(Mixing a Marker) 为例，点击它查看各种输入参数  </li>
+<li>点击 Save Input and Run TRIM，程序就会立刻开始计算</li>
+</ul>
+</blockquote>
+<h3 id="靶混合"><a href="#靶混合" class="headerlink" title="靶混合"></a>靶混合</h3><p>上述例子展示了在硅靶中间的一个铂的薄层，它用来展示相互混合效应能够有多大。</p>
+<p>点击选择图像：Ion&#x2F;Recoil Distribution。<br>在弹出的子菜单中选择“ 2-SiliconRecoil Distribution”和4-Silicon Recoil Distribution”，然后点击Plot。<br>这两类反冲硅原子的分布将会用两种不同颜色绘制以区分。</p>
+<p>就在不到100个离子入射之后，含有铂的空隙就开始被硅原子填充了。在进行到 400 个原子时，这个层将会有接近5%的硅原子。对于如氙（原子序数为54）这样的重离子，原子向这个层中的转移的效率将会很高。</p>
+<p>现在我们关闭这个图像窗口，点击图像：Ion&#x2F;Recoil Distribution。<br>在弹出的子菜单中选择3-PlatinumRecoilDistribution，然后点击Plot。</p>
+<p>这个图像展示了铂层中的原子，以及其中的多少已经进入了硅中。尤其值得注意的是朝着表面移位的铂原子数非常大，比例达 50%，和被驱使深入到靶中的铂原子数相当。  </p>
+<p><strong>这是非常值得注意的！</strong><br>离子都在进入深入靶中的方向，并且所有的初始反冲粒子一般也是朝着与入射粒子相同的方向，也就是深入靶中。可是最后原子为何能停留在比它们开始时更接近表面的位置呢？</p>
+<p>为了得到其中缘由，点击 XY Longitudinal 图像来展示每个离子以及它造成的移位（这个图像在CollisionPlots部分）<br>在这个图像的底部有一个标记为 -Clear 的按键。这将会清除图像使得你可以看到单个粒子和它产生的级联反冲。离子径迹是一条稀疏的红色点状线，所有的级联反冲都由此开始。<br>每个级联反冲（不是离子的级联反冲）开始都是朝着向前的方向，但是随后其方向很快变为向各个方向随机分布。<br>稠密的级联反冲的轨迹看上去分布于没有特定取向的绿色球状空间中级联反冲牵涉到如此多的粒子,（其中包含的信息量如此之大）以至于任何初始离子方向的信息都迅速被丢失了。<br>这个级联反冲变成了各向同性的事件，即原子会朝一个方向运动的概率大致相当（注意：对于不同性能的电脑，可能需要按下“Clear”键后再在TRIM 窗口的顶部按下“Pause”,然后会在下一个离子进入后停止展示）</p>
+<p>这就是使铂原子朝着表面移动的原因。<br>这些大的级联反冲会迅速失去原有的前进方向方向而变得具有向各个方向运动的可能。其发生的程度大小可以用被向前散射并深入到硅靶中的铂原子数和朝表面散射的铂原子数的差分来衡量。</p>
+<p>第二个需要注意的问题是铂原子移动的距离很长。初始的铂原子层厚度为30埃。使用不超过500个入射粒子进行模拟，你将能够看到有铂原子被推出30埃的铂原子层以外。</p>
+<p>此时我们可以去到TRIM DISTRIBUTIONS 选项框然后点击 File 选择 Ion&#x2F;Recoil Distributions命令，我们将会得到一张数据表格，它比图像展示了更多的细节。这个文件被放置在SRIM文件夹下的SRIMOutputs中，并被命名为RANGE.txt。<br>其数据显示，一些铂原子到达深入表面 100 埃的位置，而其他部分原子已经到达了靶的背面。<br>反冲效率如此之高，以至于在使用不到500个入射粒子时已经有铂原子移位并穿过了硅靶。如果 TRIM 再使用几千个离子进行模拟，一些铂原子将会穿出靶的背面并与靶分离。</p>
+<blockquote>
+<p>为了理解下文即将提到的靶溅射，我们应让程序继续计算，至少有1000个离子模拟完成。</p>
+</blockquote>
+<h3 id="靶溅射"><a href="#靶溅射" class="headerlink" title="靶溅射"></a>靶溅射</h3><p>溅射是指近表面原子从靶中脱离的现象。<br>当一个级联反冲给靶原子一个大于其表面结合能的能量时，原子可能会被溅射。而实际上要发生溅射时，原子穿过表面时它垂直于表面方向的动能必须大于表面结合能。表面溅射以溅射率描述，其定义为每个入射粒子所能溅射出的平均靶原子数。如果靶由若干种元素组成，每种元素都溅射率具有相应的溅射率。<br>$$<br>溅射率&#x3D;溅射出的原子数&#x2F;入射粒子数<br>$$<br>特定种类的原子的表面结合能（SBE）目前只对于几种材料是已知的，但通常可以使用升华热来进行估计。<br>典型值是：镍Ni（4.46eV）、铜Cu（3.52eV）、钯Pd（3.91eV）、银Ag（2.97eV）、铂Pt（5.86eV）和金Au（3.80eV）。当你设置 TRIM计算时这些值将会被提示。</p>
+<blockquote>
+<p>关于溅射我们应了解：</p>
+<ul>
+<li>对于溅射而言，只有朝向靶表面的级联反冲是重要的。因而通常只使用单个薄靶来模拟溅射就足够了。<br>以相对原子质量超过20的重离子为例，通常一个厚为300埃的靶就足够了。使用非常薄的靶可以减少用于计算对溅射无贡献的级联反冲的时间。对于像氦这样的轻离子，由于离子可以在靶的深层产生背散射并造成表面的溅射，使用较厚（比如1000 埃）的靶，就十分必要。<br>一次计算所需要的靶深度可以通过运行几个快速的情形进行估算，即采用变化厚度的靶进行计算，然后看看在哪个厚度溅射率趋向于常值。</li>
+<li>溅射率对表面结合能（SBE）（而表面结合能是需要输入的一个计算参数）非常敏感。<br>注意，对于真实的表面，这个能量随着离子轰击会由于表面粗糙度、损伤以及化合物的表面化学计量的变化而变化。溅射率对表面结合能的敏感度可以在计算时通过使用图像菜单来展现。溅射率对SBE图像可以精确到大约30%。</li>
+<li>对于低能离子入射情况下靶中的级联反冲（溅射的一个主要贡献），TRIM 为计算散射 ， 采 用 了 以 下 文 献 中 的 硬 球 模 型 ： J.P.Biersackand W. Eckstein,Appl.Phys.,A34,73-94(1984)</li>
+</ul>
+</blockquote>
+<p>一些离开靶的级联反冲原子可能是从比表面区域更深的靶内部出来。<br>我们能够发现，一些铂原子是从超过200埃深的靶内部碰撞后溅射出来的。现在看着 TRIM 窗口右边名为 SPUTTERING YIELD(SY) 的部分。这给出了每个入射粒子溅射出的原子数。其显示每个入射粒子会溅射出大约6或7个硅原子。</p>
+<p>事实上这些离子正在产生一个洞，因为更多的原子在离开而不是到达，其比例达 6:1！进一步说，如果计算使用超过1000个离子,你将会看到甚至会有一定数量的铂原子溅射出来。<br>给出的铂溅射率为0.005324（每200个离子约1个）。它们从靶内200埃处出发，并且某些级联反冲能量大到铂原子能够穿过顶部表面。</p>
+<p>此时我们先点击 TRIM 窗口顶端的 PAUSE 键暂停 TRIM 的计算，在左边“DISTRIBUTIONS”的下面，点击：Integral和DifferentialSputteredAtoms</p>
+<p>我们观察名为 Sputtering（Integral）的图像。这个图像给出了每个到达靶表面的反冲原子能量。坐标轴单位为原子&#x2F;离子（Atoms&#x2F;Ion），即每个离子将会产生对应坐标数量的能到达表面的反冲原子。图中有一条标记为3.1eV的垂线，它是表面结合能E<sub>surf</sub>的平均值，在这个算例中为硅原子的。这条线的左边对应说明文字为 Not Sputtered（未溅射）的箭头。<br>在3.1eV 处，到达表面时拥有超过这个能量的原子数约为7。这是被溅射出来的原子数，并且它和我们在上面的 SPUTTERING YIELD 表中看到的数字是吻合的。</p>
+<p>下面我们来讨论一下表面结合能。<br>这是一个原子要被溅射出来所需要的最小能量。我们应该清楚的是只有离子能量的垂直分量可以被计入。也就是说一个以入射角 45°到达表面的离子需要具有1.4倍的 E<sub>surf</sub>才能被溅射。<br>在下面你将绘制的图中，这个修正被自动加入了。显示的原子能量总是原子能量的垂直分量，而非其总能量。</p>
+<p>表面结合能的值可能随着辐照而变化。<br>这是因为溅射使得靶变得粗糙和有损伤，而较为粗糙的靶会有较小的表面结合能。当靶变粗糙时，由于每个表面原子电子束缚减弱，溅射率会上升。因此溅射的计算不包括所有的效应。尤其是当束流使表面粗糙化时，表面结合能会随着时间的变化。<br>但是这个图像已经能够让我们估计随着时间的变化，溅射率会有怎样的变化。我们可以看到如果表面结合能被减小一半，溅射的增加倍数小于2。即使表面结合能被减少到零，溅射率只会增加两倍。因此无论靶表面发生了什么，计算结果都会精确在两倍之内。</p>
+<p>在图像上点击SPUTTERING（Differential）将其置顶。这是之前积分图像对应的微分图像。积分图像展示了到达表面的且能量不低于为给定能量的原子个数。而这个图像展示了到达表面的原子能量的分布。典型的能量非常低，大约为1到2eV。</p>
+<blockquote>
+<p>停止 TRIM 计算，我们可以点击窗口的关闭键，或者点 File –&gt; Exit来停止，弹窗点 NO(指是否要进行保存，博主觉得没必要)</p>
+</blockquote>
+<p>我们回到 TRIM 设置窗口，点击 TRIM DEMO 切换至 Sputtering:Xe into Nickel</p>
+<p>这个demo将会带来一个极端的例子。</p>
+<p>随着计算的进行，在一开的 XZ Longitudinal 图像中，你将会看到红色小点所代表的离子产生的错位开始在垂直线上集合成簇状。<br>在镍中，原子之间的空隙只略大于2埃，而这正好是月牙状红色点群中点间的距离。入射离子在靶的每个单层中只能进行一次碰撞，因而当你观察这个图像时（靶的总深度小于15个原子）你可以看到实际的原子结构。<br>在一段时间之后，绿色的点将会开始呈现出相同的条纹状。这同样是由靶中原子间距确定的。</p>
+<p>点击 DISTRIBUTIONS 图像中的 Integral Sputtering。<br>这个图像表明每个入射离子能溅射出超过10个的原子。但是原子能量积分的斜率相比之前的硅靶要陡得多。如果表面变得粗糙化了，靶的表面结合能降低，那么溅射率可能上升为原来的两倍甚至三倍。<br>由于在这个算例中，我们无法知道表面的粗糙程度，溅射计算只能视为粗略的估计。表面的粗糙的取决于如多晶镍的晶粒大小等等因素。这些效应无法包含到 TRIM 计算中。</p>
+<p>所有溅射原子的详细信息可以通过点击 File 按钮来保存。这会生成一个名为“SRIMOutputs\SPUTTER.txt”的文件。这个文件的一个典型例子如下（注意这个文件必须使用 MS-LineDraw 字体来生成才能得到报告中的各种线条和方框）</p>
+<hr>
+<p>总结：混合与溅射的计算</p>
+<ol>
+<li>界面混合时原子可以从初始位置移动超过100A的距离，因而可以是一个很显著的效应</li>
+<li>会有数量相当可观的原子向表面移动。它们也能移动很远的距离。</li>
+<li>每个入射离子若能使超过5个原子移位，溅射可以很迅速地侵蚀表面。</li>
+<li>一些原子会从靶的深处溅射出来，正如我们看到的铂原子从表面下超过200A处溅射出来。</li>
+</ol>
+<hr>
+<p>尝试了win11下虚拟机跑Linux+wine来运行SRIM<br>尝试了win11下wsl+wine来运行SRIM<br>尝试了win11下虚拟机跑win7来运行SRIM  </p>
+<p>总结一下，想折腾的可以试试Linux+wine跑SRIM，首推win11下的wsl，戳<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps">这里可以看在适用于Linux的Windows子系统上运行Linux GUI应用（预览）</a></p>
+<p>不想折腾的可以跑个win的虚拟机，但性能会相对损失较大。<br>其次就是忍受切换语言和地区所带来的不便，使用主力机跑。<br>或者买个新的主力机（手动狗头）</p>
+<hr>
+<p>更新预告：创建复合靶</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/SRIM/">SRIM</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/60132.html">
+                        <span class="hidden-mobile">Linux之shell入门</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://blog-comment-mk0f7063p-paneersblog.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Paneer</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Emily</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
