@@ -16,21 +16,21 @@
   <meta name="author" content="Paneer &amp; Emily">
   <meta name="keywords" content="">
   
-    <meta name="description" content="demo3 复合靶的创建">
+    <meta name="description" content="洛阳一日游简单攻略">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SRIM入门（三）">
-<meta property="og:url" content="http://paneersblog.github.io/31090.html">
+<meta property="og:title" content="洛阳一日游">
+<meta property="og:url" content="http://paneersblog.github.io/12309.html">
 <meta property="og:site_name" content="Panner&amp;Emily’s paradise!">
-<meta property="og:description" content="demo3 复合靶的创建">
+<meta property="og:description" content="洛阳一日游简单攻略">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-02-19T16:00:42.000Z">
-<meta property="article:modified_time" content="2022-02-19T16:02:03.748Z">
+<meta property="article:published_time" content="2022-02-05T13:07:52.000Z">
+<meta property="article:modified_time" content="2022-02-08T14:13:04.787Z">
 <meta property="article:author" content="Paneer &amp; Emily">
-<meta property="article:tag" content="SRIM">
+<meta property="article:tag" content="Trip">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>SRIM入门（三） - Panner&amp;Emily’s paradise!</title>
+  <title>洛阳一日游 - Panner&amp;Emily’s paradise!</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +176,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="SRIM入门（三）">
+            <span class="h2" id="subtitle" title="洛阳一日游">
               
             </span>
 
@@ -186,8 +186,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-20 00:00" pubdate>
-        2022年2月20日 凌晨
+      <time datetime="2022-02-05 21:07" pubdate>
+        2022年2月5日 晚上
       </time>
     </span>
   
@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.3k 字
+      478 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      28 分钟
+      4 分钟
     </span>
   
 
@@ -235,96 +235,20 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">SRIM入门（三）</h1>
+            <h1 style="display: none">洛阳一日游</h1>
             
             <div class="markdown-body">
-              <h2 id="demo3-复合靶的创建"><a href="#demo3-复合靶的创建" class="headerlink" title="demo3 复合靶的创建"></a>demo3 复合靶的创建</h2><span id="more"></span>
+              <h1 id="洛阳一日游简单攻略"><a href="#洛阳一日游简单攻略" class="headerlink" title="洛阳一日游简单攻略"></a>洛阳一日游简单攻略</h1><span id="more"></span>
 
-<p>前文已经描述了如何设置TRIM，如何确定一个n型半导体井的注入离子种类、能量以及如何估算在半导体注入过程中的损伤。此demo将描述创建一个气体固体复合结构的载能离子气体电离探测器。</p>
-<p>设定一个装置，由一个长的圆柱体构成。在其左边有一个非常狭窄的入射窗口，它由一种名为 Paralence “C”的聚合物制成，仅为 1um的薄膜。它能够让束流进入探测器时损失最少的能量。这个探测器内部充有名为 P-10的气体，其成分为 10%甲烷和 90%氩气。氩气原子被粒子电离，然后放出的电子被电场清除出去。<br>有一种可能是电离气体流会导致击穿，并且 10%的甲烷气体会“猝息”过多的电荷堆积。最后在末端有一个“束流截止”靶。束流需要全部被截止在 P-10气体中，通常会使用一个足够厚的尾部平板以确保安全。</p>
-<p>我们在 SRIM中创建这个探测器，来用作创建复合靶的例子。通过 SRIM我们可以估计当一个束流进入探测器时会发生什么。</p>
-<p>首先我们打开 SRIM，选择 TRIM Calculation，打开 TRIM Demo，在第二列底部选择靶”He(5MeV)into Gas Ionization Detector”，然后点击 Save  Input and Statr TRIM开始计算(或许会有一个弹窗，是关于靶密度的提醒，点击 Yes即可)。</p>
-<p>这样设置可以提供给我们气体电离探测器的靶细节信息。</p>
-<blockquote>
-<p>另外有几点需要注意：</p>
-<ul>
-<li>所有的离子在到达底部的束流截止靶前应停止下来</li>
-<li>我们得到的图像只展示了靶的一部分。注意横坐标，显示的距离为 40nm到 50nm处的深度。也就是说是将该深度的部分进行了放大，这使得我们可以更详细的看到离子最终的径迹</li>
-<li>狭窄的入射窗口没有画出，但实际上是存在的。当我们将所选区域放大时它所在的第一层就不显示在图中了。</li>
-</ul>
-</blockquote>
-<p>此时我们可以查看几张计算得到的图像，但是我们看不到反冲原子或是溅射原子。这是因为他们在这个计算中被忽略了。  </p>
-<p>接下来我们要手动建立一个相同的设置来展示如何在 TRIM中创建一个复合靶。<br>首先关闭计算窗口，弹窗点否。  </p>
-<ol>
-<li>点击 Clear All清空所有条目  </li>
-<li>输入离子信息(ION DATA)<ol>
-<li>在 Ion Data中输入氦</li>
-<li>输入离子能量(以5MeV为例)</li>
-<li>入射角度垂直，故保持不变</li>
-</ol>
-</li>
-<li>输入靶信息(分为三层：表面薄膜、长圆柱气体以及黄铜束流截止靶)<ol>
-<li>首先是Paralence “C”薄膜。用快捷的方式输入它。<ol>
-<li>在 TARGET DATA右边有 Compound Dictionary按钮，点击它。</li>
-<li>此时我们会得到300多种混合物，Paralence “C”是一种商品名称，我们要知道它的确切名字或者查阅冗长的商品名称列表来寻找它。</li>
-<li>点击 PLASTICS&#x2F;POLYMERS，在展开的列表中我们可以找到“Polychloro-p-xylyene&#x2F;Paralene-C”。此时我们会得到关于他的一些信息。点击Paralene-C，然后点击 Add to Current Layer，会有弹窗提示是否使用该化合物的阻止本领修正，选择是就对了</li>
-</ol>
-</li>
-<li>此时第一层已经OK了，对于其厚度(width，默认为10000Ang)，10000A&#x3D;1um，故不需改动，可以创建第二层了</li>
-<li>点击 Add New Layer，键入该层的名字如：P-10 Gas。然后在右侧通过点击 PT来添加Ar和CH<sub>4</sub>。<ol>
-<li>Ar作为单质可以直接添加，CH<sub>4</sub>要分别添加 C和 H。</li>
-<li>现在我们来设置每种元素的数量。已知90%的Ar和10%的CH<sub>4</sub>，这是质量百分比，在 SRIM中使用原子百分比。可通过相对原子数，分别在Ar、H、C的 Atom.Stoich.列中输入64、29、7(具体计算不展开了，很简单)，然后SRIM会自动将其归一化为正确的比例。</li>
-<li>另外，在该层旁边要勾选“Gas”，然后将密度修改为气体密度，0.00125</li>
-<li>最后将该层的厚度改为 49mm</li>
-</ol>
-</li>
-<li>新建束流截止靶，层名字尽量简洁，可用：Brass<ol>
-<li>为了简化输入，可仍使用 Compound Dictionary按钮，点击METAL&#x2F;ALLOYS</li>
-<li>找到 Brass(typical)，点击它然后点击 Add New Element to Layer，弹窗点 是</li>
-<li>黄铜中包换铜、锌和铅。除了层厚，所有的数据都已经填好了。我们将厚度设置为 2.5mm，记得下拉单位菜单选择“mm”</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<p>这就完成了计算的设定。<br>注意到我们没有像在之前（demo2）一样在窗口的顶部改变计算类型（“Type of TRIM Calculation”)。<br>我们想要看在运行计算程序时将会发生什么，所以现在我们在使用快速损伤计算(默认)。特别是我们并不确定是否设定了足够厚的气体靶来截止所有的离子，我们将运行TRIM来看看将发生什么然后调整尺寸。</p>
-<p>点击 Save Input and Run TRIM开始计算</p>
-<p>如果输入信息无误的话，我们将会得到粒子运动的轨迹图像，我们可以通过修改计算来得到更多更详细的信息。</p>
-<ol>
-<li>在 TRIM窗口点击 PAUSE</li>
-<li>点击 Change TRIM</li>
-<li>此时我们想要查看离子射程末尾的细节。</li>
-<li>展开图像窗口。在左边你可以看到一个名为 PLOT Window 的表格。</li>
-<li>在其下方是数字 0A-515010000A。这意味着这个图像显示了从表面 0 埃到 51.5mm 最深处的整个靶的情况。改变左窗口的值为40mm&#x3D;400000000A（8个零）。改变右窗口的值为50mm&#x3D;500000000A（8个零）。这将会产生一个专门显示射程末端的窗口。</li>
-<li>在窗口的顶部点击 End Edit键。</li>
-<li>将会有一个弹窗告诉你你将重新开始 TRIM计算。点击Yes继续，TRIM将重新启动。</li>
-</ol>
-<p>这时你的图像应该和你执行 DEMO 所得到的相同。  </p>
-<p>注意到离子在它们行程的末尾之前都具有很好的方向性。它们初始速度很大，使得它们无法与靶发生强相互作用。靶中的传导电子具有相当于每核子25keV的速度（氦离子的速度大约为100keV，因为氦离子具有4个原子质量单位）。<br>这是在氦和靶电子之间发生最大强度相互作用的能量。氦和靶核之间的相互作用只有在这个能量以下才是显著的。<br>因而直到氦离子能量降到 100keV，也就是初始能量 5MeV的2%以下前，氦离子束一直被紧紧地聚焦着。</p>
-<p>接下来看几张图。点击 Pause TRIM</p>
-<ul>
-<li>点击Ion Distribution。  <ul>
-<li>你将会看到一个漂亮的高斯分布，中心位于 46.6mm 处。它非常窄，歧离度不到深度的2%。</li>
-</ul>
-</li>
-<li>点击 Ionization。<ul>
-<li>这张图展示了耗散到靶电子中去的能量。注意到在图像的底部是非常小的反冲原子电离的贡献（蓝线）。超过 99%转移给电子的能量损失是通过和离子的直接作用发生的。</li>
-</ul>
-</li>
-<li>点击 Phonons。<ul>
-<li>这个图像恰好显示了与靶中产生声子相反的趋势。现在靶中反冲原子占据了能量损失的主要成分。注意坐标的单位，声子能损大约是由于靶电子发生的离子能损的 1%。</li>
-<li>事实上，反冲原子给靶电子的贡献和声子（损失给靶原子）大致相当。离子损失给声子的能量几乎为零（看图中灰暗的红色虚线）。我们可以查看窗口右面叫做（(%ELOSS的表格，这里可以看到能量损失的相对分布。直接损失给靶电子的能量大约是离子能量损失的 99%，而其他的损失则是相当微小的。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p> <em><strong>TRIM设置窗口的tips:</strong></em></p>
-<p>在左下角有一个带有输入框的命令“AutoSave at Ion#”。<br>在一定数量的离子后 TRIM会自动保存计算结果。当我们通宵运行 TRIM时，这个特色工具确保了即使出现断电情形也会有信息被存储下来。默认值是10000个离子。你可以使用 Resume Saved TRIM命令来查看已经计算好的结果。</p>
-<p>下一个命令是 Total Number of Ions（默认为 99999）。<br>若使用略有不同的离子或靶得到相同的计算结果，这一命令在对它们进行比较时非常有用。但所有设定的离子计算完成时，它会保存计算结果并停止。</p>
-<p>下一个命令是随机数产生器（默认为空白）。<br>它用于计算人工制造的事件（奇异事件）。例如，也许在 10000 个离子中可能只有一次机会使某个离子能够和表面原子发生强烈的碰撞，产生一个强级联反冲。如果你想保存典型的图像，有时这些罕见的事件会产生不正常的图像造成干扰。输入任意数字（1就可以）然后你将得到一个完全不同的计算结果。如果没有数字被键入，那么这个默认的数值是16381，它是深入钻研随机数理论的人所崇敬的一个数字(我也不是很懂)。</p>
-<hr>
-<p>更新预告：靶损伤计算</p>
-<hr>
+<h2 id="龙门石窟"><a href="#龙门石窟" class="headerlink" title="龙门石窟"></a>龙门石窟</h2><p>建议时长：<br>3-4小时<br>门票价格：<br>100元，包括西山石窟、东山石窟、香山寺、白园等</p>
+<p>龙门石窟是印度文化与中国文化相融合的建筑。石窟分为西山和东山两部分，东山石窟多是唐代作品，而西山石窟开凿于北朝、隋唐时期。</p>
+<h2 id="洛阳博物馆"><a href="#洛阳博物馆" class="headerlink" title="洛阳博物馆"></a>洛阳博物馆</h2><p>建议时长：<br>1-2小时<br>门票价格：<br>免费</p>
+<p>从龙门石窟回市区的路上，可以游览洛阳博物馆。洛阳是一座综合性历史博物馆，由主楼和辅楼组成。主楼一层为通展，二楼则是博物馆的精品展。新馆共展出文物1.1万余件。</p>
+<h2 id="白马寺"><a href="#白马寺" class="headerlink" title="白马寺"></a>白马寺</h2><p>建议时长：<br>1-2小时<br>门票价格：<br>35元（不包含解说）</p>
+<p>从博物馆乘77路可前往白马寺。白马寺是佛教传入中国后第一所官办寺院。其分为三个部分，白马寺古寺，东面的齐云塔院以及西面的外国佛寺。白马寺建筑规模宏伟，现布局为明嘉靖时重修，仅存天王殿、大佛殿、大雄殿、接引殿四座大殿，其中大雄宝殿是全寺主殿。</p>
+<h2 id="洛阳老街"><a href="#洛阳老街" class="headerlink" title="洛阳老街"></a>洛阳老街</h2><p>建议时长：<br>不限<br>门票价格：<br>无</p>
+<p>从白马寺回到市区，到洛阳老街。洛阳老街承载着洛阳的记忆，老街西起丽景门，东至鼓楼，中心部分为十字街。老街更多的保持了原始风貌，青石板路，砖房店面。<strong>老街中有很多当地的美食。</strong></p>
+<p>数据参考：<br><a target="_blank" rel="noopener" href="http://www.mafengwo.cn/travel-news/1436634.html">马蜂窝-洛阳一日游</a></p>
 
             </div>
             <hr>
@@ -335,7 +259,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/SRIM/">SRIM</a>
+                      <a class="hover-with-bg" href="/tags/Trip/">Trip</a>
                     
                   </div>
                 
@@ -352,9 +276,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/52445.html">
+                      <a href="/11784.html">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">win批处理语法</span>
+                        <span class="hidden-mobile">SRIM入门</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -362,8 +286,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/19550.html">
-                        <span class="hidden-mobile">SRIM入门（二）</span>
+                      <a href="/16655.html">
+                        <span class="hidden-mobile">郑州-准备知识</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

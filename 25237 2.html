@@ -16,21 +16,21 @@
   <meta name="author" content="Paneer &amp; Emily">
   <meta name="keywords" content="">
   
-    <meta name="description" content="demo3 复合靶的创建">
+    <meta name="description" content="人生苦短 我用Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SRIM入门（三）">
-<meta property="og:url" content="http://paneersblog.github.io/31090.html">
+<meta property="og:title" content="Python入门笔记（三）">
+<meta property="og:url" content="http://paneersblog.github.io/25237.html">
 <meta property="og:site_name" content="Panner&amp;Emily’s paradise!">
-<meta property="og:description" content="demo3 复合靶的创建">
+<meta property="og:description" content="人生苦短 我用Python">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-02-19T16:00:42.000Z">
-<meta property="article:modified_time" content="2022-02-19T16:02:03.748Z">
+<meta property="article:published_time" content="2022-02-09T15:26:33.000Z">
+<meta property="article:modified_time" content="2022-02-09T15:27:28.325Z">
 <meta property="article:author" content="Paneer &amp; Emily">
-<meta property="article:tag" content="SRIM">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>SRIM入门（三） - Panner&amp;Emily’s paradise!</title>
+  <title>Python入门笔记（三） - Panner&amp;Emily’s paradise!</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +176,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="SRIM入门（三）">
+            <span class="h2" id="subtitle" title="Python入门笔记（三）">
               
             </span>
 
@@ -186,8 +186,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-20 00:00" pubdate>
-        2022年2月20日 凌晨
+      <time datetime="2022-02-09 23:26" pubdate>
+        2022年2月9日 晚上
       </time>
     </span>
   
@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.3k 字
+      1.6k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      28 分钟
+      13 分钟
     </span>
   
 
@@ -235,97 +235,92 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">SRIM入门（三）</h1>
+            <h1 style="display: none">Python入门笔记（三）</h1>
             
             <div class="markdown-body">
-              <h2 id="demo3-复合靶的创建"><a href="#demo3-复合靶的创建" class="headerlink" title="demo3 复合靶的创建"></a>demo3 复合靶的创建</h2><span id="more"></span>
+              <p>人生苦短 我用Python</p>
+<span id="more"></span>
 
-<p>前文已经描述了如何设置TRIM，如何确定一个n型半导体井的注入离子种类、能量以及如何估算在半导体注入过程中的损伤。此demo将描述创建一个气体固体复合结构的载能离子气体电离探测器。</p>
-<p>设定一个装置，由一个长的圆柱体构成。在其左边有一个非常狭窄的入射窗口，它由一种名为 Paralence “C”的聚合物制成，仅为 1um的薄膜。它能够让束流进入探测器时损失最少的能量。这个探测器内部充有名为 P-10的气体，其成分为 10%甲烷和 90%氩气。氩气原子被粒子电离，然后放出的电子被电场清除出去。<br>有一种可能是电离气体流会导致击穿，并且 10%的甲烷气体会“猝息”过多的电荷堆积。最后在末端有一个“束流截止”靶。束流需要全部被截止在 P-10气体中，通常会使用一个足够厚的尾部平板以确保安全。</p>
-<p>我们在 SRIM中创建这个探测器，来用作创建复合靶的例子。通过 SRIM我们可以估计当一个束流进入探测器时会发生什么。</p>
-<p>首先我们打开 SRIM，选择 TRIM Calculation，打开 TRIM Demo，在第二列底部选择靶”He(5MeV)into Gas Ionization Detector”，然后点击 Save  Input and Statr TRIM开始计算(或许会有一个弹窗，是关于靶密度的提醒，点击 Yes即可)。</p>
-<p>这样设置可以提供给我们气体电离探测器的靶细节信息。</p>
+<hr>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4><p>反斜杠字符(\)是一个特殊字符，在Python字符串中表示“转义”，该字符与后面相邻的一个字符共同组成一个新的含义。<br>在字符串界定符前加上r或R，转义字符失效，将原样输出。</p>
+<table>
+<thead>
+<tr>
+<th align="center">转义字符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>\n</code></td>
+<td align="center">换行符</td>
+</tr>
+<tr>
+<td align="center"><code>\t</code></td>
+<td align="center">水平制表符，横向跳转到下一个制表位</td>
+</tr>
+<tr>
+<td align="center"><code>\&quot;</code></td>
+<td align="center">双引号</td>
+</tr>
+<tr>
+<td align="center"><code>\&#39;</code></td>
+<td align="center">单引号</td>
+</tr>
+<tr>
+<td align="center"><code>\\</code></td>
+<td align="center">一个反斜杠</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 8.转义字符</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Paneer&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;真帅&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;-----------&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Paneer\n真帅&#x27;</span>)  <span class="hljs-comment"># 遇到\n即换行，可连续进行换行。</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">r&#x27;Paneer\n真帅&#x27;</span>)  <span class="hljs-comment"># 在界定符&#x27;&#x27;前加r(R)，则原样输出</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="字符串的索引"><a href="#字符串的索引" class="headerlink" title="字符串的索引"></a>字符串的索引</h4><p>对字符串中某个字符的检索称作索引<br>语法结构为：</p>
+<div class="code-wrapper"><pre><code class="hljs">字符串或字符串变量[序号]
+</code></pre></div>
 <blockquote>
-<p>另外有几点需要注意：</p>
-<ul>
-<li>所有的离子在到达底部的束流截止靶前应停止下来</li>
-<li>我们得到的图像只展示了靶的一部分。注意横坐标，显示的距离为 40nm到 50nm处的深度。也就是说是将该深度的部分进行了放大，这使得我们可以更详细的看到离子最终的径迹</li>
-<li>狭窄的入射窗口没有画出，但实际上是存在的。当我们将所选区域放大时它所在的第一层就不显示在图中了。</li>
-</ul>
+<p>注，正向递增序号从“0”开始，反向递减序号从“-1”开始</p>
 </blockquote>
-<p>此时我们可以查看几张计算得到的图像，但是我们看不到反冲原子或是溅射原子。这是因为他们在这个计算中被忽略了。  </p>
-<p>接下来我们要手动建立一个相同的设置来展示如何在 TRIM中创建一个复合靶。<br>首先关闭计算窗口，弹窗点否。  </p>
-<ol>
-<li>点击 Clear All清空所有条目  </li>
-<li>输入离子信息(ION DATA)<ol>
-<li>在 Ion Data中输入氦</li>
-<li>输入离子能量(以5MeV为例)</li>
-<li>入射角度垂直，故保持不变</li>
-</ol>
-</li>
-<li>输入靶信息(分为三层：表面薄膜、长圆柱气体以及黄铜束流截止靶)<ol>
-<li>首先是Paralence “C”薄膜。用快捷的方式输入它。<ol>
-<li>在 TARGET DATA右边有 Compound Dictionary按钮，点击它。</li>
-<li>此时我们会得到300多种混合物，Paralence “C”是一种商品名称，我们要知道它的确切名字或者查阅冗长的商品名称列表来寻找它。</li>
-<li>点击 PLASTICS&#x2F;POLYMERS，在展开的列表中我们可以找到“Polychloro-p-xylyene&#x2F;Paralene-C”。此时我们会得到关于他的一些信息。点击Paralene-C，然后点击 Add to Current Layer，会有弹窗提示是否使用该化合物的阻止本领修正，选择是就对了</li>
-</ol>
-</li>
-<li>此时第一层已经OK了，对于其厚度(width，默认为10000Ang)，10000A&#x3D;1um，故不需改动，可以创建第二层了</li>
-<li>点击 Add New Layer，键入该层的名字如：P-10 Gas。然后在右侧通过点击 PT来添加Ar和CH<sub>4</sub>。<ol>
-<li>Ar作为单质可以直接添加，CH<sub>4</sub>要分别添加 C和 H。</li>
-<li>现在我们来设置每种元素的数量。已知90%的Ar和10%的CH<sub>4</sub>，这是质量百分比，在 SRIM中使用原子百分比。可通过相对原子数，分别在Ar、H、C的 Atom.Stoich.列中输入64、29、7(具体计算不展开了，很简单)，然后SRIM会自动将其归一化为正确的比例。</li>
-<li>另外，在该层旁边要勾选“Gas”，然后将密度修改为气体密度，0.00125</li>
-<li>最后将该层的厚度改为 49mm</li>
-</ol>
-</li>
-<li>新建束流截止靶，层名字尽量简洁，可用：Brass<ol>
-<li>为了简化输入，可仍使用 Compound Dictionary按钮，点击METAL&#x2F;ALLOYS</li>
-<li>找到 Brass(typical)，点击它然后点击 Add New Element to Layer，弹窗点 是</li>
-<li>黄铜中包换铜、锌和铅。除了层厚，所有的数据都已经填好了。我们将厚度设置为 2.5mm，记得下拉单位菜单选择“mm”</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<p>这就完成了计算的设定。<br>注意到我们没有像在之前（demo2）一样在窗口的顶部改变计算类型（“Type of TRIM Calculation”)。<br>我们想要看在运行计算程序时将会发生什么，所以现在我们在使用快速损伤计算(默认)。特别是我们并不确定是否设定了足够厚的气体靶来截止所有的离子，我们将运行TRIM来看看将发生什么然后调整尺寸。</p>
-<p>点击 Save Input and Run TRIM开始计算</p>
-<p>如果输入信息无误的话，我们将会得到粒子运动的轨迹图像，我们可以通过修改计算来得到更多更详细的信息。</p>
-<ol>
-<li>在 TRIM窗口点击 PAUSE</li>
-<li>点击 Change TRIM</li>
-<li>此时我们想要查看离子射程末尾的细节。</li>
-<li>展开图像窗口。在左边你可以看到一个名为 PLOT Window 的表格。</li>
-<li>在其下方是数字 0A-515010000A。这意味着这个图像显示了从表面 0 埃到 51.5mm 最深处的整个靶的情况。改变左窗口的值为40mm&#x3D;400000000A（8个零）。改变右窗口的值为50mm&#x3D;500000000A（8个零）。这将会产生一个专门显示射程末端的窗口。</li>
-<li>在窗口的顶部点击 End Edit键。</li>
-<li>将会有一个弹窗告诉你你将重新开始 TRIM计算。点击Yes继续，TRIM将重新启动。</li>
-</ol>
-<p>这时你的图像应该和你执行 DEMO 所得到的相同。  </p>
-<p>注意到离子在它们行程的末尾之前都具有很好的方向性。它们初始速度很大，使得它们无法与靶发生强相互作用。靶中的传导电子具有相当于每核子25keV的速度（氦离子的速度大约为100keV，因为氦离子具有4个原子质量单位）。<br>这是在氦和靶电子之间发生最大强度相互作用的能量。氦和靶核之间的相互作用只有在这个能量以下才是显著的。<br>因而直到氦离子能量降到 100keV，也就是初始能量 5MeV的2%以下前，氦离子束一直被紧紧地聚焦着。</p>
-<p>接下来看几张图。点击 Pause TRIM</p>
-<ul>
-<li>点击Ion Distribution。  <ul>
-<li>你将会看到一个漂亮的高斯分布，中心位于 46.6mm 处。它非常窄，歧离度不到深度的2%。</li>
-</ul>
-</li>
-<li>点击 Ionization。<ul>
-<li>这张图展示了耗散到靶电子中去的能量。注意到在图像的底部是非常小的反冲原子电离的贡献（蓝线）。超过 99%转移给电子的能量损失是通过和离子的直接作用发生的。</li>
-</ul>
-</li>
-<li>点击 Phonons。<ul>
-<li>这个图像恰好显示了与靶中产生声子相反的趋势。现在靶中反冲原子占据了能量损失的主要成分。注意坐标的单位，声子能损大约是由于靶电子发生的离子能损的 1%。</li>
-<li>事实上，反冲原子给靶电子的贡献和声子（损失给靶原子）大致相当。离子损失给声子的能量几乎为零（看图中灰暗的红色虚线）。我们可以查看窗口右面叫做（(%ELOSS的表格，这里可以看到能量损失的相对分布。直接损失给靶电子的能量大约是离子能量损失的 99%，而其他的损失则是相当微小的。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p> <em><strong>TRIM设置窗口的tips:</strong></em></p>
-<p>在左下角有一个带有输入框的命令“AutoSave at Ion#”。<br>在一定数量的离子后 TRIM会自动保存计算结果。当我们通宵运行 TRIM时，这个特色工具确保了即使出现断电情形也会有信息被存储下来。默认值是10000个离子。你可以使用 Resume Saved TRIM命令来查看已经计算好的结果。</p>
-<p>下一个命令是 Total Number of Ions（默认为 99999）。<br>若使用略有不同的离子或靶得到相同的计算结果，这一命令在对它们进行比较时非常有用。但所有设定的离子计算完成时，它会保存计算结果并停止。</p>
-<p>下一个命令是随机数产生器（默认为空白）。<br>它用于计算人工制造的事件（奇异事件）。例如，也许在 10000 个离子中可能只有一次机会使某个离子能够和表面原子发生强烈的碰撞，产生一个强级联反冲。如果你想保存典型的图像，有时这些罕见的事件会产生不正常的图像造成干扰。输入任意数字（1就可以）然后你将得到一个完全不同的计算结果。如果没有数字被键入，那么这个默认的数值是16381，它是深入钻研随机数理论的人所崇敬的一个数字(我也不是很懂)。</p>
-<hr>
-<p>更新预告：靶损伤计算</p>
-<hr>
+<h4 id="字符串的切片"><a href="#字符串的切片" class="headerlink" title="字符串的切片"></a>字符串的切片</h4><p>对字符串中某个子串或区间的检索称为切片<br>语法结构为：</p>
+<div class="code-wrapper"><pre><code class="hljs">字符串或字符串变量[N:M]
+</code></pre></div>
+<p>切片获取字符串中从N(包含)到M(不包含)的子字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 9.字符串的索引和切片</span><br>s = <span class="hljs-string">&#x27;helloworld&#x27;</span><br><span class="hljs-built_in">print</span>(s[<span class="hljs-number">1</span>],s[-<span class="hljs-number">9</span>])  <span class="hljs-comment"># 输出&quot;e e&quot;，对于字符串&quot;s&quot;来讲正向第&quot;1&quot;个（从0开始）和逆向第&quot;9&quot;个都是&quot;e&quot;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;helloworld&#x27;</span>[<span class="hljs-number">9</span>])<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;helloworld&#x27;</span>[-<span class="hljs-number">1</span>])<br><br><span class="hljs-built_in">print</span>(s[<span class="hljs-number">2</span>:<span class="hljs-number">7</span>])  <span class="hljs-comment"># 正向递增序列切片</span><br><span class="hljs-built_in">print</span>(s[-<span class="hljs-number">8</span>:-<span class="hljs-number">3</span>])  <span class="hljs-comment"># 逆向递减序列切片</span><br><span class="hljs-comment"># N 默认是0</span><br><span class="hljs-built_in">print</span>(s[:<span class="hljs-number">5</span>])<br><span class="hljs-comment"># M 默认是到字符串结尾</span><br><span class="hljs-built_in">print</span>(s[<span class="hljs-number">5</span>:])<br></code></pre></td></tr></table></figure>
 
+<h4 id="字符串类型的操作"><a href="#字符串类型的操作" class="headerlink" title="字符串类型的操作"></a>字符串类型的操作</h4><table>
+<thead>
+<tr>
+<th align="left">操作符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">x+y</td>
+<td align="left">连接两个字符x与y</td>
+</tr>
+<tr>
+<td align="left">x*n或n*x</td>
+<td align="left">复制n次字符串</td>
+</tr>
+<tr>
+<td align="left">x in s</td>
+<td align="left">若x是s的子串，则结果为true，否则为false</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 10.字符串类型的操作</span><br>x = <span class="hljs-string">&#x27;2022年&#x27;</span><br>y = <span class="hljs-string">&#x27;北京冬奥会&#x27;</span><br><span class="hljs-built_in">print</span>(x+y)<br><span class="hljs-built_in">print</span>(<span class="hljs-number">10</span>*x,x*<span class="hljs-number">10</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;北京&#x27;</span> <span class="hljs-keyword">in</span> y)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;上海&#x27;</span> <span class="hljs-keyword">in</span> y)<br></code></pre></td></tr></table></figure>
+
+<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><ul>
+<li>用来表示真值或假值</li>
+<li>在Python中使用标识符<code>True</code>和<code>False</code>表示布尔类型的值</li>
+<li>布尔类型可转换化为数值，<code>True</code>表示1 <code>False</code>表示O</li>
+<li>所有对象都有一个布尔值，使用内置函数<code>bool()</code>进行测试</li>
+<li>布尔值为假的情况<ul>
+<li><code>False</code>或者是<code>None</code></li>
+<li>数值中的0，包含0，0.0，虚数0</li>
+<li>空序列,包含空字符串、空元组、空列表、空字典</li>
+<li>自定义对象的实例，该对象的<code>__bool()__</code>方法返回<code>False</code>或<code>__len___()</code>方法返回0</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 11.布尔类型</span><br>x = <span class="hljs-literal">True</span><br><span class="hljs-built_in">print</span>(x)  <span class="hljs-comment"># 输出&quot;True&quot;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(x))  <span class="hljs-comment"># 输出&quot;&lt;class &#x27;bool&#x27;&gt;&quot;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-literal">True</span>+<span class="hljs-number">10</span>)  <span class="hljs-comment"># 1+10</span><br><span class="hljs-built_in">print</span>(<span class="hljs-literal">False</span>+<span class="hljs-number">10</span>)  <span class="hljs-comment"># 0+10</span><br><br><span class="hljs-comment"># 测试对象的布尔值</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-number">18</span>))  <span class="hljs-comment"># True</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-number">0</span>),<span class="hljs-built_in">bool</span>(<span class="hljs-number">0.0</span>))  <span class="hljs-comment"># False</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-string">&#x27;北京欢迎你&#x27;</span>))  <span class="hljs-comment"># True</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-string">&#x27;&#x27;</span>))  <span class="hljs-comment"># 空字符串，False</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-literal">False</span>))  <span class="hljs-comment"># False</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-literal">None</span>))  <span class="hljs-comment"># False</span><br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -335,7 +330,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/SRIM/">SRIM</a>
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
                     
                   </div>
                 
@@ -352,18 +347,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/52445.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">win批处理语法</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/19550.html">
-                        <span class="hidden-mobile">SRIM入门（二）</span>
+                      <a href="/1.html">
+                        <span class="hidden-mobile">test page (music)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
