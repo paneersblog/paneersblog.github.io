@@ -24,7 +24,7 @@
 <meta property="og:description" content="win批处理语法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-21T15:21:26.000Z">
-<meta property="article:modified_time" content="2022-02-21T15:33:42.854Z">
+<meta property="article:modified_time" content="2022-02-22T03:37:30.917Z">
 <meta property="article:author" content="Paneer &amp; Emily">
 <meta property="article:tag" content="DOS">
 <meta name="twitter:card" content="summary_large_image">
@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      8.7k 字
+      8.5k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      73 分钟
+      71 分钟
     </span>
   
 
@@ -265,19 +265,19 @@
 <li><p>在命令提示下键入批处理文件的名称，或者双击该批处理文件，系统就会调用Cmd.exe来运行该文件。</p>
 </li>
 </ol>
-<h2 id="二、参数"><a href="#二、参数" class="headerlink" title="二、参数"></a>二、参数</h2><h3 id="1-系统参数"><a href="#1-系统参数" class="headerlink" title="1.系统参数"></a>1.系统参数</h3><p>%SystemRoot% &#x3D;&#x3D;&#x3D; C:\WINDOWS (%windir% 同样)</p>
-<p>%ProgramFiles% &#x3D;&#x3D;&#x3D; C:\Program Files</p>
-<p>%USERPROFILE% &#x3D;&#x3D;&#x3D; C:\Documents and Settings\Administrator (子目录有“桌面”,“开始菜单”,“收藏夹”等)</p>
-<p>%APPDATA% &#x3D;&#x3D;&#x3D; C:\Documents and Settings\Administrator\Application Data</p>
-<p>%TEMP% &#x3D;&#x3D;&#x3D; C:\DOCUME<del>1\ADMINI</del>1\LOCALS~1\Temp (%TEM% 同样)</p>
-<p>%APPDATA% &#x3D;&#x3D;&#x3D; C:\Documents and Settings\Administrator\Application Data</p>
-<p>%OS% &#x3D;&#x3D;&#x3D; Windows_NT (系统)</p>
-<p>%Path% &#x3D;&#x3D;&#x3D; %SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem (原本的设置)</p>
-<p>%HOMEDRIVE% &#x3D;&#x3D;&#x3D; C: (系统盘)</p>
-<p>%HOMEPATH% &#x3D;&#x3D;&#x3D; \Documents and Settings\Administrator</p>
-<p>:: 枚举当前的环境变量</p>
-<p>setlocal enabledelayedexpansion</p>
-<p>FOR &#x2F;F “usebackq delims&#x3D;&#x3D;” %%i IN (<code>set</code>) DO @echo %%i</p>
+<h2 id="二、参数"><a href="#二、参数" class="headerlink" title="二、参数"></a>二、参数</h2><h3 id="1-系统参数"><a href="#1-系统参数" class="headerlink" title="1.系统参数"></a>1.系统参数</h3><p><code>%SystemRoot% === C:\WINDOWS (%windir% 同样)</code></p>
+<p><code>%ProgramFiles% === C:\Program Files</code></p>
+<p><code>%USERPROFILE% === C:\Documents and Settings\Administrator (子目录有“桌面”,“开始菜单”,“收藏夹”等)</code></p>
+<p><code>%APPDATA% === C:\Documents and Settings\Administrator\Application Data</code></p>
+<p><code>%TEMP% === C:\DOCUME~1\ADMINI1~\LOCALS~1\Temp (%TEM% 同样)</code></p>
+<p><code>%APPDATA% === C:\Documents and Settings\Administrator\Application Data</code></p>
+<p><code>%OS% === Windows_NT (系统)</code></p>
+<p><code>%Path% === %SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem (原本的设置)</code></p>
+<p><code>%HOMEDRIVE% === C: (系统盘)</code></p>
+<p><code>%HOMEPATH% === \Documents and Settings\Administrator</code></p>
+<p><code>:: 枚举当前的环境变量</code></p>
+<p><code>setlocal enabledelayedexpansion</code></p>
+<p><code>FOR /F &quot;usebackq delims==&quot; %%i IN (</code>set<code>) DO @echo %%i</code></p>
 <h3 id="2-传递参数给批处理文件"><a href="#2-传递参数给批处理文件" class="headerlink" title="2.传递参数给批处理文件"></a>2.传递参数给批处理文件</h3><p>%[1-9]表示参数，参数是指在运行批处理文件时在文件名后加的以空格(或者Tab)分隔的字符串。</p>
 <p>变量可以从%0到%9，%0表示批处理命令本身，其它参数字符串用 %1 到 %9 顺序表示。</p>
 <p>举例如下(括号内容仅作为解释说明，运行时请删除)：</p>
