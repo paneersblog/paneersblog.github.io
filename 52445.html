@@ -1,22 +1,24 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang=zh>
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/IMG_4556.JPG">
-  <link rel="icon" href="/img/IMG_4556.JPG">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8">
   
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Paneer &amp; Emily">
-  <meta name="keywords" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
   
-    <meta name="description" content="win批处理语法">
+  
+  <title>win批处理语法 | Paneer&#39;s blog</title>
+  <meta name="description" content="win批处理语法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="win批处理语法">
 <meta property="og:url" content="http://paneersblog.github.io/52445.html">
@@ -24,224 +26,365 @@
 <meta property="og:description" content="win批处理语法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-21T15:21:26.000Z">
-<meta property="article:modified_time" content="2022-02-22T03:37:30.917Z">
+<meta property="article:modified_time" content="2022-07-16T09:31:08.877Z">
 <meta property="article:author" content="Paneer &amp; Emily">
 <meta property="article:tag" content="DOS">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://paneersblog.github.io/52445.html">
   
   
-  <title>win批处理语法 - Panner&amp;Emily’s paradise!</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
   
+  
+  
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Panner&Emily’s paradise!" type="application/atom+xml">
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/paneersblog" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Paneer</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">一个成熟稳重的沙雕网友</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shandong, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/paneersblog" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6203293798" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Paneer_007" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
     
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%94%BB%E7%95%A5/">攻略</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%A1%B5/">测试页</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">英语学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
     
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOS/" rel="tag">DOS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MCNP5/" rel="tag">MCNP5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/" rel="tag">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SRIM/" rel="tag">SRIM</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Trip/" rel="tag">Trip</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordList-E/" rel="tag">WordList_E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordList-P/" rel="tag">WordList_P</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
 
 
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/DOS/" style="font-size: 13.33px;">DOS</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/MCNP5/" style="font-size: 13px;">MCNP5</a> <a href="/tags/Markdown/" style="font-size: 13px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 13px;">Matlab</a> <a href="/tags/Photo/" style="font-size: 13px;">Photo</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/SRIM/" style="font-size: 13.67px;">SRIM</a> <a href="/tags/Trip/" style="font-size: 13.33px;">Trip</a> <a href="/tags/WordList-E/" style="font-size: 13px;">WordList_E</a> <a href="/tags/WordList-P/" style="font-size: 13px;">WordList_P</a>
+    </div>
+  </div>
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
 
 
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"paneersblog.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Paradise</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                友链
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/54952.html" class="title">MCNP5入门（一）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-05T07:47:05.000Z" itemprop="datePublished">2022-04-05</time>
+              </p>
+            </div>
           </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">英语学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/28793.html" class="title">Chapter_1</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-27T04:35:02.000Z" itemprop="datePublished">2022-02-27</time>
+              </p>
+            </div>
           </li>
-        
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/6067.html" class="title">SRIM入门（四）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-22T16:34:54.000Z" itemprop="datePublished">2022-02-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+              </p>
+              <p class="item-title">
+                <a href="/52445.html" class="title">win批处理语法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-21T15:21:26.000Z" itemprop="datePublished">2022-02-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/31090.html" class="title">SRIM入门（三）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-19T16:00:42.000Z" itemprop="datePublished">2022-02-20</time>
+              </p>
+            </div>
+          </li>
+          
       </ul>
     </div>
   </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="win批处理语法">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-21 23:21" pubdate>
-        2022年2月21日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      8.5k 字
-    </span>
   
 
+    
+  </div>
+</aside>
+
   
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-win批处理语法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      win批处理语法
+    </h1>
+  
+
       
-      71 分钟
-    </span>
-  
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/52445.html" class="article-date">
+	  <time datetime="2022-02-21T15:21:26.000Z" itemprop="datePublished">2022-02-21</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+  </span>
 
-  
-  
-</div>
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/DOS/" rel="tag">DOS</a>
+  </span>
 
-            
-          </div>
 
-          
-        </div>
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/52445.html#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 4.3k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 17(分)</span>
+	
+
       </div>
     </div>
-  </header>
-
-  <main>
-    
+    <div class="article-entry marked-body" itemprop="articleBody">
       
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">win批处理语法</h1>
-            
-            <div class="markdown-body">
-              <h1 id="win批处理语法"><a href="#win批处理语法" class="headerlink" title="win批处理语法"></a>win批处理语法</h1><span id="more"></span>
+        <p>win批处理语法</p>
+<span id="more"></span>
 
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><strong>%~dp0 [获取当前路径]</strong></p>
-<figure class="highlight bat"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><pre><code class="hljs bat">%~dp0 “d”为Drive的缩写，即为驱动器，磁盘、“p”为<span class="hljs-built_in">Path</span>缩写，即为路径，目录<br><br><span class="hljs-built_in">cd</span> %~dp0 ：进入批处理所在目录<br><br><span class="hljs-built_in">cd</span> %~dp0bin\ ：进入批处理所在目录的bin目录<br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%~dp0 “d”为Drive的缩写，即为驱动器，磁盘、“p”为<span class="built_in">Path</span>缩写，即为路径，目录</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> %~dp0 ：进入批处理所在目录</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> %~dp0bin\ ：进入批处理所在目录的bin目录</span><br></pre></td></tr></table></figure>
 
 <p><strong>%cd%[执行的路径]</strong><br>当前执行的路径，并非目标文件的路径</p>
 <p><strong>taskkill &#x2F;f &#x2F;im notepad.exe [终止进程]</strong><br>taskkill &#x2F;?打开帮助</p>
@@ -281,12 +424,12 @@
 <h3 id="2-传递参数给批处理文件"><a href="#2-传递参数给批处理文件" class="headerlink" title="2.传递参数给批处理文件"></a>2.传递参数给批处理文件</h3><p>%[1-9]表示参数，参数是指在运行批处理文件时在文件名后加的以空格(或者Tab)分隔的字符串。</p>
 <p>变量可以从%0到%9，%0表示批处理命令本身，其它参数字符串用 %1 到 %9 顺序表示。</p>
 <p>举例如下(括号内容仅作为解释说明，运行时请删除)：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-keyword">call</span> test2.bat &quot;hello&quot; &quot;haha&quot; (执行同目录下的“test2.bat”文件，并输入两个参数)<br><br>在“test2.bat”文件里写:<br><br><span class="hljs-built_in">echo</span> %<span class="hljs-number">1</span> (打印: &quot;hello&quot;)<br><br><span class="hljs-built_in">echo</span> %<span class="hljs-number">2</span> (打印: &quot;haha&quot;)<br><br><span class="hljs-built_in">echo</span> %<span class="hljs-number">0</span> (打印: test2.bat)<br><br><span class="hljs-built_in">echo</span> %<span class="hljs-number">19</span> (打印: &quot;hello&quot;<span class="hljs-number">9</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> test2.bat &quot;hello&quot; &quot;haha&quot; (执行同目录下的“test2.bat”文件，并输入两个参数)</span><br><span class="line"></span><br><span class="line">在“test2.bat”文件里写:</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> %<span class="number">1</span> (打印: &quot;hello&quot;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> %<span class="number">2</span> (打印: &quot;haha&quot;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> %<span class="number">0</span> (打印: test2.bat)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> %<span class="number">19</span> (打印: &quot;hello&quot;<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
 
 <h2 id="三、批处理基本命令"><a href="#三、批处理基本命令" class="headerlink" title="三、批处理基本命令"></a>三、批处理基本命令</h2><h3 id="0-help-命令"><a href="#0-help-命令" class="headerlink" title="0.help 命令"></a>0.help 命令</h3><p>语法： 命令 &#x2F;?</p>
 <p>可显示此命令的帮助信息</p>
 <p>Sample：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">type</span> /? &gt;&gt;tmp.txt (把 <span class="hljs-built_in">type</span> 命令的帮助信息写入到tmp.txt文件里)<br><br><span class="hljs-built_in">help</span> <span class="hljs-built_in">type</span> (显示跟“<span class="hljs-built_in">type</span> /?”一样)<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> /? &gt;&gt;tmp.txt (把 <span class="built_in">type</span> 命令的帮助信息写入到tmp.txt文件里)</span><br><span class="line"></span><br><span class="line"><span class="built_in">help</span> <span class="built_in">type</span> (显示跟“<span class="built_in">type</span> /?”一样)</span><br></pre></td></tr></table></figure>
 
 <h3 id="1-echo-命令"><a href="#1-echo-命令" class="headerlink" title="1.echo 命令"></a>1.echo 命令</h3><p>语法: echo [{on|off}] [message]</p>
 <p>ECHO [ON | OFF] 打开回显或关闭回显功能。</p>
@@ -294,11 +437,11 @@
 <p>ECHO [message] 显示信息。</p>
 <p>echo off 表示在此语句后所有运行的命令都不显示命令行本身；默认是on，on时会显示如： C:\文件夹路径&gt;命令行。</p>
 <p>在实际应用中我们会把这条命令和重定向符号( 也称为管道符号，详见DOS基础命令，一般用 &gt; &gt;&gt; ^ )结合来实现输入一些命令到特定格式的文件中。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">echo</span> off<br><br><span class="hljs-built_in">echo</span> hello world (显示出“hello world”)<br><br><span class="hljs-built_in">echo</span> Windows Registry Editor Version <span class="hljs-number">5</span>.<span class="hljs-number">00</span> &gt; c:\setupreg.reg (此前还没有 setupreg.reg 这个文件)<br><br><span class="hljs-built_in">echo</span> &quot;SourcePath&quot;=&quot;D:\\Win2003\\&quot; &gt;&gt; c:\setupreg.reg (追加内容进 setupreg.reg 这个文件)<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> hello world (显示出“hello world”)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Windows Registry Editor Version <span class="number">5</span>.<span class="number">00</span> &gt; c:\setupreg.reg (此前还没有 setupreg.reg 这个文件)</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> &quot;SourcePath&quot;=&quot;D:\\Win2003\\&quot; &gt;&gt; c:\setupreg.reg (追加内容进 setupreg.reg 这个文件)</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-命令"><a href="#2-命令" class="headerlink" title="2.@ 命令"></a>2.@ 命令</h3><p>表示不显示@后面的命令，(在入侵过程中自然不能让对方看到你使用的命令啦 手动狗头)</p>
 <p>@ 与 echo off 相象，但它是加在每个命令行的最前面，表示运行时不显示这一行的命令行(只能影响当前行)。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cmd">@<span class="hljs-built_in">echo</span> off (此语句常用于开头，表示不显示所有的命令行信息，包括此句)<br><br>@<span class="hljs-built_in">echo</span> please wait a minite...<br><br>@<span class="hljs-built_in">format</span> X: /q/u/autoset<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off (此语句常用于开头，表示不显示所有的命令行信息，包括此句)</span><br><span class="line"></span><br><span class="line">@<span class="built_in">echo</span> please wait a minite...</span><br><span class="line"></span><br><span class="line">@<span class="built_in">format</span> X: /q/u/autoset</span><br></pre></td></tr></table></figure>
 
 <p>(format 这个命令是不可以使用&#x2F;y这个参数的，可喜的是微软留了个autoset这个参数给我们，效果和&#x2F;y是一样的。)</p>
 <h3 id="3-Goto-命令"><a href="#3-Goto-命令" class="headerlink" title="3.Goto 命令"></a>3.Goto 命令</h3><p>语法：goto label (label是参数，指定所要转向的批处理程序中的行。)</p>
@@ -309,10 +452,10 @@
 <h3 id="4-Rem-命令"><a href="#4-Rem-命令" class="headerlink" title="4.Rem 命令"></a>4.Rem 命令</h3><p>语法：Rem Message</p>
 <p>(小技巧：用::代替rem)</p>
 <p>注释命令，在C语言中相当与&#x2F;<em>…</em>&#x2F;,它并不会被执行，只是起一个注释的作用，便于别人阅读和自己日后修改。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-comment">@Rem Here is the description.</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">@Rem Here is the description.</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="5-Pause-命令"><a href="#5-Pause-命令" class="headerlink" title="5.Pause 命令"></a>5.Pause 命令</h3><p>会暂停批处理的执行并在屏幕上显示Press any key to continue…的提示，等待用户按任意键后继续</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cmd">@<span class="hljs-built_in">echo</span> off<br><br>:begin<br><br><span class="hljs-built_in">copy</span> a:*.* d:\back<br><br><span class="hljs-built_in">echo</span> Please put a new disk into driver A<br><br><span class="hljs-built_in">pause</span><br><br><span class="hljs-keyword">goto</span> begin<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">:begin</span><br><span class="line"></span><br><span class="line"><span class="built_in">copy</span> a:*.* d:\back</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> Please put a new disk into driver A</span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">goto</span> begin</span><br></pre></td></tr></table></figure>
 
 <p>在这个例子中，驱动器 A中磁盘上的所有文件均复制到d:\back中。</p>
 <p>显示的信息提示您将另一张磁盘放入驱动器 A 时，pause 命令会使程序挂起，以便您更换磁盘，然后按任意键再次复制。</p>
@@ -321,7 +464,7 @@
 <p>调用另一个批处理程序，并且不终止父批处理程序。</p>
 <p>如果不用call而直接调用别的批处理文件，那么执行完那个批处理文件后将无法返回当前文件并执行当前文件的后续命令。</p>
 <p>call命令接受用作调用目标的标签。如果在脚本或批处理文件外使用 call，它将不会在命令行起作用。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-keyword">call</span>=&quot;<span class="hljs-variable">%cd%</span>\test2.bat&quot; haha kkk aaa (调用指定目录下的 test2.bat，且输入<span class="hljs-number">3</span>个参数给他)<br><br><span class="hljs-keyword">call</span> test2.bat arg1 arg2 (调用同目录下的 test2.bat，且输入<span class="hljs-number">2</span>个参数给他)<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span>=&quot;<span class="variable">%cd%</span>\test2.bat&quot; haha kkk aaa (调用指定目录下的 test2.bat，且输入<span class="number">3</span>个参数给他)</span><br><span class="line"></span><br><span class="line"><span class="keyword">call</span> test2.bat arg1 arg2 (调用同目录下的 test2.bat，且输入<span class="number">2</span>个参数给他)</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注：可以调用自身(死循环、递归)</p>
@@ -336,20 +479,20 @@
 <li>WAIT 启动应用程序并等候它结束</li>
 <li>parameters 这些为传送到命令&#x2F;程序的参数</li>
 </ol>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-built_in">start</span> /MIN test2.bat arg1 arg2 (调用同目录下的 test2.bat，且输入<span class="hljs-number">2</span>个参数给他，且本窗口最小化)<br><span class="hljs-function"></span><br><span class="hljs-function">e:\&quot;<span class="hljs-title">program</span> <span class="hljs-title">files</span>&quot;\列车时刻表\<span class="hljs-title">skb.exe</span> (文件路径名有空格时“ ”是必要的)</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">start</span> /MIN test2.bat arg1 arg2 (调用同目录下的 test2.bat，且输入<span class="number">2</span>个参数给他，且本窗口最小化)</span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">e:\&quot;<span class="title">program</span> <span class="title">files</span>&quot;\列车时刻表\<span class="title">skb.exe</span> (文件路径名有空格时“ ”是必要的)</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="8-if-命令"><a href="#8-if-命令" class="headerlink" title="8.if 命令"></a>8.if 命令</h3><p>if 表示将判断是否符合规定的条件，从而决定执行不同的命令。有三种格式:</p>
 <h4 id="1-if"><a href="#1-if" class="headerlink" title="1.if"></a>1.if</h4><p>语法: if [not] “参数” &#x3D;&#x3D; “字符串” 待执行的命令</p>
 <p>参数如果等于(not表示不等，下同)指定的字符串，则条件成立，运行命令，否则运行下一句。(注意是两个等号)</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-keyword">if</span> &quot;%<span class="hljs-number">1</span>&quot; == &quot;a&quot; <span class="hljs-built_in">format</span> a:<br><br><span class="hljs-keyword">if</span> &#123;%<span class="hljs-number">1</span>&#125; == &#123;&#125; <span class="hljs-keyword">goto</span> noparms<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> &quot;%<span class="number">1</span>&quot; == &quot;a&quot; <span class="built_in">format</span> a:</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> &#123;%<span class="number">1</span>&#125; == &#123;&#125; <span class="keyword">goto</span> noparms</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-if-exist"><a href="#2-if-exist" class="headerlink" title="2.if exist"></a>2.if exist</h4><p>语法: if [not] exist [路径]文件名 待执行的命令</p>
 <p>如果有指定的文件，则条件成立，运行命令，否则运行下一句。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-keyword">if</span> <span class="hljs-keyword">exist</span> config.sys edit config.sys (表示如果存在这文件，则编辑它，用很难看的系统编辑器)<br><br><span class="hljs-keyword">if</span> <span class="hljs-keyword">exist</span> config.sys <span class="hljs-built_in">type</span> config.sys (表示如果存在这文件，则显示它的内容)<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> config.sys edit config.sys (表示如果存在这文件，则编辑它，用很难看的系统编辑器)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span> config.sys <span class="built_in">type</span> config.sys (表示如果存在这文件，则显示它的内容)</span><br></pre></td></tr></table></figure>
 
 <h4 id="3-if-errorlevel-number"><a href="#3-if-errorlevel-number" class="headerlink" title="3.if errorlevel number"></a>3.if errorlevel number</h4><p>语法: if [not] errorlevel &lt;数字&gt; 待执行的命令</p>
 <p>如果程序返回值等于指定的数字，则条件成立，运行命令，否则运行下一句。(返回值必须按照从大到小的顺序排列)</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cmd">@<span class="hljs-built_in">echo</span> off<br><br><span class="hljs-built_in">XCOPY</span> F:\test.bat D:\<br><br><span class="hljs-keyword">IF</span> <span class="hljs-keyword">ERRORLEVEL</span> <span class="hljs-number">1</span> (<span class="hljs-built_in">ECHO</span> 文件拷贝失败<br><br>) <span class="hljs-keyword">Else</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">ERRORLEVEL</span> <span class="hljs-number">0</span> <span class="hljs-built_in">ECHO</span> 成功拷贝文件<br><br><span class="hljs-built_in">pause</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="built_in">XCOPY</span> F:\test.bat D:\</span><br><span class="line"></span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">ERRORLEVEL</span> <span class="number">1</span> (<span class="built_in">ECHO</span> 文件拷贝失败</span><br><span class="line"></span><br><span class="line">) <span class="keyword">Else</span> <span class="keyword">IF</span> <span class="keyword">ERRORLEVEL</span> <span class="number">0</span> <span class="built_in">ECHO</span> 成功拷贝文件</span><br><span class="line"></span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>很多DOS程序在运行结束后会返回一个数字值用来表示程序运行的结果(或者状态)，称为错误码errorlevel或称返回码。</p>
@@ -357,14 +500,14 @@
 </blockquote>
 <h4 id="4-else"><a href="#4-else" class="headerlink" title="4.else"></a>4.else</h4><p>语法： if 条件 (成立时执行的命令) else (不成立时执行的命令)</p>
 <p>如果是多个条件，建议适当使用括号把各条件包起来，以免出错。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-keyword">if</span> <span class="hljs-number">1</span> == <span class="hljs-number">0</span> ( <span class="hljs-built_in">echo</span> comment1 ) <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-number">1</span>==<span class="hljs-number">0</span> ( <span class="hljs-built_in">echo</span> comment2 ) <span class="hljs-keyword">else</span> (<span class="hljs-built_in">echo</span> comment3 )<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="number">1</span> == <span class="number">0</span> ( <span class="built_in">echo</span> comment1 ) <span class="keyword">else</span> <span class="keyword">if</span> <span class="number">1</span>==<span class="number">0</span> ( <span class="built_in">echo</span> comment2 ) <span class="keyword">else</span> (<span class="built_in">echo</span> comment3 )</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注：如果 else的语句需要换行，if执行的行尾需用“^”连接，并且 if执行的动作需用(括起来)，否则报错</p>
 </blockquote>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-keyword">if</span> <span class="hljs-number">1</span> == <span class="hljs-number">0</span> ( <span class="hljs-built_in">echo</span> comment1 ) <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-number">1</span>==<span class="hljs-number">0</span> ( <span class="hljs-built_in">echo</span> comment2 ) ^<br><span class="hljs-keyword">else</span> (<span class="hljs-built_in">echo</span> comment3 )<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="number">1</span> == <span class="number">0</span> ( <span class="built_in">echo</span> comment1 ) <span class="keyword">else</span> <span class="keyword">if</span> <span class="number">1</span>==<span class="number">0</span> ( <span class="built_in">echo</span> comment2 ) ^</span><br><span class="line"><span class="keyword">else</span> (<span class="built_in">echo</span> comment3 )</span><br></pre></td></tr></table></figure>
 
-<h4 id="5-比较运算符"><a href="#5-比较运算符" class="headerlink" title="5.比较运算符"></a>5.比较运算符</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-keyword">EQU</span> - 等于 (一般使用“==”)<br><br><span class="hljs-keyword">NEQ</span> - 不等于 (没有 “!=”,改用“ <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-number">1</span>==<span class="hljs-number">1</span> ”的写法)<br><br><span class="hljs-keyword">LSS</span> - 小于<br><br><span class="hljs-keyword">LEQ</span> - 小于或等于<br><br><span class="hljs-keyword">GTR</span> - 大于<br><br><span class="hljs-keyword">GEQ</span> - 大于或等于<br></code></pre></td></tr></table></figure>
+<h4 id="5-比较运算符"><a href="#5-比较运算符" class="headerlink" title="5.比较运算符"></a>5.比较运算符</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EQU</span> - 等于 (一般使用“==”)</span><br><span class="line"></span><br><span class="line"><span class="keyword">NEQ</span> - 不等于 (没有 “!=”,改用“ <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">1</span>==<span class="number">1</span> ”的写法)</span><br><span class="line"></span><br><span class="line"><span class="keyword">LSS</span> - 小于</span><br><span class="line"></span><br><span class="line"><span class="keyword">LEQ</span> - 小于或等于</span><br><span class="line"></span><br><span class="line"><span class="keyword">GTR</span> - 大于</span><br><span class="line"></span><br><span class="line"><span class="keyword">GEQ</span> - 大于或等于</span><br></pre></td></tr></table></figure>
 
 <h3 id="9-choice-命令"><a href="#9-choice-命令" class="headerlink" title="9.choice 命令"></a>9.choice 命令</h3><p>choice 使用此命令可以让用户输入一个字符(用于选择)，从而根据用户的选择返回不同的 errorlevel，</p>
 <p>然后配合 if errorlevel 选择运行不同的命令。</p>
@@ -373,20 +516,20 @@
 </blockquote>
 <p>choice 使用此命令可以让用户输入一个字符，从而运行不同的命令。</p>
 <p>使用时应该加&#x2F;c:参数，c:后应写提示可输入的字符，之间无空格。它的返回码为1234……</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bat">choice /c:dme defrag,mem,end<br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choice /c:dme defrag,mem,end</span><br></pre></td></tr></table></figure>
 
 <p>将显示:</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bat">defrag,mem,end[D,M,E]?<br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defrag,mem,end[D,M,E]?</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bat"><br>choice /c:dme defrag,mem,end<br><br><span class="hljs-keyword">if</span> <span class="hljs-keyword">errorlevel</span> <span class="hljs-number">3</span> <span class="hljs-keyword">goto</span> defrag (应先判断数值最高的错误码)<br><br><span class="hljs-keyword">if</span> <span class="hljs-keyword">errorlevel</span> <span class="hljs-number">2</span> <span class="hljs-keyword">goto</span> mem<br><br><span class="hljs-keyword">if</span> errotlevel <span class="hljs-number">1</span> <span class="hljs-keyword">goto</span> end<br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">choice /c:dme defrag,mem,end</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">errorlevel</span> <span class="number">3</span> <span class="keyword">goto</span> defrag (应先判断数值最高的错误码)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">errorlevel</span> <span class="number">2</span> <span class="keyword">goto</span> mem</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> errotlevel <span class="number">1</span> <span class="keyword">goto</span> end</span><br></pre></td></tr></table></figure>
 
 <h3 id="10-for-命令"><a href="#10-for-命令" class="headerlink" title="10.for 命令"></a>10.for 命令</h3><p>for 命令是一个比较复杂的命令，主要用于参数在指定的范围内循环执行命令。</p>
 <ol>
 <li>语法结构</li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bat">`<span class="hljs-keyword">for</span> &#123;%variable | <span class="hljs-variable">%%v</span>ariable&#125; <span class="hljs-keyword">in</span> (<span class="hljs-built_in">set</span>) <span class="hljs-keyword">do</span> command [command-parameters]`  <br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`<span class="keyword">for</span> &#123;%variable | <span class="variable">%%v</span>ariable&#125; <span class="keyword">in</span> (<span class="built_in">set</span>) <span class="keyword">do</span> command [command-parameters]`  </span><br></pre></td></tr></table></figure>
 
-<div class="code-wrapper"><pre><code class="hljs">%variable 指定一个单一字母可替换的参数。变量名称是区分大小写的，所以 %i 不同于 %I  
+<pre><code>%variable 指定一个单一字母可替换的参数。变量名称是区分大小写的，所以 %i 不同于 %I  
 
 在批处理文件中使用 FOR 命令时，指定变量建议用 %%variable而不要用 %variable。  
 
@@ -395,7 +538,7 @@
 command 指定对每个文件执行的命令。  
 
 command-parameters 为特定命令指定参数或命令行开关。
-</code></pre></div>
+</code></pre>
 <ol>
 <li><p>如果命令扩展名被启用，下列额外的 FOR 命令格式会受到支持:</p>
 <p> 1.FOR &#x2F;D %variable IN (set) DO command [command-parameters]<br> 如果集里面包含通配符，则指定与目录名匹配，而不与文件名匹配。</p>
@@ -419,7 +562,7 @@ command-parameters 为特定命令指定参数或命令行开关。
 <li><p>Sample:</p>
 </li>
 </ol>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs bat">:: 如下命令行会显示当前目录下所有以bat或者txt为扩展名的文件名。<br><br><span class="hljs-keyword">for</span> <span class="hljs-variable">%%c</span> <span class="hljs-keyword">in</span> (*.bat *.txt) <span class="hljs-keyword">do</span> (<span class="hljs-built_in">echo</span> <span class="hljs-variable">%%c</span>)<br><br>::如下命令行会显示当前目录下所有包含有 e 或者 i 的目录名。<br><br><span class="hljs-keyword">for</span> /D <span class="hljs-variable">%%a</span> <span class="hljs-keyword">in</span> (*e* *i*) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">%%a</span><br><br>:: 如下命令行会显示 E盘test目录 下所有以bat或者txt为扩展名的文件名。<br><br><span class="hljs-keyword">for</span> /R E:\test <span class="hljs-variable">%%b</span> <span class="hljs-keyword">in</span> (*.txt *.bat) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">%%b</span><br><br><span class="hljs-keyword">for</span> /r <span class="hljs-variable">%%c</span> <span class="hljs-keyword">in</span> (*) <span class="hljs-keyword">do</span> (<span class="hljs-built_in">echo</span> <span class="hljs-variable">%%c</span>) :: 遍历当前目录下所有文件<br><br>:: 如下命令行将产生序列 <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br><br><span class="hljs-keyword">for</span> /L <span class="hljs-variable">%%c</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span>) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">%%c</span><br><br>:: 以下两句，显示当前的年月日和时间<br><br><span class="hljs-keyword">For</span> /f &quot;tokens=<span class="hljs-number">1</span>-<span class="hljs-number">3</span> delims=-/. &quot; <span class="hljs-variable">%%j</span> <span class="hljs-keyword">In</span> (&#x27;<span class="hljs-built_in">Date</span> /T&#x27;) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">%%j</span>年<span class="hljs-variable">%%k</span>月<span class="hljs-variable">%%l</span>日<br><br><span class="hljs-keyword">For</span> /f &quot;tokens=<span class="hljs-number">1</span>,<span class="hljs-number">2</span> delims=: &quot; <span class="hljs-variable">%%j</span> <span class="hljs-keyword">In</span> (&#x27;<span class="hljs-built_in">TIME</span> /T&#x27;) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">%%j</span>时<span class="hljs-variable">%%k</span>分<br><br>:: 把记事本中的内容每一行前面去掉<span class="hljs-number">8</span>个字符<br><br><span class="hljs-built_in">setlocal</span> enabledelayedexpansion<br><br><span class="hljs-keyword">for</span> /f <span class="hljs-variable">%%i</span> <span class="hljs-keyword">in</span> (zhidian.txt) <span class="hljs-keyword">do</span> (<br><br><span class="hljs-built_in">set</span> atmp=<span class="hljs-variable">%%i</span><br><br><span class="hljs-built_in">set</span> atmp=<span class="hljs-variable">!atmp:~8!</span><br><br><span class="hljs-keyword">if</span> &#123;<span class="hljs-variable">!atmp!</span>&#125;==&#123;&#125; ( <span class="hljs-built_in">echo</span>.) <span class="hljs-keyword">else</span> <span class="hljs-built_in">echo</span> <span class="hljs-variable">!atmp!</span><br><br>)<br><br>:: 读取记事本里的内容(使用 delims 是为了把一行显示全,否则会以空格为分隔符)<br><br><span class="hljs-keyword">for</span> /f &quot;delims=&quot; <span class="hljs-variable">%%a</span> <span class="hljs-keyword">in</span> (zhidian.txt) <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span>.<span class="hljs-variable">%%a</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">:: 如下命令行会显示当前目录下所有以bat或者txt为扩展名的文件名。</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="variable">%%c</span> <span class="keyword">in</span> (*.bat *.txt) <span class="keyword">do</span> (<span class="built_in">echo</span> <span class="variable">%%c</span>)</span><br><span class="line"></span><br><span class="line">::如下命令行会显示当前目录下所有包含有 e 或者 i 的目录名。</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /D <span class="variable">%%a</span> <span class="keyword">in</span> (*e* *i*) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%a</span></span><br><span class="line"></span><br><span class="line">:: 如下命令行会显示 E盘test目录 下所有以bat或者txt为扩展名的文件名。</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /R E:\test <span class="variable">%%b</span> <span class="keyword">in</span> (*.txt *.bat) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%b</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /r <span class="variable">%%c</span> <span class="keyword">in</span> (*) <span class="keyword">do</span> (<span class="built_in">echo</span> <span class="variable">%%c</span>) :: 遍历当前目录下所有文件</span><br><span class="line"></span><br><span class="line">:: 如下命令行将产生序列 <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /L <span class="variable">%%c</span> <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">1</span>,<span class="number">5</span>) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%c</span></span><br><span class="line"></span><br><span class="line">:: 以下两句，显示当前的年月日和时间</span><br><span class="line"></span><br><span class="line"><span class="keyword">For</span> /f &quot;tokens=<span class="number">1</span>-<span class="number">3</span> delims=-/. &quot; <span class="variable">%%j</span> <span class="keyword">In</span> (&#x27;<span class="built_in">Date</span> /T&#x27;) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%j</span>年<span class="variable">%%k</span>月<span class="variable">%%l</span>日</span><br><span class="line"></span><br><span class="line"><span class="keyword">For</span> /f &quot;tokens=<span class="number">1</span>,<span class="number">2</span> delims=: &quot; <span class="variable">%%j</span> <span class="keyword">In</span> (&#x27;<span class="built_in">TIME</span> /T&#x27;) <span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">%%j</span>时<span class="variable">%%k</span>分</span><br><span class="line"></span><br><span class="line">:: 把记事本中的内容每一行前面去掉<span class="number">8</span>个字符</span><br><span class="line"></span><br><span class="line"><span class="built_in">setlocal</span> enabledelayedexpansion</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /f <span class="variable">%%i</span> <span class="keyword">in</span> (zhidian.txt) <span class="keyword">do</span> (</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> atmp=<span class="variable">%%i</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> atmp=<span class="variable">!atmp:~8!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> &#123;<span class="variable">!atmp!</span>&#125;==&#123;&#125; ( <span class="built_in">echo</span>.) <span class="keyword">else</span> <span class="built_in">echo</span> <span class="variable">!atmp!</span></span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">:: 读取记事本里的内容(使用 delims 是为了把一行显示全,否则会以空格为分隔符)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /f &quot;delims=&quot; <span class="variable">%%a</span> <span class="keyword">in</span> (zhidian.txt) <span class="keyword">do</span> <span class="built_in">echo</span>.<span class="variable">%%a</span></span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li><p>continue 和 break</p>
@@ -429,7 +572,7 @@ command-parameters 为特定命令指定参数或命令行开关。
 <p>break: 在 for 循环的外面的下一句写上一个标签，跳转到这位置即可</p>
 </blockquote>
 <p> Sample: (伪代码)</p>
- <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bat"><span class="hljs-keyword">for</span> /F [&quot;options&quot;] %variable <span class="hljs-keyword">IN</span> (command) <span class="hljs-keyword">DO</span> (<br><br>... <span class="hljs-keyword">do</span> command ...<br><br><span class="hljs-keyword">if</span> ... <span class="hljs-keyword">goto</span> continue<br><br><span class="hljs-keyword">if</span> ... <span class="hljs-keyword">goto</span> <span class="hljs-built_in">break</span><br><br>... <span class="hljs-keyword">do</span> command ...<br><br>:continue<br><br>)<br><br>:<span class="hljs-built_in">break</span><br></code></pre></td></tr></table></figure></li>
+ <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> /F [&quot;options&quot;] %variable <span class="keyword">IN</span> (command) <span class="keyword">DO</span> (</span><br><span class="line"></span><br><span class="line">... <span class="keyword">do</span> command ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ... <span class="keyword">goto</span> continue</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ... <span class="keyword">goto</span> <span class="built_in">break</span></span><br><span class="line"></span><br><span class="line">... <span class="keyword">do</span> command ...</span><br><span class="line"></span><br><span class="line">:continue</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">:<span class="built_in">break</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="四、其他命令"><a href="#四、其他命令" class="headerlink" title="四、其他命令"></a>四、其他命令</h2><h3 id="1-ping命令"><a href="#1-ping命令" class="headerlink" title="1.ping命令"></a>1.ping命令</h3><p>测试网络联接状况以及信息包发送和接收状况。但是不能够测试端口。</p>
 <p>语法：ping IP地址或主机名 [-t] [-a] [-n count] [-l size]</p>
@@ -441,11 +584,11 @@ command-parameters 为特定命令指定参数或命令行开关。
 <p>-l size 指定发送到目标主机的数据包的大小。</p>
 </blockquote>
 <p>Sample:</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bat"><span class="hljs-built_in">ping</span> <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> -t (不停的测试<span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>，按ctrl+c停止)<br><br><span class="hljs-keyword">for</span> /L <span class="hljs-variable">%%a</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">255</span>) <span class="hljs-keyword">do</span> <span class="hljs-built_in">ping</span> <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">0</span>.<span class="hljs-variable">%%a</span> -n <span class="hljs-number">1</span> &gt;&gt; tmp.txt (<span class="hljs-built_in">ping</span>一下所有的局域网电脑)<br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ping</span> <span class="number">192</span>.<span class="number">168</span>.<span class="number">0</span>.<span class="number">1</span> -t (不停的测试<span class="number">192</span>.<span class="number">168</span>.<span class="number">0</span>.<span class="number">1</span>，按ctrl+c停止)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /L <span class="variable">%%a</span> <span class="keyword">in</span> (<span class="number">0</span>,<span class="number">1</span>,<span class="number">255</span>) <span class="keyword">do</span> <span class="built_in">ping</span> <span class="number">192</span>.<span class="number">168</span>.<span class="number">0</span>.<span class="variable">%%a</span> -n <span class="number">1</span> &gt;&gt; tmp.txt (<span class="built_in">ping</span>一下所有的局域网电脑)</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-telnet-命令"><a href="#2-telnet-命令" class="headerlink" title="2.telnet 命令"></a>2.telnet 命令</h3><p>测试端口使用 telnet IP地址或主机名 端口，使用tcp协议的</p>
 <p>Sample:</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bat">telnet <span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> <span class="hljs-number">80</span> (测试<span class="hljs-number">192</span>.<span class="hljs-number">168</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>的<span class="hljs-number">80</span>端口)<br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet <span class="number">192</span>.<span class="number">168</span>.<span class="number">0</span>.<span class="number">1</span> <span class="number">80</span> (测试<span class="number">192</span>.<span class="number">168</span>.<span class="number">0</span>.<span class="number">1</span>的<span class="number">80</span>端口)</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-color-命令"><a href="#3-color-命令" class="headerlink" title="3.color 命令"></a>3.color 命令</h3><p>设置背景及字体颜色</p>
 <p>语法： color bf</p>
@@ -484,25 +627,25 @@ command-parameters 为特定命令指定参数或命令行开关。
 <h3 id="5-exit-命令"><a href="#5-exit-命令" class="headerlink" title="5.exit 命令"></a>5.exit 命令</h3><p>结束程序。即时是被调用的程序，结束后也不会返回原程序</p>
 <h3 id="6-hutdown命令"><a href="#6-hutdown命令" class="headerlink" title="6.hutdown命令"></a>6.hutdown命令</h3><p>shutdown -s 关机</p>
 <h2 id="五、文件处理"><a href="#五、文件处理" class="headerlink" title="五、文件处理"></a>五、文件处理</h2><h3 id="1-删除"><a href="#1-删除" class="headerlink" title="1.删除"></a>1.删除</h3><p>1.删除一个文件或多个文件</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bat"><span class="hljs-built_in">del</span> /s /q /f d:\test\a.bat<br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">del</span> /s /q /f d:\test\a.bat</span><br></pre></td></tr></table></figure>
 
 <p>将直接删除d:\test\a.bat，没有任务提示</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bat"><span class="hljs-built_in">del</span> temp\* /q /f /s<br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">del</span> temp\* /q /f /s</span><br></pre></td></tr></table></figure>
 
 <p>将直接删除 本目录的 temp 目录的所有文件，没有任务提示</p>
 <p>删除文件的时候可以使用“*”作通配符</p>
 <p>2.删除一个空目录</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bat"><span class="hljs-built_in">rd</span> /q /s d:\test\log<br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rd</span> /q /s d:\test\log</span><br></pre></td></tr></table></figure>
 
 <p>将直接删除d:\test\log目录，如果log目录里面有文件将无法删除</p>
 <p>3.删除一个非空目录 (必须指定目录名称)</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bat"><span class="hljs-built_in">rmdir</span> /q /s d:\test\logs<br></code></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rmdir</span> /q /s d:\test\logs</span><br></pre></td></tr></table></figure>
 
 <p>必须指定目录名称，不能使用通配符</p>
 <p>&#x2F;S 除目录本身外，还将删除指定目录下的所有子目录</p>
 <p>&#x2F;Q 安静模式，带 &#x2F;S 删除目录树时不要求确认</p>
 <p>无论里面是否有文件或文件夹将全部直接删除</p>
-<h3 id="2-创建目录"><a href="#2-创建目录" class="headerlink" title="2.创建目录"></a>2.创建目录</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bat"><span class="hljs-built_in">MKDIR</span> [drive:]<span class="hljs-built_in">path</span><br><br><span class="hljs-built_in">MD</span> [drive:]<span class="hljs-built_in">path</span><br></code></pre></td></tr></table></figure>
+<h3 id="2-创建目录"><a href="#2-创建目录" class="headerlink" title="2.创建目录"></a>2.创建目录</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MKDIR</span> [drive:]<span class="built_in">path</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">MD</span> [drive:]<span class="built_in">path</span></span><br></pre></td></tr></table></figure>
 
 <p>路径有空格时，可以用双引号括起来，也可以用 <code>&amp;nbsp;</code> 替代</p>
 <hr>
@@ -512,272 +655,178 @@ command-parameters 为特定命令指定参数或命令行开关。
 </blockquote>
 <hr>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/DOS/">DOS</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/6067.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">SRIM入门（四）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/31090.html">
-                        <span class="hidden-mobile">SRIM入门（三）</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <div id="waline"></div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
-        var options = Object.assign(
-          {"serverURL":"https://blog-comment-mk0f7063p-paneersblog.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
-          {
-            el: '#waline',
-            path: window.location.pathname
-          }
-        )
-        new Waline(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
-        })
-      });
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-              </article>
-            
-          </article>
-        </div>
-      </div>
+      
     </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://paneersblog.github.io/52445.html" title="win批处理语法" target="_blank" rel="external">http://paneersblog.github.io/52445.html</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/paneersblog" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
       </div>
-    
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/paneersblog" target="_blank"><span class="text-dark">Paneer</span><small class="ml-1x">一个成熟稳重的沙雕网友</small></a></h3>
+        <div>一个成熟稳重的沙雕网友</div>
+      </div>
+    </figure>
   </div>
 </div>
 
-<!-- Custom -->
 
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
     </div>
-  </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
 </div>
-    
 
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
     
-  </main>
-
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Paneer</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Emily</span></a> 
+    <li class="prev">
+      <a href="/6067.html" title="SRIM入门（四）"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/31090.html" title="SRIM入门（三）"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
   </div>
+  </div>
+</nav>
   
 
-  
 
-  
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/paneersblog" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6203293798" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Paneer_007" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2022 Paneer &amp; Emily
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
 </footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
 
 
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
+<script src="/js/application.js"></script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-  
-
-  
-    <!-- MathJax -->
     <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
-        loader: {
-          load: ['ui/lazy']
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
 
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
-
-  
+<script src="/js/insight.js"></script>
 
 
 
 
 
 
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
 
 
 </body>

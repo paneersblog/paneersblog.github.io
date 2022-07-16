@@ -1,22 +1,24 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang=zh>
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/IMG_4556.JPG">
-  <link rel="icon" href="/img/IMG_4556.JPG">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8">
   
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Paneer &amp; Emily">
-  <meta name="keywords" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
   
-    <meta name="description" content="我的Matlab入门笔记">
+  
+  <title>我的Matlab入门笔记 | Paneer&#39;s blog</title>
+  <meta name="description" content="我的Matlab入门笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的Matlab入门笔记">
 <meta property="og:url" content="http://paneersblog.github.io/19643.html">
@@ -26,275 +28,416 @@
 <meta property="og:image" content="http://paneersblog.github.io/Matlab/peaks.png">
 <meta property="og:image" content="http://paneersblog.github.io/19643/peaks.png">
 <meta property="article:published_time" content="2022-01-30T16:10:57.868Z">
-<meta property="article:modified_time" content="2022-02-09T09:41:51.653Z">
+<meta property="article:modified_time" content="2022-07-16T09:31:53.189Z">
 <meta property="article:author" content="Paneer &amp; Emily">
 <meta property="article:tag" content="Matlab">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://paneersblog.github.io/Matlab/peaks.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://paneersblog.github.io/19643.html">
   
   
-  <title>我的Matlab入门笔记 - Panner&amp;Emily’s paradise!</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
   
+  
+  
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Panner&Emily’s paradise!" type="application/atom+xml">
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/paneersblog" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Paneer</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">一个成熟稳重的沙雕网友</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shandong, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/paneersblog" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6203293798" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Paneer_007" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
     
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%94%BB%E7%95%A5/">攻略</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%A1%B5/">测试页</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">英语学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
     
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOS/" rel="tag">DOS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MCNP5/" rel="tag">MCNP5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/" rel="tag">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SRIM/" rel="tag">SRIM</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Trip/" rel="tag">Trip</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordList-E/" rel="tag">WordList_E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordList-P/" rel="tag">WordList_P</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
 
 
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/DOS/" style="font-size: 13.33px;">DOS</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/MCNP5/" style="font-size: 13px;">MCNP5</a> <a href="/tags/Markdown/" style="font-size: 13px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 13px;">Matlab</a> <a href="/tags/Photo/" style="font-size: 13px;">Photo</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/SRIM/" style="font-size: 13.67px;">SRIM</a> <a href="/tags/Trip/" style="font-size: 13.33px;">Trip</a> <a href="/tags/WordList-E/" style="font-size: 13px;">WordList_E</a> <a href="/tags/WordList-P/" style="font-size: 13px;">WordList_P</a>
+    </div>
+  </div>
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
 
 
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"paneersblog.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Paradise</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                友链
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/54952.html" class="title">MCNP5入门（一）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-05T07:47:05.000Z" itemprop="datePublished">2022-04-05</time>
+              </p>
+            </div>
           </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">英语学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/28793.html" class="title">Chapter_1</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-27T04:35:02.000Z" itemprop="datePublished">2022-02-27</time>
+              </p>
+            </div>
           </li>
-        
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/6067.html" class="title">SRIM入门（四）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-22T16:34:54.000Z" itemprop="datePublished">2022-02-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+              </p>
+              <p class="item-title">
+                <a href="/52445.html" class="title">win批处理语法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-21T15:21:26.000Z" itemprop="datePublished">2022-02-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/31090.html" class="title">SRIM入门（三）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-19T16:00:42.000Z" itemprop="datePublished">2022-02-20</time>
+              </p>
+            </div>
+          </li>
+          
       </ul>
     </div>
   </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="我的Matlab入门笔记">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-31 00:10" pubdate>
-        2022年1月31日 凌晨
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      4.5k 字
-    </span>
   
 
+    
+  </div>
+</aside>
+
   
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Matlab" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      我的Matlab入门笔记
+    </h1>
+  
+
       
-      38 分钟
-    </span>
-  
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/19643.html" class="article-date">
+	  <time datetime="2022-01-30T16:10:57.868Z" itemprop="datePublished">2022-01-31</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+  </span>
 
-  
-  
-</div>
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Matlab/" rel="tag">Matlab</a>
+  </span>
 
-            
-          </div>
 
-          
-        </div>
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/19643.html#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8(分)</span>
+	
+
       </div>
     </div>
-  </header>
-
-  <main>
-    
+    <div class="article-entry marked-body" itemprop="articleBody">
       
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">我的Matlab入门笔记</h1>
-            
-            <div class="markdown-body">
-              <h1 id="我的Matlab入门笔记"><a href="#我的Matlab入门笔记" class="headerlink" title="我的Matlab入门笔记"></a>我的Matlab入门笔记</h1><span id="more"></span>
+        <p>我的Matlab入门笔记</p>
+<span id="more"></span>
 <p>By Paneer</p>
-<h2 id="关于注释"><a href="#关于注释" class="headerlink" title="关于注释"></a>关于注释</h2><figure class="highlight matlab"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">%% 这是一行注释（双百分号）</span><br><span class="hljs-comment">% 这也是一行注释（单百分号）</span><br></code></pre></td></tr></table></figure>
+<h2 id="关于注释"><a href="#关于注释" class="headerlink" title="关于注释"></a>关于注释</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 这是一行注释（双百分号）</span></span><br><span class="line"><span class="comment">% 这也是一行注释（单百分号）</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="关于变量命名"><a href="#关于变量命名" class="headerlink" title="关于变量命名"></a>关于变量命名</h2><p>% 变量名不能超过63个字符</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">datou = <span class="hljs-string">&#x27;keai&#x27;</span> <span class="hljs-comment">% &#x27; &#x27;之间为字符串，定义datou为keai</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datou = <span class="string">&#x27;keai&#x27;</span> <span class="comment">% &#x27; &#x27;之间为字符串，定义datou为keai</span></span><br></pre></td></tr></table></figure>
 
 <p>% 定义矩阵A 空格或逗号隔开，分号换行</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A=[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>;<span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span>;<span class="hljs-number">4</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>] <br><br>     A =<br><br>          <span class="hljs-number">1</span>     <span class="hljs-number">2</span>     <span class="hljs-number">3</span><br>          <span class="hljs-number">3</span>     <span class="hljs-number">3</span>     <span class="hljs-number">3</span><br>          <span class="hljs-number">4</span>     <span class="hljs-number">1</span>     <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A=[<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>;<span class="number">3</span> <span class="number">3</span> <span class="number">3</span>;<span class="number">4</span> <span class="number">1</span> <span class="number">1</span>] </span><br><span class="line"></span><br><span class="line">     A =</span><br><span class="line"></span><br><span class="line">          <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span></span><br><span class="line">          <span class="number">3</span>     <span class="number">3</span>     <span class="number">3</span></span><br><span class="line">          <span class="number">4</span>     <span class="number">1</span>     <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <p>% 对矩阵A转置</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs matlab">B=A&#x27;<br><br>     B =<br><br>          <span class="hljs-number">1</span>     <span class="hljs-number">3</span>     <span class="hljs-number">4</span><br>          <span class="hljs-number">2</span>     <span class="hljs-number">3</span>     <span class="hljs-number">1</span><br>          <span class="hljs-number">3</span>     <span class="hljs-number">3</span>     <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">B=A&#x27;</span><br><span class="line"></span><br><span class="line">     B =</span><br><span class="line"></span><br><span class="line">          <span class="number">1</span>     <span class="number">3</span>     <span class="number">4</span></span><br><span class="line">          <span class="number">2</span>     <span class="number">3</span>     <span class="number">1</span></span><br><span class="line">          <span class="number">3</span>     <span class="number">3</span>     <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <p>% 将矩阵A按列拉长</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs matlab">C=A(:)<br><br>     C =<br><br>          <span class="hljs-number">1</span><br>          <span class="hljs-number">3</span><br>          <span class="hljs-number">4</span><br>          <span class="hljs-number">2</span><br>          <span class="hljs-number">3</span><br>          <span class="hljs-number">1</span><br>          <span class="hljs-number">3</span><br>          <span class="hljs-number">3</span><br>          <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">C=A(:)</span><br><span class="line"></span><br><span class="line">     C =</span><br><span class="line"></span><br><span class="line">          <span class="number">1</span></span><br><span class="line">          <span class="number">3</span></span><br><span class="line">          <span class="number">4</span></span><br><span class="line">          <span class="number">2</span></span><br><span class="line">          <span class="number">3</span></span><br><span class="line">          <span class="number">1</span></span><br><span class="line">          <span class="number">3</span></span><br><span class="line">          <span class="number">3</span></span><br><span class="line">          <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <p>% 对矩阵A求逆</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs matlab">D=inv(A)<br><br>     D =<br><br>     <span class="hljs-number">-0.0000</span>   <span class="hljs-number">-0.1111</span>    <span class="hljs-number">0.3333</span><br>     <span class="hljs-number">-1.0000</span>    <span class="hljs-number">1.2222</span>   <span class="hljs-number">-0.6667</span><br>     <span class="hljs-number">1.0000</span>   <span class="hljs-number">-0.7778</span>    <span class="hljs-number">0.3333</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">D=inv(A)</span><br><span class="line"></span><br><span class="line">     D =</span><br><span class="line"></span><br><span class="line">     <span class="number">-0.0000</span>   <span class="number">-0.1111</span>    <span class="number">0.3333</span></span><br><span class="line">     <span class="number">-1.0000</span>    <span class="number">1.2222</span>   <span class="number">-0.6667</span></span><br><span class="line">     <span class="number">1.0000</span>   <span class="number">-0.7778</span>    <span class="number">0.3333</span></span><br></pre></td></tr></table></figure>
 
 <p>% 矩阵之间的乘法运算</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A*D<br><br>     <span class="hljs-built_in">ans</span> =<br><br>     <span class="hljs-number">1.0000</span>         <span class="hljs-number">0</span>   <span class="hljs-number">-0.0000</span><br>          <span class="hljs-number">0</span>    <span class="hljs-number">1.0000</span>         <span class="hljs-number">0</span><br>          <span class="hljs-number">0</span>    <span class="hljs-number">0.0000</span>    <span class="hljs-number">1.0000</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A*D</span><br><span class="line"></span><br><span class="line">     <span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">     <span class="number">1.0000</span>         <span class="number">0</span>   <span class="number">-0.0000</span></span><br><span class="line">          <span class="number">0</span>    <span class="number">1.0000</span>         <span class="number">0</span></span><br><span class="line">          <span class="number">0</span>    <span class="number">0.0000</span>    <span class="number">1.0000</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="随机数部分"><a href="#随机数部分" class="headerlink" title="随机数部分"></a>随机数部分</h2><p>% 生成伪随机数，分布在（0-1）之间</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-built_in">rand</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rand</span></span><br></pre></td></tr></table></figure>
 
 <p>% 生成m行n列的均匀分布的伪随机数</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-built_in">rand</span>(m.n)<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rand</span>(m.n)</span><br></pre></td></tr></table></figure>
 
 <p>% 生成指定精度的均匀分布的伪随机数，参数还可为’single’</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-built_in">rand</span>(m,n,<span class="hljs-string">&#x27;double&#x27;</span>) <br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rand</span>(m,n,<span class="string">&#x27;double&#x27;</span>) </span><br></pre></td></tr></table></figure>
 
 <p>% 利用指定的 RandStream（随机种子）生成伪随机数</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-built_in">rand</span>(RandStream,m,n) <br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rand</span>(RandStream,m,n) </span><br></pre></td></tr></table></figure>
 
 <p>% 生成标准正态分布的伪随机数（均值为0，方差为1）</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-built_in">randn</span> <span class="hljs-comment">% 主要语法同 rand</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">randn</span> <span class="comment">% 主要语法同 rand</span></span><br></pre></td></tr></table></figure>
 
 <p>% 生成均匀分布的伪随机数</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">randi(n) <br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">randi(n) </span><br></pre></td></tr></table></figure>
 
 <p>% 在开区间（1，iMax）生成均匀分布的伪随机数</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">r=randi(iMax)<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r=randi(iMax)</span><br></pre></td></tr></table></figure>
 
 <p>% 在开区间（1，iMax）生成m*n型随机矩阵</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">r=randi(iMax,m,n)<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r=randi(iMax,m,n)</span><br></pre></td></tr></table></figure>
 
 <p>% 在开区间（iMin，iMax）生成m*n型随机矩阵</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">r=randi([iMin,iMax],m,n)<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r=randi([iMin,iMax],m,n)</span><br></pre></td></tr></table></figure>
 
 <h2 id="元胞数组"><a href="#元胞数组" class="headerlink" title="元胞数组"></a>元胞数组</h2><p>%% 元胞数组：Matlab中特有的一种数据类型，数组的一种。<br>% 其内部元素可以是属于不同的数据类型。</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A = cell(<span class="hljs-number">1</span>,<span class="hljs-number">6</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = cell(<span class="number">1</span>,<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
 
 <p>在Matlab中输出为</p>
-<div class="code-wrapper"><pre><code class="hljs"> A =
+<pre><code> A =
 
  1×6 cell 数组
 
@@ -305,12 +448,12 @@
  列 4 至 6
 
  &#123;0×0 double&#125;    &#123;0×0 double&#125;    &#123;0×0 double&#125;
-</code></pre></div>
+</code></pre>
 <p>% matlab索引从1开始，此处为第二个元胞为3x3型</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A&#123;<span class="hljs-number">2</span>&#125; = <span class="hljs-built_in">eye</span>(<span class="hljs-number">3</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A&#123;<span class="number">2</span>&#125; = <span class="built_in">eye</span>(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
 <p>% 输出为<br>     A &#x3D;</p>
-<div class="code-wrapper"><pre><code class="hljs"> 1×6 cell 数组
+<pre><code> 1×6 cell 数组
 
  列 1 至 3
 
@@ -319,15 +462,15 @@
  列 4 至 6
 
  &#123;0×0 double&#125;    &#123;0×0 double&#125;    &#123;0×0 double&#125;
-</code></pre></div>
+</code></pre>
 <p>%% 在Matlab中生成n阶幻方:</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-built_in">magic</span>(n)<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">magic</span>(n)</span><br></pre></td></tr></table></figure>
 
 <p>% 幻方：三阶幻方为例，指1-9九个数字组成3*3的矩阵使得该矩阵任意横竖斜方向三个数的和总是相同。</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A&#123;<span class="hljs-number">5</span>&#125; = <span class="hljs-built_in">magic</span>(<span class="hljs-number">5</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A&#123;<span class="number">5</span>&#125; = <span class="built_in">magic</span>(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 
 <p>% 输出为</p>
-<div class="code-wrapper"><pre><code class="hljs"> A =
+<pre><code> A =
 
  1×6 cell 数组
 
@@ -338,69 +481,69 @@
  列 4 至 6
 
  &#123;0×0 double&#125;    &#123;5×5 double&#125;    &#123;0×0 double&#125;
-</code></pre></div>
-<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">books = struct(<span class="hljs-string">&#x27;name&#x27;</span>,&#123;&#123;<span class="hljs-string">&#x27;Machine Learning&#x27;</span>,<span class="hljs-string">&#x27;Date Mining&#x27;</span>&#125;&#125;,<span class="hljs-string">&#x27;price&#x27;</span>,[<span class="hljs-number">30</span> <span class="hljs-number">40</span>])<br></code></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">books = struct(<span class="string">&#x27;name&#x27;</span>,&#123;&#123;<span class="string">&#x27;Machine Learning&#x27;</span>,<span class="string">&#x27;Date Mining&#x27;</span>&#125;&#125;,<span class="string">&#x27;price&#x27;</span>,[<span class="number">30</span> <span class="number">40</span>])</span><br></pre></td></tr></table></figure>
 
 <p>% 可以理解为python中的字典</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab">books.name <span class="hljs-comment">%调用books中name这一属性</span><br>books.name(<span class="hljs-number">1</span>) <span class="hljs-comment">%调用books中第一个name的cell</span><br>books.name&#123;<span class="hljs-number">1</span>&#125; <span class="hljs-comment">%调用books中第一个name的字符串</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">books.name <span class="comment">%调用books中name这一属性</span></span><br><span class="line">books.name(<span class="number">1</span>) <span class="comment">%调用books中第一个name的cell</span></span><br><span class="line">books.name&#123;<span class="number">1</span>&#125; <span class="comment">%调用books中第一个name的字符串</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Matlab矩阵操作"><a href="#Matlab矩阵操作" class="headerlink" title="Matlab矩阵操作"></a>Matlab矩阵操作</h2><h3 id="1-矩阵的定义与构造"><a href="#1-矩阵的定义与构造" class="headerlink" title="1.矩阵的定义与构造"></a>1.矩阵的定义与构造</h3><p>% 构造一个一行六列的矩阵</p>
-<div class="code-wrapper"><pre><code class="hljs"> A = [1 2 3 4 5 6]
-</code></pre></div>
+<pre><code> A = [1 2 3 4 5 6]
+</code></pre>
 <p>% 构造1-9区间内步长为3的矩阵即：B &#x3D; 1 4 7</p>
-<div class="code-wrapper"><pre><code class="hljs"> B = 1:3:9
-</code></pre></div>
+<pre><code> B = 1:3:9
+</code></pre>
 <p>%将B矩阵重复，化为3行1列的分块矩阵C，每一块都是矩阵B</p>
-<div class="code-wrapper"><pre><code class="hljs"> C = repmat(B,3,1)
-</code></pre></div>
+<pre><code> C = repmat(B,3,1)
+</code></pre>
 <p>% 生成一个2行4列的每个值都是1的矩阵</p>
-<div class="code-wrapper"><pre><code class="hljs"> D = ones(2,4)
-</code></pre></div>
-<h3 id="2-矩阵的四则运算"><a href="#2-矩阵的四则运算" class="headerlink" title="2.矩阵的四则运算"></a>2.矩阵的四则运算</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A = [<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>; <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span>]<br>B = [<span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span>; <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>]<br>C = A + B<br>D = A - B<br>E = A * B&#x27; <span class="hljs-comment">% A矩阵与B矩阵的转置相乘</span><br>F = A .* B <span class="hljs-comment">% A矩阵与B矩阵所对应的项相乘</span><br>G = A / B  <span class="hljs-comment">% G * B = A 即 G = A * inv(B) （B的逆）</span><br>H = A ./ B <span class="hljs-comment">% A矩阵与B的逆矩阵对应项相乘</span><br></code></pre></td></tr></table></figure>
+<pre><code> D = ones(2,4)
+</code></pre>
+<h3 id="2-矩阵的四则运算"><a href="#2-矩阵的四则运算" class="headerlink" title="2.矩阵的四则运算"></a>2.矩阵的四则运算</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>; <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>]</span><br><span class="line">B = [<span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">2</span>; <span class="number">2</span> <span class="number">2</span> <span class="number">1</span> <span class="number">1</span>]</span><br><span class="line">C = A + B</span><br><span class="line">D = A - B</span><br><span class="line">E = A * B&#x27; <span class="comment">% A矩阵与B矩阵的转置相乘</span></span><br><span class="line">F = A .* B <span class="comment">% A矩阵与B矩阵所对应的项相乘</span></span><br><span class="line">G = A / B  <span class="comment">% G * B = A 即 G = A * inv(B) （B的逆）</span></span><br><span class="line">H = A ./ B <span class="comment">% A矩阵与B的逆矩阵对应项相乘</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="3-矩阵的下标"><a href="#3-矩阵的下标" class="headerlink" title="3.矩阵的下标"></a>3.矩阵的下标</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs matlab">A = <span class="hljs-built_in">magic</span>(<span class="hljs-number">5</span>) <span class="hljs-comment">% 生成5阶幻方</span><br>B = A(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)   <span class="hljs-comment">% 将矩阵A的第二列第三行元素赋值给B</span><br>C = A(<span class="hljs-number">3</span>,:)   <span class="hljs-comment">% 将矩阵A的第三行赋值给C</span><br>D = A(:,<span class="hljs-number">4</span>)   <span class="hljs-comment">% 将矩阵A的第四列赋值给D</span><br>[m, n] = <span class="hljs-built_in">find</span>(A &gt; <span class="hljs-number">20</span>) <span class="hljs-comment">% 寻找A中大于20的值，并将其行数列数分别赋值给 m、n</span><br></code></pre></td></tr></table></figure>
+<h3 id="3-矩阵的下标"><a href="#3-矩阵的下标" class="headerlink" title="3.矩阵的下标"></a>3.矩阵的下标</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A = <span class="built_in">magic</span>(<span class="number">5</span>) <span class="comment">% 生成5阶幻方</span></span><br><span class="line">B = A(<span class="number">2</span>,<span class="number">3</span>)   <span class="comment">% 将矩阵A的第二列第三行元素赋值给B</span></span><br><span class="line">C = A(<span class="number">3</span>,:)   <span class="comment">% 将矩阵A的第三行赋值给C</span></span><br><span class="line">D = A(:,<span class="number">4</span>)   <span class="comment">% 将矩阵A的第四列赋值给D</span></span><br><span class="line">[m, n] = <span class="built_in">find</span>(A &gt; <span class="number">20</span>) <span class="comment">% 寻找A中大于20的值，并将其行数列数分别赋值给 m、n</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h2><h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><h4 id="for循环：步长默认为1，可省略。其余符合数学逻辑即可"><a href="#for循环：步长默认为1，可省略。其余符合数学逻辑即可" class="headerlink" title="for循环：步长默认为1，可省略。其余符合数学逻辑即可"></a>for循环：步长默认为1，可省略。其余符合数学逻辑即可</h4><div class="code-wrapper"><pre><code class="hljs">% for 循环变量 = 初值：步长：终值
+<h2 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h2><h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><h4 id="for循环：步长默认为1，可省略。其余符合数学逻辑即可"><a href="#for循环：步长默认为1，可省略。其余符合数学逻辑即可" class="headerlink" title="for循环：步长默认为1，可省略。其余符合数学逻辑即可"></a>for循环：步长默认为1，可省略。其余符合数学逻辑即可</h4><pre><code>% for 循环变量 = 初值：步长：终值
      % 执行语句 1
      % ……
      % 执行语句 n
 % end
-</code></pre></div>
+</code></pre>
 <p>示例：</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab">sum = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> n = <span class="hljs-number">1</span>:<span class="hljs-number">5</span><br>sum = sum + n^<span class="hljs-number">2</span><br><span class="hljs-keyword">end</span> <span class="hljs-comment">% 输出得sum为55</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> n = <span class="number">1</span>:<span class="number">5</span></span><br><span class="line">sum = sum + n^<span class="number">2</span></span><br><span class="line"><span class="keyword">end</span> <span class="comment">% 输出得sum为55</span></span><br></pre></td></tr></table></figure>
 
 <p>% for循环求i!的累加，i&#x3D;1:5</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs matlab">sum = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> =<span class="hljs-number">1</span>:<span class="hljs-number">5</span>;<br>     p=<span class="hljs-number">1</span>;<br>     <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span> = <span class="hljs-number">1</span>:<span class="hljs-built_in">i</span>;<br>          p = p*<span class="hljs-built_in">j</span>;<br>     <span class="hljs-keyword">end</span><br>     sum =sum+p;<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> =<span class="number">1</span>:<span class="number">5</span>;</span><br><span class="line">     p=<span class="number">1</span>;</span><br><span class="line">     <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:<span class="built_in">i</span>;</span><br><span class="line">          p = p*<span class="built_in">j</span>;</span><br><span class="line">     <span class="keyword">end</span></span><br><span class="line">     sum =sum+p;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="while循环-当表达式为真时进入循环，为假时执行end之后的语句"><a href="#while循环-当表达式为真时进入循环，为假时执行end之后的语句" class="headerlink" title="while循环 当表达式为真时进入循环，为假时执行end之后的语句"></a>while循环 当表达式为真时进入循环，为假时执行end之后的语句</h4><div class="code-wrapper"><pre><code class="hljs"> % while 条件表达式
+<h4 id="while循环-当表达式为真时进入循环，为假时执行end之后的语句"><a href="#while循环-当表达式为真时进入循环，为假时执行end之后的语句" class="headerlink" title="while循环 当表达式为真时进入循环，为假时执行end之后的语句"></a>while循环 当表达式为真时进入循环，为假时执行end之后的语句</h4><pre><code> % while 条件表达式
  %    执行语句1
  %    ...
  %    执行语句n
  % end
-</code></pre></div>
+</code></pre>
 <p>% 求1+2+3+4+5+…+10的和</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs matlab">s = <span class="hljs-number">0</span>;<br>n = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">while</span> n&lt;=<span class="hljs-number">10</span><br>     s = s+n;<br>     n = n+<span class="hljs-number">1</span>;<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="number">0</span>;</span><br><span class="line">n = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> n&lt;=<span class="number">10</span></span><br><span class="line">     s = s+n;</span><br><span class="line">     n = n+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h3><h4 id="1-if…end-结构"><a href="#1-if…end-结构" class="headerlink" title="1. if…end 结构"></a>1. if…end 结构</h4><p>% 该结构只有一个判断语句，当条件表达式为真时，执行该语句；反之执行end后的语句</p>
-<div class="code-wrapper"><pre><code class="hljs"> % if 条件表达式
+<pre><code> % if 条件表达式
  %    ...
  %   语句体
  %    ...
  % end
-</code></pre></div>
+</code></pre>
 <p>% 满足条件时显示”成立”</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs matlab">a = <span class="hljs-number">100</span>;<br>b = <span class="hljs-number">10</span>;<br><span class="hljs-keyword">if</span> a&gt;b<br>     <span class="hljs-string">&#x27;成立&#x27;</span><br><span class="hljs-keyword">end</span> <span class="hljs-comment">% 输出ans = 成立</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span>;</span><br><span class="line">b = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">if</span> a&gt;b</span><br><span class="line">     <span class="string">&#x27;成立&#x27;</span></span><br><span class="line"><span class="keyword">end</span> <span class="comment">% 输出ans = 成立</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="2-if…else…end结构"><a href="#2-if…else…end结构" class="headerlink" title="2.if…else…end结构"></a>2.if…else…end结构</h4><p>% 若表达式为真，则执行语句体1，否则执行语句体2</p>
-<div class="code-wrapper"><pre><code class="hljs"> % if 表达式
+<pre><code> % if 表达式
  %       语句体1
  %   else
  %       语句体2
  % end
-</code></pre></div>
+</code></pre>
 <h4 id="3-switch…case…end结构"><a href="#3-switch…case…end结构" class="headerlink" title="3.switch…case…end结构"></a>3.switch…case…end结构</h4><p>% switch后表达式的值或字符串与case后的值或字符串进行比较，与哪一个case相同则执行哪一个case下的语句体。</p>
 <p>% 若所有的case的值都不相同，则执行otherwise后的语句体。</p>
-<div class="code-wrapper"><pre><code class="hljs"> % switch 表达式（数值or字符串）
+<pre><code> % switch 表达式（数值or字符串）
  %       case 数值或字符串1
  %           语句体1;
  %       case 数值或字符串2
@@ -409,8 +552,8 @@
  %       otherwise
  %           语句体n；
  % end
-</code></pre></div>
-<h2 id="二维平面绘图"><a href="#二维平面绘图" class="headerlink" title="二维平面绘图"></a>二维平面绘图</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs matlab">x = <span class="hljs-number">0</span>:<span class="hljs-number">0.01</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;<br>y = <span class="hljs-built_in">sin</span>(x);<br><span class="hljs-built_in">figure</span>             <span class="hljs-comment">% 建立一个幕布，有时可省略</span><br><span class="hljs-built_in">plot</span>(x,y)          <span class="hljs-comment">% 画图命令</span><br>title(<span class="hljs-string">&#x27;y=sin(x)&#x27;</span>)  <span class="hljs-comment">% 图像标题</span><br>xlabel(<span class="hljs-string">&#x27;x&#x27;</span>)        <span class="hljs-comment">% x轴标题</span><br>ylabel(<span class="hljs-string">&#x27;sin(x)&#x27;</span>)   <span class="hljs-comment">% y轴标题</span><br>xlim([<span class="hljs-number">0</span> <span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>])     <span class="hljs-comment">% Matlab默认会另x范围增大，加上此语句可避免</span><br></code></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="二维平面绘图"><a href="#二维平面绘图" class="headerlink" title="二维平面绘图"></a>二维平面绘图</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0</span>:<span class="number">0.01</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">y = <span class="built_in">sin</span>(x);</span><br><span class="line"><span class="built_in">figure</span>             <span class="comment">% 建立一个幕布，有时可省略</span></span><br><span class="line"><span class="built_in">plot</span>(x,y)          <span class="comment">% 画图命令</span></span><br><span class="line">title(<span class="string">&#x27;y=sin(x)&#x27;</span>)  <span class="comment">% 图像标题</span></span><br><span class="line">xlabel(<span class="string">&#x27;x&#x27;</span>)        <span class="comment">% x轴标题</span></span><br><span class="line">ylabel(<span class="string">&#x27;sin(x)&#x27;</span>)   <span class="comment">% y轴标题</span></span><br><span class="line">xlim([<span class="number">0</span> <span class="number">2</span>*<span class="built_in">pi</span>])     <span class="comment">% Matlab默认会另x范围增大，加上此语句可避免</span></span><br></pre></td></tr></table></figure>
 
 <p>% 颜色选项参数  </p>
 <table>
@@ -490,288 +633,194 @@
 </tr>
 </tbody></table>
 <p>% 例子  </p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs matlab">x = <span class="hljs-number">0</span>:<span class="hljs-number">0.01</span>:<span class="hljs-number">20</span>;<br>y1 = <span class="hljs-number">200</span>*<span class="hljs-built_in">exp</span>(<span class="hljs-number">-0.05</span>*x).*<span class="hljs-built_in">sin</span>(x);<br>y2 = <span class="hljs-number">0.8</span>*<span class="hljs-built_in">exp</span>(<span class="hljs-number">-0.5</span>*x).*<span class="hljs-built_in">sin</span>(<span class="hljs-number">10</span>*x);<br><span class="hljs-built_in">figure</span><br>[AX,H1,H2] = plotyy(x,y1,x,y2,<span class="hljs-string">&#x27;plot&#x27;</span>);<br>set(get(AX(<span class="hljs-number">1</span>),<span class="hljs-string">&#x27;ylabel&#x27;</span>),<span class="hljs-string">&#x27;string&#x27;</span>,<span class="hljs-string">&#x27;Slow Decay&#x27;</span>) <span class="hljs-comment">% y1轴命名</span><br>set(get(AX(<span class="hljs-number">2</span>),<span class="hljs-string">&#x27;ylabel&#x27;</span>),<span class="hljs-string">&#x27;string&#x27;</span>,<span class="hljs-string">&#x27;Fast Decay&#x27;</span>) <span class="hljs-comment">% y2轴命名</span><br>xlabel(<span class="hljs-string">&#x27;Time(\musec)&#x27;</span>)                         <span class="hljs-comment">% X轴命名</span><br>title(<span class="hljs-string">&#x27;Multiple Decay Rates&#x27;</span>)<br>set(H1,<span class="hljs-string">&#x27;linestyle&#x27;</span>,<span class="hljs-string">&#x27;--&#x27;</span>)                       <span class="hljs-comment">% 设置y1的线型</span><br>set(H2,<span class="hljs-string">&#x27;linestyle&#x27;</span>,<span class="hljs-string">&#x27;-.&#x27;</span>)                       <span class="hljs-comment">% 设置y2的线型</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0</span>:<span class="number">0.01</span>:<span class="number">20</span>;</span><br><span class="line">y1 = <span class="number">200</span>*<span class="built_in">exp</span>(<span class="number">-0.05</span>*x).*<span class="built_in">sin</span>(x);</span><br><span class="line">y2 = <span class="number">0.8</span>*<span class="built_in">exp</span>(<span class="number">-0.5</span>*x).*<span class="built_in">sin</span>(<span class="number">10</span>*x);</span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">[AX,H1,H2] = plotyy(x,y1,x,y2,<span class="string">&#x27;plot&#x27;</span>);</span><br><span class="line">set(get(AX(<span class="number">1</span>),<span class="string">&#x27;ylabel&#x27;</span>),<span class="string">&#x27;string&#x27;</span>,<span class="string">&#x27;Slow Decay&#x27;</span>) <span class="comment">% y1轴命名</span></span><br><span class="line">set(get(AX(<span class="number">2</span>),<span class="string">&#x27;ylabel&#x27;</span>),<span class="string">&#x27;string&#x27;</span>,<span class="string">&#x27;Fast Decay&#x27;</span>) <span class="comment">% y2轴命名</span></span><br><span class="line">xlabel(<span class="string">&#x27;Time(\musec)&#x27;</span>)                         <span class="comment">% X轴命名</span></span><br><span class="line">title(<span class="string">&#x27;Multiple Decay Rates&#x27;</span>)</span><br><span class="line">set(H1,<span class="string">&#x27;linestyle&#x27;</span>,<span class="string">&#x27;--&#x27;</span>)                       <span class="comment">% 设置y1的线型</span></span><br><span class="line">set(H2,<span class="string">&#x27;linestyle&#x27;</span>,<span class="string">&#x27;-.&#x27;</span>)                       <span class="comment">% 设置y2的线型</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="三维平面绘图"><a href="#三维平面绘图" class="headerlink" title="三维平面绘图"></a>三维平面绘图</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs matlab">t = <span class="hljs-number">0</span>:<span class="hljs-built_in">pi</span>/<span class="hljs-number">50</span>:<span class="hljs-number">10</span>*<span class="hljs-built_in">pi</span><br><span class="hljs-built_in">plot3</span>(<span class="hljs-built_in">sin</span>(t),<span class="hljs-built_in">cos</span>(t),t)  <span class="hljs-comment">% 三维绘图使用plot3，二维为plot</span><br>xlabel(<span class="hljs-string">&#x27;sin(t)&#x27;</span>)<br>ylabel(<span class="hljs-string">&#x27;cos(t)&#x27;</span>)<br>zlabel(<span class="hljs-string">&#x27;t&#x27;</span>)<br><span class="hljs-comment">% hold on               % 在同一张幕布下保持住，继续添加其他图像，hold off则是不保存清除幕布进行绘制</span><br>grid on                 <span class="hljs-comment">% 在绘制的幕布中添加网格线</span><br>axis square             <span class="hljs-comment">% 将幕布的坐标变为一个正方形，美化图像</span><br></code></pre></td></tr></table></figure>
+<h2 id="三维平面绘图"><a href="#三维平面绘图" class="headerlink" title="三维平面绘图"></a>三维平面绘图</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">50</span>:<span class="number">10</span>*<span class="built_in">pi</span></span><br><span class="line"><span class="built_in">plot3</span>(<span class="built_in">sin</span>(t),<span class="built_in">cos</span>(t),t)  <span class="comment">% 三维绘图使用plot3，二维为plot</span></span><br><span class="line">xlabel(<span class="string">&#x27;sin(t)&#x27;</span>)</span><br><span class="line">ylabel(<span class="string">&#x27;cos(t)&#x27;</span>)</span><br><span class="line">zlabel(<span class="string">&#x27;t&#x27;</span>)</span><br><span class="line"><span class="comment">% hold on               % 在同一张幕布下保持住，继续添加其他图像，hold off则是不保存清除幕布进行绘制</span></span><br><span class="line">grid on                 <span class="comment">% 在绘制的幕布中添加网格线</span></span><br><span class="line">axis square             <span class="comment">% 将幕布的坐标变为一个正方形，美化图像</span></span><br></pre></td></tr></table></figure>
 
 <p>%% 图形窗口分割  </p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs matlab">x = <span class="hljs-built_in">linspace</span>(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>,<span class="hljs-number">60</span>) <span class="hljs-comment">% 定义一个x</span><br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)          <span class="hljs-comment">% 将画布分为两行两列四块，在第1块上绘图</span><br><span class="hljs-built_in">plot</span>(x,<span class="hljs-built_in">sin</span>(x)<span class="hljs-number">-1</span>);<br>title(<span class="hljs-string">&#x27;sin(x)-1&#x27;</span>);<br>axis([<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>,<span class="hljs-number">-2</span>,<span class="hljs-number">0</span>])     <span class="hljs-comment">% 规定范围</span><br>subplot(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)          <span class="hljs-comment">% 将画布分为两行一列两块，在第2块上绘图</span><br><span class="hljs-built_in">plot</span>(x,<span class="hljs-built_in">cos</span>(x)+<span class="hljs-number">1</span>);<br>title(<span class="hljs-string">&#x27;cos(x)+1&#x27;</span>);<br>axis([<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>])<br>subplot(<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>)          <span class="hljs-comment">% 将画布分为四行四列16块，在第3块上绘图</span><br><span class="hljs-built_in">plot</span>(x,<span class="hljs-built_in">tan</span>(x));<br>title(<span class="hljs-string">&#x27;tan(x)&#x27;</span>);<br>axis([<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>,<span class="hljs-number">-40</span>,<span class="hljs-number">40</span>])<br>subplot(<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">8</span>)          <span class="hljs-comment">% 将画布分为四行四列16块，在第8块上绘图</span><br><span class="hljs-built_in">plot</span>(x,<span class="hljs-built_in">cot</span>(x));<br>title(<span class="hljs-string">&#x27;cot(x)&#x27;</span>);<br>axis([<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>,<span class="hljs-number">-35</span>,<span class="hljs-number">35</span>])<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="built_in">linspace</span>(<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">pi</span>,<span class="number">60</span>) <span class="comment">% 定义一个x</span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>)          <span class="comment">% 将画布分为两行两列四块，在第1块上绘图</span></span><br><span class="line"><span class="built_in">plot</span>(x,<span class="built_in">sin</span>(x)<span class="number">-1</span>);</span><br><span class="line">title(<span class="string">&#x27;sin(x)-1&#x27;</span>);</span><br><span class="line">axis([<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">pi</span>,<span class="number">-2</span>,<span class="number">0</span>])     <span class="comment">% 规定范围</span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>)          <span class="comment">% 将画布分为两行一列两块，在第2块上绘图</span></span><br><span class="line"><span class="built_in">plot</span>(x,<span class="built_in">cos</span>(x)+<span class="number">1</span>);</span><br><span class="line">title(<span class="string">&#x27;cos(x)+1&#x27;</span>);</span><br><span class="line">axis([<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">pi</span>,<span class="number">0</span>,<span class="number">2</span>])</span><br><span class="line">subplot(<span class="number">4</span>,<span class="number">4</span>,<span class="number">3</span>)          <span class="comment">% 将画布分为四行四列16块，在第3块上绘图</span></span><br><span class="line"><span class="built_in">plot</span>(x,<span class="built_in">tan</span>(x));</span><br><span class="line">title(<span class="string">&#x27;tan(x)&#x27;</span>);</span><br><span class="line">axis([<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">pi</span>,<span class="number">-40</span>,<span class="number">40</span>])</span><br><span class="line">subplot(<span class="number">4</span>,<span class="number">4</span>,<span class="number">8</span>)          <span class="comment">% 将画布分为四行四列16块，在第8块上绘图</span></span><br><span class="line"><span class="built_in">plot</span>(x,<span class="built_in">cot</span>(x));</span><br><span class="line">title(<span class="string">&#x27;cot(x)&#x27;</span>);</span><br><span class="line">axis([<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">pi</span>,<span class="number">-35</span>,<span class="number">35</span>])</span><br></pre></td></tr></table></figure>
 
 <p>%% 完结撒花</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-comment">% peaks &amp; mesh</span><br>[x,y,z] = peaks(<span class="hljs-number">40</span>)<br>mesh(x,y,z)<br>grid<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% peaks &amp; mesh</span></span><br><span class="line">[x,y,z] = peaks(<span class="number">40</span>)</span><br><span class="line">mesh(x,y,z)</span><br><span class="line">grid</span><br></pre></td></tr></table></figure>
 
-<img src="Matlab/peaks.png" srcset="/img/loading.gif" lazyload>
+<img src="Matlab/peaks.png">
 
 <hr>
-<p><a href="paneersblog.github.io"><img src="/19643/peaks.png" srcset="/img/loading.gif" lazyload class="" title="peaks"></a></p>
+<p><a href="paneersblog.github.io"><img src="/19643/peaks.png" class="" title="peaks"></a></p>
 <p>参考视频地址：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV13D4y1Q7RS?p=15&amp;share_source=copy_web">https://www.bilibili.com/video/BV13D4y1Q7RS?p=15&amp;share_source=copy_web</a></p>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Matlab/">Matlab</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/24896.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">我们接吻吧 我们不恋爱</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/14595.html">
-                        <span class="hidden-mobile">myfirstBlog</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <div id="waline"></div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
-        var options = Object.assign(
-          {"serverURL":"https://blog-comment-mk0f7063p-paneersblog.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
-          {
-            el: '#waline',
-            path: window.location.pathname
-          }
-        )
-        new Waline(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
-        })
-      });
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-              </article>
-            
-          </article>
-        </div>
-      </div>
+      
     </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://paneersblog.github.io/19643.html" title="我的Matlab入门笔记" target="_blank" rel="external">http://paneersblog.github.io/19643.html</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/paneersblog" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
       </div>
-    
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/paneersblog" target="_blank"><span class="text-dark">Paneer</span><small class="ml-1x">一个成熟稳重的沙雕网友</small></a></h3>
+        <div>一个成熟稳重的沙雕网友</div>
+      </div>
+    </figure>
   </div>
 </div>
 
-<!-- Custom -->
 
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
     </div>
-  </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
 </div>
-    
 
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
     
-  </main>
-
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Paneer</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Emily</span></a> 
+    <li class="prev">
+      <a href="/24896.html" title="我们接吻吧 我们不恋爱"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/14595.html" title="myfirstBlog"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
   </div>
+  </div>
+</nav>
   
 
-  
 
-  
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/paneersblog" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6203293798" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Paneer_007" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2022 Paneer &amp; Emily
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
 </footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
 
 
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
+<script src="/js/application.js"></script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-  
-
-  
-    <!-- MathJax -->
     <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
-        loader: {
-          load: ['ui/lazy']
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
 
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
-
-  
+<script src="/js/insight.js"></script>
 
 
 
 
 
 
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
 
 
 </body>

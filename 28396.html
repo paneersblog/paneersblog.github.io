@@ -1,22 +1,24 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang=zh>
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/IMG_4556.JPG">
-  <link rel="icon" href="/img/IMG_4556.JPG">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8">
   
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Paneer &amp; Emily">
-  <meta name="keywords" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
   
-    <meta name="description" content="人生苦短 我用Python">
+  
+  <title>Python入门笔记（二） | Paneer&#39;s blog</title>
+  <meta name="description" content="人生苦短 我用Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python入门笔记（二）">
 <meta property="og:url" content="http://paneersblog.github.io/28396.html">
@@ -24,221 +26,361 @@
 <meta property="og:description" content="人生苦短 我用Python">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-02-07T15:31:37.000Z">
-<meta property="article:modified_time" content="2022-02-08T14:13:04.760Z">
+<meta property="article:modified_time" content="2022-07-16T09:28:48.139Z">
 <meta property="article:author" content="Paneer &amp; Emily">
 <meta property="article:tag" content="Python">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://paneersblog.github.io/28396.html">
   
   
-  <title>Python入门笔记（二） - Panner&amp;Emily’s paradise!</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
   
+  
+  
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Panner&Emily’s paradise!" type="application/atom+xml">
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/paneersblog" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Paneer</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">一个成熟稳重的沙雕网友</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shandong, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/paneersblog" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6203293798" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Paneer_007" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
     
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%94%BB%E7%95%A5/">攻略</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%A1%B5/">测试页</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">英语学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
     
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOS/" rel="tag">DOS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MCNP5/" rel="tag">MCNP5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/" rel="tag">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SRIM/" rel="tag">SRIM</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Trip/" rel="tag">Trip</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordList-E/" rel="tag">WordList_E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordList-P/" rel="tag">WordList_P</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
 
 
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/DOS/" style="font-size: 13.33px;">DOS</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/MCNP5/" style="font-size: 13px;">MCNP5</a> <a href="/tags/Markdown/" style="font-size: 13px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 13px;">Matlab</a> <a href="/tags/Photo/" style="font-size: 13px;">Photo</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/SRIM/" style="font-size: 13.67px;">SRIM</a> <a href="/tags/Trip/" style="font-size: 13.33px;">Trip</a> <a href="/tags/WordList-E/" style="font-size: 13px;">WordList_E</a> <a href="/tags/WordList-P/" style="font-size: 13px;">WordList_P</a>
+    </div>
+  </div>
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
 
 
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"paneersblog.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Paradise</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                友链
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/54952.html" class="title">MCNP5入门（一）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-05T07:47:05.000Z" itemprop="datePublished">2022-04-05</time>
+              </p>
+            </div>
           </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">英语学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/28793.html" class="title">Chapter_1</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-27T04:35:02.000Z" itemprop="datePublished">2022-02-27</time>
+              </p>
+            </div>
           </li>
-        
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/6067.html" class="title">SRIM入门（四）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-22T16:34:54.000Z" itemprop="datePublished">2022-02-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+              </p>
+              <p class="item-title">
+                <a href="/52445.html" class="title">win批处理语法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-21T15:21:26.000Z" itemprop="datePublished">2022-02-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/31090.html" class="title">SRIM入门（三）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-19T16:00:42.000Z" itemprop="datePublished">2022-02-20</time>
+              </p>
+            </div>
+          </li>
+          
       </ul>
     </div>
   </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Python入门笔记（二）">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-07 23:31" pubdate>
-        2022年2月7日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      4.4k 字
-    </span>
   
 
+    
+  </div>
+</aside>
+
   
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Python入门笔记（二）" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python入门笔记（二）
+    </h1>
+  
+
       
-      37 分钟
-    </span>
-  
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/28396.html" class="article-date">
+	  <time datetime="2022-02-07T15:31:37.000Z" itemprop="datePublished">2022-02-07</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+  </span>
 
-  
-  
-</div>
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Python/" rel="tag">Python</a>
+  </span>
 
-            
-          </div>
 
-          
-        </div>
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/28396.html#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.5k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
+	
+
       </div>
     </div>
-  </header>
-
-  <main>
-    
+    <div class="article-entry marked-body" itemprop="articleBody">
       
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">Python入门笔记（二）</h1>
-            
-            <div class="markdown-body">
-              <p>人生苦短 我用Python</p>
+        <p>人生苦短 我用Python</p>
 <span id="more"></span>
 
 <hr>
@@ -262,7 +404,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 10.单行注释</span><br><span class="hljs-comment"># 要求从键盘去输入出生年份，举例：1998</span><br>year = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入您的出生年份：&#x27;</span>)<br><br>year = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入您的出生年份：&#x27;</span>)  <span class="hljs-comment"># 要求从键盘去输入出生年份，举例：1998</span><br><br><span class="hljs-comment"># 11.多行注释</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">参考视频：马士兵教育</span><br><span class="hljs-string">分节名：11.多行注释</span><br><span class="hljs-string">创建人：Paneer</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-comment"># -*- OR -*- #</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">参考视频：马士兵教育</span><br><span class="hljs-string">分节名：11.多行注释</span><br><span class="hljs-string">创建人：Paneer</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><br><span class="hljs-comment"># 12.中文声明注释</span><br><br><span class="hljs-comment"># 在Python2.x中，使用中文注释时必须要加上中文声明注释。在Python3.x中可加可不加。</span><br><span class="hljs-comment"># coding:utf-8</span><br><span class="hljs-comment"># 此声明若加的话务必加在代码首行。</span><br><span class="hljs-comment"># 写好注释至关重要哦~</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 10.单行注释</span></span><br><span class="line"><span class="comment"># 要求从键盘去输入出生年份，举例：1998</span></span><br><span class="line">year = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的出生年份：&#x27;</span>)</span><br><span class="line"></span><br><span class="line">year = <span class="built_in">input</span>(<span class="string">&#x27;请输入您的出生年份：&#x27;</span>)  <span class="comment"># 要求从键盘去输入出生年份，举例：1998</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 11.多行注释</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">参考视频：马士兵教育</span></span><br><span class="line"><span class="string">分节名：11.多行注释</span></span><br><span class="line"><span class="string">创建人：Paneer</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># -*- OR -*- #</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">参考视频：马士兵教育</span></span><br><span class="line"><span class="string">分节名：11.多行注释</span></span><br><span class="line"><span class="string">创建人：Paneer</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 12.中文声明注释</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在Python2.x中，使用中文注释时必须要加上中文声明注释。在Python3.x中可加可不加。</span></span><br><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="comment"># 此声明若加的话务必加在代码首行。</span></span><br><span class="line"><span class="comment"># 写好注释至关重要哦~</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="代码缩进"><a href="#代码缩进" class="headerlink" title="代码缩进"></a>代码缩进</h2><p>Python语言采用严格的“缩进”来表示程序逻辑</p>
 <ul>
@@ -271,10 +413,10 @@
 <li>类定义、函数定义、流程控制语句，以及异常处理语句等，行尾的冒号和下一行的缩进表示一个代码块的开始，而缩进结束则表示一个代码块的结束</li>
 <li>缩进可以使用空格或Tab键来实现，通常情况下采用四个空格作为一个缩进量</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 13.代码缩进</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello&#x27;</span>)<br> <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello&#x27;</span>)  <span class="hljs-comment">#此情况下会报错：IndentationError: unexpected indent,解决办法是删掉第二个print前的空格</span><br> <br><span class="hljs-comment"># 类的定义</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span>:<br>    <span class="hljs-keyword">pass</span><br><span class="hljs-comment"># 函数定义</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>():<br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 13.代码缩进</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"> <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)  <span class="comment">#此情况下会报错：IndentationError: unexpected indent,解决办法是删掉第二个print前的空格</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 类的定义</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="comment"># 函数定义</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="在Python交互式模式中运行-py文件"><a href="#在Python交互式模式中运行-py文件" class="headerlink" title="在Python交互式模式中运行*.py文件"></a>在Python交互式模式中运行*.py文件</h2><p>首先确保电脑已经安装好python且配置好了环境变量，其语法格式为：</p>
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs DOS">python 完整文件名（包括路径）<br></code></pre></td></tr></table></figure>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python 完整文件名（包括路径）</span><br></pre></td></tr></table></figure>
 
 <h2 id="数据类型和基本运算符"><a href="#数据类型和基本运算符" class="headerlink" title="数据类型和基本运算符"></a>数据类型和基本运算符</h2><h3 id="保留字与标识符"><a href="#保留字与标识符" class="headerlink" title="保留字与标识符"></a>保留字与标识符</h3><p>保留字：<br>保留字是Python已经被赋予特定意义的一些单词，在开发程序时，不可以把这些保留字作为变量、函数、类、模块和其他对象的名称来使用<br>保留字表如下所示：</p>
 <table>
@@ -337,7 +479,7 @@
 <p>注：保留字严格区分大小写，只有<strong>True</strong>、<strong>False</strong>、<strong>None</strong>为首字母大写。</p>
 </blockquote>
 <p>保留字查看</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 保留字的查看</span><br><span class="hljs-keyword">import</span> keyword<br><span class="hljs-built_in">print</span>(keyword.kwlist)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保留字的查看</span></span><br><span class="line"><span class="keyword">import</span> keyword</span><br><span class="line"><span class="built_in">print</span>(keyword.kwlist)</span><br></pre></td></tr></table></figure>
 
 <p>标识符：<br>标识符可以简单的理解为是一个名字，它主要用来标识变量、函数、类、模块和其他对象的名称。  </p>
 <blockquote>
@@ -362,7 +504,7 @@
 <li>使用双下划线“__“开头的实例变量或方法是类私有的</li>
 <li>以双下划线开头和结尾的是Python的专用标识。如 <code>__init__()</code> 表示初始化函数</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 2.标识符的规范</span><br><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">每一个*.py文件都是一个模块，模块命名应尽量使用小写字母并使用下划线分隔</span><br><span class="hljs-string">这些*.py文件所在的文件夹称作包，包命名应尽量使用小写字母不推荐使用下划线</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyClass</span>:  <span class="hljs-comment"># 新建一个名为MyClass的类，采用Pascal风格</span><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">_InnerMyClass</span>:  <span class="hljs-comment"># 新建一个名为 _InnerMyClass 的内部类</span><br>        <span class="hljs-keyword">pass</span><br><br><br><span class="hljs-comment"># 函数 fun &amp; fun_name 的定义</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun</span>():<br>    <span class="hljs-keyword">pass</span><br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fun_name</span>():<br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2.标识符的规范</span></span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">每一个*.py文件都是一个模块，模块命名应尽量使用小写字母并使用下划线分隔</span></span><br><span class="line"><span class="string">这些*.py文件所在的文件夹称作包，包命名应尽量使用小写字母不推荐使用下划线</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span>:  <span class="comment"># 新建一个名为MyClass的类，采用Pascal风格</span></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">_InnerMyClass</span>:  <span class="comment"># 新建一个名为 _InnerMyClass 的内部类</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数 fun &amp; fun_name 的定义</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun_name</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Python中的变量"><a href="#Python中的变量" class="headerlink" title="Python中的变量"></a>Python中的变量</h2><p>变量是指保存和表示数值的一种语法元素，可以简单的理解为“名字”。<br>变量的值是可以改变的，可以通过赋值方式被修改。</p>
 <blockquote>
@@ -370,8 +512,8 @@
 <p>可以理解为去菜鸟驿站取快递，我只需要取件码就能找到自己的快递，此时我的取件码就是一个变量，它代表的那个位置上的快递是我的，因为是菜鸟驿站的工作人员给它赋值了。</p>
 </blockquote>
 <h3 id="变量的定义"><a href="#变量的定义" class="headerlink" title="变量的定义"></a>变量的定义</h3><p>其语法结构为：</p>
-<div class="code-wrapper"><pre><code class="hljs">变量名=value
-</code></pre></div>
+<pre><code>变量名=value
+</code></pre>
 <h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3><p>Python是一种动态类型的语言，变量的类型可以随时变化</p>
 <ul>
 <li>使用内置函数<code>type()</code>可以查看变量的数据类型</li>
@@ -380,7 +522,7 @@
 <ul>
 <li>使用内置函数<code>id()</code>可以返回变量所指的内存地址</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 3.变量的定义和使用</span><br>luck_number=<span class="hljs-number">8</span>  <span class="hljs-comment"># 创建一个整型变量luck_number，赋值为8</span><br>my_name=<span class="hljs-string">&#x27;Paneer&#x27;</span>  <span class="hljs-comment"># 创建一个字符串类型变量</span><br><span class="hljs-built_in">print</span>(my_name,<span class="hljs-string">&#x27;的幸运数字是：&#x27;</span>,luck_number)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;luck_number的数据类型是：&#x27;</span>,<span class="hljs-built_in">type</span>(luck_number))<br><br><span class="hljs-comment"># 变量的值可以更改</span><br>luck_number=<span class="hljs-string">&#x27;Emily真圆&#x27;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;luck_number的数据类型是：&#x27;</span>,<span class="hljs-built_in">type</span>(luck_number))  <span class="hljs-comment"># 此时其数据类型就是 str型（字符串型）了</span><br><br><span class="hljs-comment"># Python允许多个变量指向同一个值</span><br>no=number=<span class="hljs-number">502</span>  <span class="hljs-comment"># 给no 和number 都赋值为502</span><br><span class="hljs-built_in">print</span>(no,number)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(no))  <span class="hljs-comment"># 输出no 所指向的内存地址</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(number))  <span class="hljs-comment">#输出number 所指向的内存地址，会发现与no 的相同</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3.变量的定义和使用</span></span><br><span class="line">luck_number=<span class="number">8</span>  <span class="comment"># 创建一个整型变量luck_number，赋值为8</span></span><br><span class="line">my_name=<span class="string">&#x27;Paneer&#x27;</span>  <span class="comment"># 创建一个字符串类型变量</span></span><br><span class="line"><span class="built_in">print</span>(my_name,<span class="string">&#x27;的幸运数字是：&#x27;</span>,luck_number)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;luck_number的数据类型是：&#x27;</span>,<span class="built_in">type</span>(luck_number))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 变量的值可以更改</span></span><br><span class="line">luck_number=<span class="string">&#x27;Emily真圆&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;luck_number的数据类型是：&#x27;</span>,<span class="built_in">type</span>(luck_number))  <span class="comment"># 此时其数据类型就是 str型（字符串型）了</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Python允许多个变量指向同一个值</span></span><br><span class="line">no=number=<span class="number">502</span>  <span class="comment"># 给no 和number 都赋值为502</span></span><br><span class="line"><span class="built_in">print</span>(no,number)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(no))  <span class="comment"># 输出no 所指向的内存地址</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(number))  <span class="comment">#输出number 所指向的内存地址，会发现与no 的相同</span></span><br></pre></td></tr></table></figure>
 
 <p>变量命名应遵循以下几条规则</p>
 <blockquote>
@@ -436,7 +578,7 @@
 <td align="center">由0-9，a(A)-f(F)组成，如 0x98A，0X89F</td>
 </tr>
 </tbody></table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 4.整数类型</span><br>num=<span class="hljs-number">987</span>  <span class="hljs-comment"># 默认十进制</span><br>num1=<span class="hljs-number">0b10100101</span>  <span class="hljs-comment"># 使用二进制表示整数</span><br>num2=<span class="hljs-number">0o765</span>  <span class="hljs-comment"># 使用八进制表示整数</span><br>num3=<span class="hljs-number">0x98AF</span>  <span class="hljs-comment"># 使用十六进制表示整数</span><br><span class="hljs-built_in">print</span>(num)  <span class="hljs-comment"># 输出全部为十进制</span><br><span class="hljs-built_in">print</span>(num1)  <span class="hljs-comment"># 输出全部为十进制</span><br><span class="hljs-built_in">print</span>(num2)  <span class="hljs-comment"># 输出全部为十进制</span><br><span class="hljs-built_in">print</span>(num3)  <span class="hljs-comment"># 输出全部为十进制</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 4.整数类型</span></span><br><span class="line">num=<span class="number">987</span>  <span class="comment"># 默认十进制</span></span><br><span class="line">num1=<span class="number">0b10100101</span>  <span class="comment"># 使用二进制表示整数</span></span><br><span class="line">num2=<span class="number">0o765</span>  <span class="comment"># 使用八进制表示整数</span></span><br><span class="line">num3=<span class="number">0x98AF</span>  <span class="comment"># 使用十六进制表示整数</span></span><br><span class="line"><span class="built_in">print</span>(num)  <span class="comment"># 输出全部为十进制</span></span><br><span class="line"><span class="built_in">print</span>(num1)  <span class="comment"># 输出全部为十进制</span></span><br><span class="line"><span class="built_in">print</span>(num2)  <span class="comment"># 输出全部为十进制</span></span><br><span class="line"><span class="built_in">print</span>(num3)  <span class="comment"># 输出全部为十进制</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="浮点数类型"><a href="#浮点数类型" class="headerlink" title="浮点数类型"></a>浮点数类型</h4><ul>
 <li>表示带有小数点的数</li>
@@ -447,7 +589,7 @@
 <li>使用内置函数<code>round()</code>可以限定运算结果需要保留的小数位数</li>
 <li>不可变数据类型</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 5.浮点数类型</span><br>height=<span class="hljs-number">180.1</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(height))  <span class="hljs-comment"># 可以得出height 的数据类型为float 型</span><br>x=<span class="hljs-number">10</span><br>y=<span class="hljs-number">10.0</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(x))  <span class="hljs-comment"># x为int 型</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(y))  <span class="hljs-comment"># y为float 型</span><br><span class="hljs-comment"># 浮点数相加尾数不确定问题</span><br><span class="hljs-built_in">print</span>(<span class="hljs-number">0.1</span>+<span class="hljs-number">0.2</span>)  <span class="hljs-comment"># 得结果为 0.30000000000000004，有一不确定尾数</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">round</span>(<span class="hljs-number">0.1</span>+<span class="hljs-number">0.2</span>,<span class="hljs-number">1</span>))  <span class="hljs-comment"># 保留一位小数</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 5.浮点数类型</span></span><br><span class="line">height=<span class="number">180.1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(height))  <span class="comment"># 可以得出height 的数据类型为float 型</span></span><br><span class="line">x=<span class="number">10</span></span><br><span class="line">y=<span class="number">10.0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(x))  <span class="comment"># x为int 型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(y))  <span class="comment"># y为float 型</span></span><br><span class="line"><span class="comment"># 浮点数相加尾数不确定问题</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">0.1</span>+<span class="number">0.2</span>)  <span class="comment"># 得结果为 0.30000000000000004，有一不确定尾数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">round</span>(<span class="number">0.1</span>+<span class="number">0.2</span>,<span class="number">1</span>))  <span class="comment"># 保留一位小数</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="复数类型"><a href="#复数类型" class="headerlink" title="复数类型"></a>复数类型</h4><ul>
 <li>Python中复数与数学中的复数形式完全一致</li>
@@ -456,7 +598,7 @@
 <li><code>.real</code>获取实数部分，<code>.imag</code>获取虚数部分</li>
 <li>不可变数据类型</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 6.复数类型</span><br>z=<span class="hljs-number">123</span>+<span class="hljs-number">456j</span>  <span class="hljs-comment"># 定义复数类型 complex型</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(z))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;实数部分：&#x27;</span>,z.real)  <span class="hljs-comment"># 输出实数部分</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;虚数部分：&#x27;</span>,z.imag)  <span class="hljs-comment"># 输出虚数部分</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 6.复数类型</span></span><br><span class="line">z=<span class="number">123</span>+<span class="number">456j</span>  <span class="comment"># 定义复数类型 complex型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(z))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;实数部分：&#x27;</span>,z.real)  <span class="comment"># 输出实数部分</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;虚数部分：&#x27;</span>,z.imag)  <span class="comment"># 输出虚数部分</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><ul>
 <li>字符串就是连续的字符序列，，可以表示计算机所能识别的一切字符</li>
@@ -464,274 +606,180 @@
 <li>单行字符串使用’…’或”…”</li>
 <li>多行字符串使用’’’…’’’或”””…”””</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 7.字符串类型</span><br><span class="hljs-comment"># 单行字符串</span><br>city=<span class="hljs-string">&#x27;菏泽&#x27;</span><br>address=<span class="hljs-string">&quot;山东省菏泽市&quot;</span><br><span class="hljs-built_in">print</span>(city)<br><span class="hljs-built_in">print</span>(address)<br><br><span class="hljs-comment"># 多行字符串</span><br>info=<span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">地址：山东省菏泽市</span><br><span class="hljs-string">收件人：Paneer</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-built_in">print</span>(info)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 7.字符串类型</span></span><br><span class="line"><span class="comment"># 单行字符串</span></span><br><span class="line">city=<span class="string">&#x27;菏泽&#x27;</span></span><br><span class="line">address=<span class="string">&quot;山东省菏泽市&quot;</span></span><br><span class="line"><span class="built_in">print</span>(city)</span><br><span class="line"><span class="built_in">print</span>(address)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多行字符串</span></span><br><span class="line">info=<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">地址：山东省菏泽市</span></span><br><span class="line"><span class="string">收件人：Paneer</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(info)</span><br></pre></td></tr></table></figure>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/1.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">test page (music)</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/25723.html">
-                        <span class="hidden-mobile">专业词汇表（一）</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <div id="waline"></div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
-        var options = Object.assign(
-          {"serverURL":"https://blog-comment-mk0f7063p-paneersblog.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
-          {
-            el: '#waline',
-            path: window.location.pathname
-          }
-        )
-        new Waline(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
-        })
-      });
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-              </article>
-            
-          </article>
-        </div>
-      </div>
+      
     </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://paneersblog.github.io/28396.html" title="Python入门笔记（二）" target="_blank" rel="external">http://paneersblog.github.io/28396.html</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/paneersblog" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
       </div>
-    
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/paneersblog" target="_blank"><span class="text-dark">Paneer</span><small class="ml-1x">一个成熟稳重的沙雕网友</small></a></h3>
+        <div>一个成熟稳重的沙雕网友</div>
+      </div>
+    </figure>
   </div>
 </div>
 
-<!-- Custom -->
 
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
     </div>
-  </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
 </div>
-    
 
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
     
-  </main>
-
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Paneer</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Emily</span></a> 
+    <li class="prev">
+      <a href="/1.html" title="test page (music)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/25723.html" title="专业词汇表（一）"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
   </div>
+  </div>
+</nav>
   
 
-  
 
-  
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/paneersblog" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6203293798" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Paneer_007" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2022 Paneer &amp; Emily
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
 </footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
 
 
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
+<script src="/js/application.js"></script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-  
-
-  
-    <!-- MathJax -->
     <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
-        loader: {
-          load: ['ui/lazy']
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
 
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
-
-  
+<script src="/js/insight.js"></script>
 
 
 
 
 
 
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
 
 
 </body>

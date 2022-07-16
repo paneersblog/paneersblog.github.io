@@ -1,22 +1,24 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang=zh>
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/IMG_4556.JPG">
-  <link rel="icon" href="/img/IMG_4556.JPG">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8">
   
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Paneer &amp; Emily">
-  <meta name="keywords" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
   
-    <meta name="description" content="MCNP5入门搬运学习，搬砖永无止境">
+  
+  <title>MCNP5入门（一） | Paneer&#39;s blog</title>
+  <meta name="description" content="MCNP5入门搬运学习，搬砖永无止境">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MCNP5入门（一）">
 <meta property="og:url" content="http://paneersblog.github.io/54952.html">
@@ -32,224 +34,359 @@
 <meta property="article:modified_time" content="2022-04-05T10:33:39.117Z">
 <meta property="article:author" content="Paneer &amp; Emily">
 <meta property="article:tag" content="MCNP5">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://paneersblog.github.io/54952/uTools_1649138657812.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://paneersblog.github.io/54952.html">
   
   
-  <title>MCNP5入门（一） - Panner&amp;Emily’s paradise!</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
   
+  
+  
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Panner&Emily’s paradise!" type="application/atom+xml">
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/paneersblog" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Paneer</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">一个成熟稳重的沙雕网友</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shandong, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/paneersblog" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6203293798" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Paneer_007" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
     
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%94%BB%E7%95%A5/">攻略</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%A1%B5/">测试页</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">英语学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a><span class="category-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
     
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOS/" rel="tag">DOS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MCNP5/" rel="tag">MCNP5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/" rel="tag">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SRIM/" rel="tag">SRIM</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Trip/" rel="tag">Trip</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordList-E/" rel="tag">WordList_E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordList-P/" rel="tag">WordList_P</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
 
 
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/DOS/" style="font-size: 13.33px;">DOS</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/MCNP5/" style="font-size: 13px;">MCNP5</a> <a href="/tags/Markdown/" style="font-size: 13px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 13px;">Matlab</a> <a href="/tags/Photo/" style="font-size: 13px;">Photo</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/SRIM/" style="font-size: 13.67px;">SRIM</a> <a href="/tags/Trip/" style="font-size: 13.33px;">Trip</a> <a href="/tags/WordList-E/" style="font-size: 13px;">WordList_E</a> <a href="/tags/WordList-P/" style="font-size: 13px;">WordList_P</a>
+    </div>
+  </div>
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
 
 
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"paneersblog.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.0.0"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Paradise</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                友链
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/54952.html" class="title">MCNP5入门（一）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-05T07:47:05.000Z" itemprop="datePublished">2022-04-05</time>
+              </p>
+            </div>
           </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">英语学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/28793.html" class="title">Chapter_1</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-27T04:35:02.000Z" itemprop="datePublished">2022-02-27</time>
+              </p>
+            </div>
           </li>
-        
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/6067.html" class="title">SRIM入门（四）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-22T16:34:54.000Z" itemprop="datePublished">2022-02-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+              </p>
+              <p class="item-title">
+                <a href="/52445.html" class="title">win批处理语法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-21T15:21:26.000Z" itemprop="datePublished">2022-02-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a>
+              </p>
+              <p class="item-title">
+                <a href="/31090.html" class="title">SRIM入门（三）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-19T16:00:42.000Z" itemprop="datePublished">2022-02-20</time>
+              </p>
+            </div>
+          </li>
+          
       </ul>
     </div>
   </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="MCNP5入门（一）">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-05 15:47" pubdate>
-        2022年4月5日 下午
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      10k 字
-    </span>
   
 
+    
+  </div>
+</aside>
+
   
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-MCNP5入门（一）" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MCNP5入门（一）
+    </h1>
+  
+
       
-      85 分钟
-    </span>
-  
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/54952.html" class="article-date">
+	  <time datetime="2022-04-05T07:47:05.000Z" itemprop="datePublished">2022-04-05</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/MCNP5/" rel="tag">MCNP5</a>
+  </span>
 
-  
-  
-</div>
 
-            
-          </div>
+        
 
-          
-        </div>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/54952.html#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 6.4k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 24(分)</span>
+	
+
       </div>
     </div>
-  </header>
-
-  <main>
-    
+    <div class="article-entry marked-body" itemprop="articleBody">
       
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">MCNP5入门（一）</h1>
-            
-            <div class="markdown-body">
-              <p>MCNP5入门搬运学习，搬砖永无止境</p>
+        <p>MCNP5入门搬运学习，搬砖永无止境</p>
 <span id="more"></span>
 <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>因为有童鞋要用MCNP做毕业设计，且求助于我（orz我何德何能！）</p>
 <p>我对于MCNP也仅仅是停留在“勉强会用”这一水平，故从<a target="_blank" rel="noopener" href="http://hejishult.com/">核技术论坛</a>中搬运学习MCNP5的相关知识，并结合自己的理解，完成了此篇笔记。</p>
 <p>AAAAND，希望大家能给自己的电脑装一个好用的文本编辑器（推荐<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">vs code</a>！yyds！）<br>vs code的好处就是它可以装很多的扩展，用来提高文件的可读性（代码高亮之类）。至于怎么安装扩展，可以百度vs code汉化教程，因为汉化就是给软件安装简体中文扩展。</p>
-<img src="/54952/uTools_1649138657812.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/54952/uTools_1649138657812.png" class="">
 
 <blockquote>
 <p>注：此笔记中提及的软件等请自行寻找，恕不提供。</p>
@@ -274,7 +411,7 @@
 <p>输入文件中有两种注释方法，助记符分别为<code>c </code>(c后有一个空格)和<code>$</code>符号。在第一行写c就是把这一行都注释掉；在某一行的某列上写<code>$</code>就是注释该行该列后的内容。但是即使是注释， 也不能超过每一列80个字符（包括空格）的要求。</p>
 <p>还有三个常用的助记符，分别为r，i，j。r代表的是repeat，例如1 3r 就等于写了 1 1 1 1；i代表线性插入点，例如 1 2i 4 就等于写了 1 2 3 4；j代表的是jump，表示该位置使用默认值，例如1 j 2就等于写了 1 默认值 2，多用于描述重要性部分。</p>
 <h3 id="算例：7MeV轫致辐射X射线角分布、能谱"><a href="#算例：7MeV轫致辐射X射线角分布、能谱" class="headerlink" title="算例：7MeV轫致辐射X射线角分布、能谱"></a>算例：7MeV轫致辐射X射线角分布、能谱</h3><p>在书写MCNP输入文件前，我们首先想好要计算的模型，包括坐标系以及各个物体在这个坐标系内的相对位置。我的计算模型如下图所示。  </p>
-<img src="/54952/uTools_1649142670082.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/54952/uTools_1649142670082.png" class="">
 
 <p>计算模型中感兴区是半径为100cm的球内，源是能量为7MeV，位置在(-2,0,0)的单向电子束；X射线靶是半径（Y或者Z方向）1cm，高度(X方向)1cm的金；其他位置均为真空。记录面设置在圈定感兴区的球面上。</p>
 <h4 id="surface-card"><a href="#surface-card" class="headerlink" title="surface card"></a>surface card</h4><p>为了描述出上述模型，我们首先写surface模块，这里需要定义的surface有：</p>
@@ -285,16 +422,16 @@
 <li>划分感兴趣区域表面的记录面</li>
 </ol>
 <p>源所在面书写方法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs MCNP">1    PX   -2  <br>C 第一个1是指这个面的序号，在cell模块会用到。PX为助记符，表示垂直于X轴的面。-2是该面在X轴上的轴距。<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1    PX   -2  </span><br><span class="line">C 第一个1是指这个面的序号，在cell模块会用到。PX为助记符，表示垂直于X轴的面。-2是该面在X轴上的轴距。</span><br></pre></td></tr></table></figure>
 
 <p>同理可得Au的三个面分别为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs MCNP">2    PX   0<br>3    PX   1<br>4    CX   1   <br>C CX指的是轴心是X轴的圆柱面，1代表半径<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2    PX   0</span><br><span class="line">3    PX   1</span><br><span class="line">4    CX   1   </span><br><span class="line">C CX指的是轴心是X轴的圆柱面，1代表半径</span><br></pre></td></tr></table></figure>
 
 <p>圈定感兴趣的区域的面：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MCNP">100  SO   100   <br>C 第一个100还是面的序号，定义面序号时不需要连续的定义，但要保证定义顺序递增。so代表的是圆心在原点的球面，后面的100就是指半径<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">100  SO   100   </span><br><span class="line">C 第一个100还是面的序号，定义面序号时不需要连续的定义，但要保证定义顺序递增。so代表的是圆心在原点的球面，后面的100就是指半径</span><br></pre></td></tr></table></figure>
 
 <p>除了上述的面，为了将记录面分割成若干个小面，我们需要额外定义一些分割用辅助面，此处我定义若干圆锥体来分割，以第一个为例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs MCNP">30   KX   0 0.234567901 1   <br>C KX指的是轴心是X轴的圆锥面，0代表顶点在原点，0.234567901代表圆锥顶角的tan值平方。这样的圆锥有两叶，分别在Z&gt;0和Z&lt;0，所以最后的1代表的是我们所需要的Z&gt;0的部分<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">30   KX   0 0.234567901 1   </span><br><span class="line">C KX指的是轴心是X轴的圆锥面，0代表顶点在原点，0.234567901代表圆锥顶角的tan值平方。这样的圆锥有两叶，分别在Z&gt;0和Z&lt;0，所以最后的1代表的是我们所需要的Z&gt;0的部分</span><br></pre></td></tr></table></figure>
 
 <h4 id="cell-card"><a href="#cell-card" class="headerlink" title="cell card"></a>cell card</h4><p>有了这些surface之后我们就能来书写cell部分了。<br>栅元卡有四列数据构成：</p>
 <ol>
@@ -305,9 +442,9 @@
 </ol>
 <blockquote>
 <p>假如1号曲面方程为f(x,y,z)&#x3D;0，则f(x,y,z)&lt;0的部分由“-1”表示，f(x,y,z)&gt;0的部分直接由1表示。  </p>
-<img src="/54952/cell.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/54952/cell.png" class="">
 <p>描述栅元时还要用到布尔算符，布尔算符有三个：空格、冒号、井号。空格表示“交”，冒号表示“并”，井号表示“补”。比如100号栅元为“-1”和“-2”相交的空间。  </p>
-<img src="/54952/%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/54952/%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97.png" class="">
 </blockquote>
 <hr>
 <p>回到我们的算例：</p>
@@ -336,7 +473,7 @@
 </li>
 </ol>
 <p>2号cell和100号cell均为真空，区分哪一个是感兴区的方法是利用另外一个助记符imp，它代表的是importance，也就是粒子在该cell内的重要性。<br>这个助记符可以在每个cell的定义的末端写上，也可以在第三块中写入。<br>在cell末端写入的方法如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mcnp">2 0 -100 #1 imp:e,p=1<br>C 它代表了2号cell中电子(e)及光子(p)的重要性为1，即它是感兴区内的物体<br>100 0 100 imp:e,p=0<br>C 它代表了100号cell的电子及光子的重要性为0，即它在感兴区外。<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 0 -100 #1 imp:e,p=1</span><br><span class="line">C 它代表了2号cell中电子(e)及光子(p)的重要性为1，即它是感兴区内的物体</span><br><span class="line">100 0 100 imp:e,p=0</span><br><span class="line">C 它代表了100号cell的电子及光子的重要性为0，即它在感兴区外。</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>感兴区与非感兴区并不需要一定是位置划分分明的两块区域，我们可以在感兴区内设定一个非感兴区，只要粒子被输运到该区域就会被杀死（类似于黑洞）。</p>
@@ -432,7 +569,7 @@
 <p>此外一种记录卡可以有多个记录面，只要保证记录卡的个位数是8种记录卡的一种，例如F11和F21都是第一种记录类型，即通过某个记录面的粒子个数。</p>
 <p>另外请谨记，在使用F1和F2的记录卡时，记录面一定要是构成某个cell的一个面，不然MCNP不会给出记录结果，也就是说如果用户随意定义了一个面(如上面定义的某个分割面)，而且这个面没有被使用在定义某个cell上，那么我们不能期望MCNP可以记录通过这个面的粒子信息。<br>使用分割面时，其实还是记录通过那个记录面的粒子个数，分割面只是把那个记录面分割为若个块而已。</p>
 <h4 id="总结-输入文件"><a href="#总结-输入文件" class="headerlink" title="总结-输入文件"></a>总结-输入文件</h4><p>总结上文，得输入文件为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs mcnp">X-ray Ener=7MeV<br>c cell card<br>1    1  -19.3   2 -3 -4   $ Au      <br>2    0 -100 #1 <br>100   0 100<br><br>c surface card<br>c radiation source<br>1    px     -2            $ 放射源所在面<br>2    px     0      <br>3    px     1      <br>4    cx     1      <br>30   kx  0  0.234567901   1<br>31   kx  0  0.5625        1<br>32   kx  0  1.040816327   1<br>33   kx  0  1.777777778   1<br>34   kx  0  3             1<br>35   kx  0  5.25          1<br>36   kx  0  10.11111111   1<br>37   kx  0  24            1<br>38   kx  0  99            1<br>39   kx  0  1e33          1<br>40   kx  0  99           -1<br>41   kx  0  24           -1<br>42   kx  0  10.11111111  -1<br>43   kx  0  5.25         -1<br>44   kx  0  3            -1<br>45   kx  0  1.777777778  -1<br>46   kx  0  1.040816327  -1<br>47   kx  0  0.5625       -1<br>48   kx  0  0.234567901  -1<br>49   kx  0  0            -1<br>100  so    100<br><br>mode e p<br>m1   79197 -1.0           $ Au        <br>sdef par=3 sur=1 pos=-2 0 0 vec=1 0 0 dir=1 erg=7   <br>imp:e 1 1 0<br>imp:p 1 1 0<br>cut:e j 1<br>cut:p j 1<br>F1:p 100<br>F2:p 100<br>Fs2 -30 -31 -32 -33 -34 -35 -36 -37 -38 -39 40 41 42 43 44 &amp;<br> 45 46 47 48  <br>E2 1 19i 7<br>ctme 10<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">X-ray Ener=7MeV</span><br><span class="line">c cell card</span><br><span class="line">1    1  -19.3   2 -3 -4   $ Au      </span><br><span class="line">2    0 -100 #1 </span><br><span class="line">100   0 100</span><br><span class="line"></span><br><span class="line">c surface card</span><br><span class="line">c radiation source</span><br><span class="line">1    px     -2            $ 放射源所在面</span><br><span class="line">2    px     0      </span><br><span class="line">3    px     1      </span><br><span class="line">4    cx     1      </span><br><span class="line">30   kx  0  0.234567901   1</span><br><span class="line">31   kx  0  0.5625        1</span><br><span class="line">32   kx  0  1.040816327   1</span><br><span class="line">33   kx  0  1.777777778   1</span><br><span class="line">34   kx  0  3             1</span><br><span class="line">35   kx  0  5.25          1</span><br><span class="line">36   kx  0  10.11111111   1</span><br><span class="line">37   kx  0  24            1</span><br><span class="line">38   kx  0  99            1</span><br><span class="line">39   kx  0  1e33          1</span><br><span class="line">40   kx  0  99           -1</span><br><span class="line">41   kx  0  24           -1</span><br><span class="line">42   kx  0  10.11111111  -1</span><br><span class="line">43   kx  0  5.25         -1</span><br><span class="line">44   kx  0  3            -1</span><br><span class="line">45   kx  0  1.777777778  -1</span><br><span class="line">46   kx  0  1.040816327  -1</span><br><span class="line">47   kx  0  0.5625       -1</span><br><span class="line">48   kx  0  0.234567901  -1</span><br><span class="line">49   kx  0  0            -1</span><br><span class="line">100  so    100</span><br><span class="line"></span><br><span class="line">mode e p</span><br><span class="line">m1   79197 -1.0           $ Au        </span><br><span class="line">sdef par=3 sur=1 pos=-2 0 0 vec=1 0 0 dir=1 erg=7   </span><br><span class="line">imp:e 1 1 0</span><br><span class="line">imp:p 1 1 0</span><br><span class="line">cut:e j 1</span><br><span class="line">cut:p j 1</span><br><span class="line">F1:p 100</span><br><span class="line">F2:p 100</span><br><span class="line">Fs2 -30 -31 -32 -33 -34 -35 -36 -37 -38 -39 40 41 42 43 44 &amp;</span><br><span class="line"> 45 46 47 48  </span><br><span class="line">E2 1 19i 7</span><br><span class="line">ctme 10</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注意，该输入文件共有两个空行，用来分割 cell card &amp; surface card &amp; data card。MCNP对于输入文件格式要求很严格，应注意。</p>
@@ -442,7 +579,7 @@
 <p>在书写复杂的模型时，vised.exe可以帮助我们确定写出来的模型与我们想像的模型是一致的。我们应反复地观察各个方向的视图，从而确保输入文件的正确性，不然计算出来的结果就很有可能是错误的。</p>
 <p>Vised.exe是windows下的应用程序，我们双击它并用它打开我们已经书写好的输入文件，就可以观察写好的模型了，操作简单不做赘述。</p>
 <h2 id="输出文件解读"><a href="#输出文件解读" class="headerlink" title="输出文件解读"></a>输出文件解读</h2><p>利用MCNP 计算上面的输入文件可以得到同名的、拓展名为o的文件。使用文本编辑器打开它，搜索关键字：<code>tally</code> 找到如下部分：</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">1tally</span>   <span class="hljs-number">1</span>        nps =  <span class="hljs-number">2958959</span><br>           <span class="hljs-attribute">tally</span> type <span class="hljs-number">1</span>    number of particles crossing a surface.                        <br>           <span class="hljs-attribute">tally</span> for  photons  <br> <br> <span class="hljs-attribute">surface</span>  <span class="hljs-number">100</span>                                                                                                          <br>                 <span class="hljs-attribute">2</span>.<span class="hljs-number">90042</span>E-<span class="hljs-number">01</span> <span class="hljs-number">0</span>.<span class="hljs-number">0010</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1tally   1        nps =  2958959</span><br><span class="line">           tally type 1    number of particles crossing a surface.                        </span><br><span class="line">           tally for  photons  </span><br><span class="line"> </span><br><span class="line"> surface  100                                                                                                          </span><br><span class="line">                 2.90042E-01 0.0010</span><br></pre></td></tr></table></figure>
 
 <p>这是输出文件中关于记录信息的结果部分。</p>
 <ul>
@@ -461,7 +598,7 @@
 </li>
 </ul>
 <p>第二号记录结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs mcnp">1tally   2        nps =  2958959<br>           tally type 2    particle flux averaged over a surface.       units   1/cm**2   <br>           tally for  photons  <br>           areas   <br>                surface:      100                                                                                  <br>               segment<br>                 1       6.28319E+03<br>                 2       6.28319E+03<br>                 3       6.28319E+03<br>                 4       6.28319E+03<br>                 5       6.28319E+03<br>                 6       6.28319E+03<br>                 7       6.28319E+03<br>                 8       6.28319E+03<br>                 9       6.28319E+03<br>                10       6.28319E+03<br>                11       6.28319E+03<br>                12       6.28319E+03<br>                13       6.28319E+03<br>                14       6.28319E+03<br>                15       6.28319E+03<br>                16       6.28319E+03<br>                17       6.28319E+03<br>                18       6.28319E+03<br>                19       6.28319E+03<br>                20       6.28319E+03<br>                ......<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">1tally   2        nps =  2958959</span><br><span class="line">           tally type 2    particle flux averaged over a surface.       units   1/cm**2   </span><br><span class="line">           tally for  photons  </span><br><span class="line">           areas   </span><br><span class="line">                surface:      100                                                                                  </span><br><span class="line">               segment</span><br><span class="line">                 1       6.28319E+03</span><br><span class="line">                 2       6.28319E+03</span><br><span class="line">                 3       6.28319E+03</span><br><span class="line">                 4       6.28319E+03</span><br><span class="line">                 5       6.28319E+03</span><br><span class="line">                 6       6.28319E+03</span><br><span class="line">                 7       6.28319E+03</span><br><span class="line">                 8       6.28319E+03</span><br><span class="line">                 9       6.28319E+03</span><br><span class="line">                10       6.28319E+03</span><br><span class="line">                11       6.28319E+03</span><br><span class="line">                12       6.28319E+03</span><br><span class="line">                13       6.28319E+03</span><br><span class="line">                14       6.28319E+03</span><br><span class="line">                15       6.28319E+03</span><br><span class="line">                16       6.28319E+03</span><br><span class="line">                17       6.28319E+03</span><br><span class="line">                18       6.28319E+03</span><br><span class="line">                19       6.28319E+03</span><br><span class="line">                20       6.28319E+03</span><br><span class="line">                ......</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><code>nps</code>代表一共运行了2958959个源粒子的输运过程。</li>
@@ -474,17 +611,17 @@
 </li>
 </ul>
 <p>其他记录结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs mcnp">surface  100                                                                                                          <br> segment:         -30                                                                                                  <br>      energy<br>    1.0000E+00   0.00000E+00 0.0000<br>    1.3000E+00   1.58985E-06 0.0058<br>    1.6000E+00   1.25669E-06 0.0065<br>    1.9000E+00   1.01556E-06 0.0073<br>    2.2000E+00   8.05683E-07 0.0082<br>    2.5000E+00   6.50129E-07 0.0091<br>    2.8000E+00   5.29430E-07 0.0101<br>    3.1000E+00   4.41488E-07 0.0110<br>    3.4000E+00   3.71080E-07 0.0120<br>    3.7000E+00   3.09977E-07 0.0132<br>    4.0000E+00   2.59094E-07 0.0144<br>    4.3000E+00   2.11708E-07 0.0159<br>    4.6000E+00   1.80941E-07 0.0172<br>    4.9000E+00   1.59103E-07 0.0184<br>    5.2000E+00   1.31403E-07 0.0202<br>    5.5000E+00   1.04079E-07 0.0227<br>    5.8000E+00   8.97713E-08 0.0245<br>    6.1000E+00   6.86866E-08 0.0280<br>    6.4000E+00   4.88390E-08 0.0332<br>    6.7000E+00   2.82384E-08 0.0436<br>    7.0000E+00   1.05423E-08 0.0714<br>      total      8.26230E-06 0.0025<br> <br> surface  100                                                                                                          <br> segment:          30      -31                                                                                         <br>      energy<br>    1.0000E+00   0.00000E+00 0.0000<br>    1.3000E+00   9.48975E-07 0.0075<br>    1.6000E+00   7.33985E-07 0.0086<br>    1.9000E+00   5.56701E-07 0.0098<br>    2.2000E+00   4.35679E-07 0.0111<br>    2.5000E+00   3.35311E-07 0.0127<br>    2.8000E+00   2.73079E-07 0.0140<br>    3.1000E+00   2.10847E-07 0.0160<br>    .....<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">surface  100                                                                                                          </span><br><span class="line"> segment:         -30                                                                                                  </span><br><span class="line">      energy</span><br><span class="line">    1.0000E+00   0.00000E+00 0.0000</span><br><span class="line">    1.3000E+00   1.58985E-06 0.0058</span><br><span class="line">    1.6000E+00   1.25669E-06 0.0065</span><br><span class="line">    1.9000E+00   1.01556E-06 0.0073</span><br><span class="line">    2.2000E+00   8.05683E-07 0.0082</span><br><span class="line">    2.5000E+00   6.50129E-07 0.0091</span><br><span class="line">    2.8000E+00   5.29430E-07 0.0101</span><br><span class="line">    3.1000E+00   4.41488E-07 0.0110</span><br><span class="line">    3.4000E+00   3.71080E-07 0.0120</span><br><span class="line">    3.7000E+00   3.09977E-07 0.0132</span><br><span class="line">    4.0000E+00   2.59094E-07 0.0144</span><br><span class="line">    4.3000E+00   2.11708E-07 0.0159</span><br><span class="line">    4.6000E+00   1.80941E-07 0.0172</span><br><span class="line">    4.9000E+00   1.59103E-07 0.0184</span><br><span class="line">    5.2000E+00   1.31403E-07 0.0202</span><br><span class="line">    5.5000E+00   1.04079E-07 0.0227</span><br><span class="line">    5.8000E+00   8.97713E-08 0.0245</span><br><span class="line">    6.1000E+00   6.86866E-08 0.0280</span><br><span class="line">    6.4000E+00   4.88390E-08 0.0332</span><br><span class="line">    6.7000E+00   2.82384E-08 0.0436</span><br><span class="line">    7.0000E+00   1.05423E-08 0.0714</span><br><span class="line">      total      8.26230E-06 0.0025</span><br><span class="line"> </span><br><span class="line"> surface  100                                                                                                          </span><br><span class="line"> segment:          30      -31                                                                                         </span><br><span class="line">      energy</span><br><span class="line">    1.0000E+00   0.00000E+00 0.0000</span><br><span class="line">    1.3000E+00   9.48975E-07 0.0075</span><br><span class="line">    1.6000E+00   7.33985E-07 0.0086</span><br><span class="line">    1.9000E+00   5.56701E-07 0.0098</span><br><span class="line">    2.2000E+00   4.35679E-07 0.0111</span><br><span class="line">    2.5000E+00   3.35311E-07 0.0127</span><br><span class="line">    2.8000E+00   2.73079E-07 0.0140</span><br><span class="line">    3.1000E+00   2.10847E-07 0.0160</span><br><span class="line">    .....</span><br></pre></td></tr></table></figure>
 
 <p>其中：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mcnp">surface  100                                                                                                          <br>        segment:         -30<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">surface  100                                                                                                          </span><br><span class="line">        segment:         -30</span><br></pre></td></tr></table></figure>
 
 <p>代表统计的是从记录面100且从分割面30的内部（圆锥右叶的内部）通过的光子。<br>同理，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mcnp">surface  100                                                                                                          <br>         segment:          30      -31     <br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">surface  100                                                                                                          </span><br><span class="line">         segment:          30      -31     </span><br></pre></td></tr></table></figure>
 
 <p>代表的是统计的是从记录面100且从分割面30的外部且从分割面31的内部通过的光子。</p>
 <p>对于：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mcnp">1.0000E+00   0.00000E+00 0.0000<br>1.3000E+00   1.58985E-06 0.0058<br>1.6000E+00   1.25669E-06 0.0065<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.0000E+00   0.00000E+00 0.0000</span><br><span class="line">1.3000E+00   1.58985E-06 0.0058</span><br><span class="line">1.6000E+00   1.25669E-06 0.0065</span><br></pre></td></tr></table></figure>
 
 <p>最左边一列代表的是能量，第二列代表的是概率，第三列代表的是第二列的相对误差。</p>
 <p>对于这三行统计结果的解读如下，在相应的记录面内，</p>
@@ -496,274 +633,182 @@
 </ul>
 <h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>感觉没啥可写的了，剩下的都在手册里或者不难找到。有啥疑问我们评论区聊（评论托管服务器在国外，可能会偶尔渲染不出来大家可以试着多进几次）。</p>
 <h3 id="关于使用bat文件配置环境变量的问题"><a href="#关于使用bat文件配置环境变量的问题" class="headerlink" title="关于使用bat文件配置环境变量的问题"></a>关于使用bat文件配置环境变量的问题</h3><p>我们可以使用快捷键 WIN+S 搜索<code>环境变量</code>，打开<code>编辑环境变量</code>进入如下截面：</p>
-<img src="/54952/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png" srcset="/img/loading.gif" lazyload class="">
+<img src="/54952/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png" class="">
 <p>首先双击 Path，然后点击新建，将bat文件<strong>注意是bat文件</strong>所在的路径添加进去。该操作的意义是只有在Path内的路径才能使用cmd。<br>bat文件可以不放在MCNP根目录，只要确保bat文件与输入文件在同一目录下即可。</p>
 <p>最后的最后，附上我写的bat文件(可以删除中间文件)，大家看看能不能用～</p>
 <p>calculate：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cmd">::设置输入文件和输出结果文件名<br><span class="hljs-built_in">set</span> inp=test.i<br><span class="hljs-built_in">set</span> outp=test.o<br><br>::删除旧文件<br><span class="hljs-keyword">if</span> <span class="hljs-keyword">exist</span>  <span class="hljs-variable">%outp%</span>    <span class="hljs-built_in">del</span> <span class="hljs-variable">%outp%</span><br><br>::调用MCNP开始计算<br><span class="hljs-keyword">call</span> mcnp5.exe i=<span class="hljs-variable">%inp%</span> o=<span class="hljs-variable">%outp%</span><br><br>::删除各类中间备份转储文件(应该是这么几个)<br><span class="hljs-built_in">del</span> runtp*<br><span class="hljs-built_in">del</span> dcinp<br><span class="hljs-built_in">del</span> ddinp<br><span class="hljs-built_in">del</span> dfill<br><span class="hljs-built_in">del</span> inp <br><span class="hljs-built_in">del</span> out*<br><span class="hljs-built_in">del</span> *.sav<br></code></pre></td></tr></table></figure>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">::设置输入文件和输出结果文件名</span><br><span class="line"><span class="built_in">set</span> inp=test.i</span><br><span class="line"><span class="built_in">set</span> outp=test.o</span><br><span class="line"></span><br><span class="line">::删除旧文件</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">exist</span>  <span class="variable">%outp%</span>    <span class="built_in">del</span> <span class="variable">%outp%</span></span><br><span class="line"></span><br><span class="line">::调用MCNP开始计算</span><br><span class="line"><span class="keyword">call</span> mcnp5.exe i=<span class="variable">%inp%</span> o=<span class="variable">%outp%</span></span><br><span class="line"></span><br><span class="line">::删除各类中间备份转储文件(应该是这么几个)</span><br><span class="line"><span class="built_in">del</span> runtp*</span><br><span class="line"><span class="built_in">del</span> dcinp</span><br><span class="line"><span class="built_in">del</span> ddinp</span><br><span class="line"><span class="built_in">del</span> dfill</span><br><span class="line"><span class="built_in">del</span> inp </span><br><span class="line"><span class="built_in">del</span> out*</span><br><span class="line"><span class="built_in">del</span> *.sav</span><br></pre></td></tr></table></figure>
 
 <p>draw：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cmd"><span class="hljs-keyword">call</span> vised.exe<br><br><span class="hljs-built_in">del</span> *.o<br><span class="hljs-built_in">del</span> runtp*<br><br><span class="hljs-built_in">del</span> dcinp<br><span class="hljs-built_in">del</span> ddinp<br><span class="hljs-built_in">del</span> dfill<br><span class="hljs-built_in">del</span> inp <br><span class="hljs-built_in">del</span> out*<br><span class="hljs-built_in">del</span> *.sav<br></code></pre></td></tr></table></figure>
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/MCNP5/">MCNP5</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/28793.html">
-                        <span class="hidden-mobile">Chapter_1</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <div id="waline"></div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
-        var options = Object.assign(
-          {"serverURL":"https://blog-comment-mk0f7063p-paneersblog.vercel.app/","path":"window.location.pathname","placeholder":null,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":0,"pageSize":10,"highlight":true},
-          {
-            el: '#waline',
-            path: window.location.pathname
-          }
-        )
-        new Waline(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
-        })
-      });
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-              </article>
-            
-          </article>
-        </div>
-      </div>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> vised.exe</span><br><span class="line"></span><br><span class="line"><span class="built_in">del</span> *.o</span><br><span class="line"><span class="built_in">del</span> runtp*</span><br><span class="line"></span><br><span class="line"><span class="built_in">del</span> dcinp</span><br><span class="line"><span class="built_in">del</span> ddinp</span><br><span class="line"><span class="built_in">del</span> dfill</span><br><span class="line"><span class="built_in">del</span> inp </span><br><span class="line"><span class="built_in">del</span> out*</span><br><span class="line"><span class="built_in">del</span> *.sav</span><br></pre></td></tr></table></figure>
+      
     </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://paneersblog.github.io/54952.html" title="MCNP5入门（一）" target="_blank" rel="external">http://paneersblog.github.io/54952.html</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/paneersblog" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
       </div>
-    
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/paneersblog" target="_blank"><span class="text-dark">Paneer</span><small class="ml-1x">一个成熟稳重的沙雕网友</small></a></h3>
+        <div>一个成熟稳重的沙雕网友</div>
+      </div>
+    </figure>
   </div>
 </div>
 
-<!-- Custom -->
 
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
     </div>
-  </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
 </div>
-    
 
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
     
-  </main>
-
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Paneer</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Emily</span></a> 
+    
+    <li class="next">
+      <a href="/28793.html" title="Chapter_1"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
   </div>
+  </div>
+</nav>
   
 
-  
 
-  
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/paneersblog" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6203293798" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Paneer_007" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2022 Paneer &amp; Emily
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
 </footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
 
 
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
+<script src="/js/application.js"></script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-  
-
-  
-    <!-- MathJax -->
     <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
-        loader: {
-          load: ['ui/lazy']
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
 
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
-
-  
+<script src="/js/insight.js"></script>
 
 
 
 
 
 
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
 
 
 </body>
