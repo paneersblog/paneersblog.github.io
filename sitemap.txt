@@ -1,3 +1,4 @@
+http://paneersblog.github.io/about/index.html
 http://paneersblog.github.io/404.html
 http://paneersblog.github.io/19550.html
 http://paneersblog.github.io/16655.html
@@ -24,7 +25,6 @@ http://paneersblog.github.io/tags/index.html
 http://paneersblog.github.io/books/index.html
 http://paneersblog.github.io/categories/index.html
 http://paneersblog.github.io/links/index.html
-http://paneersblog.github.io/about/index.html
 http://paneersblog.github.io/54952.html
 http://paneersblog.github.io/14595.html
 http://paneersblog.github.io/16107.html

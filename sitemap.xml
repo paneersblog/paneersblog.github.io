@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://paneersblog.github.io/about/index.html</loc>
+    
+    <lastmod>2022-07-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://paneersblog.github.io/404.html</loc>
     
     <lastmod>2022-07-16</lastmod>
@@ -228,15 +237,6 @@
   
   <url>
     <loc>http://paneersblog.github.io/links/index.html</loc>
-    
-    <lastmod>2022-07-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://paneersblog.github.io/about/index.html</loc>
     
     <lastmod>2022-07-16</lastmod>
     
