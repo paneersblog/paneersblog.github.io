@@ -1,3 +1,4 @@
+http://paneersblog.github.io/1.html
 http://paneersblog.github.io/about/index.html
 http://paneersblog.github.io/404.html
 http://paneersblog.github.io/19550.html
@@ -12,7 +13,6 @@ http://paneersblog.github.io/65174.html
 http://paneersblog.github.io/31090.html
 http://paneersblog.github.io/6067.html
 http://paneersblog.github.io/11784.html
-http://paneersblog.github.io/1.html
 http://paneersblog.github.io/52445.html
 http://paneersblog.github.io/25723.html
 http://paneersblog.github.io/28793.html
