@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Python入门笔记（11） | Paneer&#39;s blog</title>
+  <meta name="description" content="人生苦短 我用Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python入门笔记（11）">
+<meta property="og:url" content="http://paneersblog.github.io/41781.html">
+<meta property="og:site_name" content="Panner&amp;Emily’s paradise!">
+<meta property="og:description" content="人生苦短 我用Python">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-04T12:31:21.000Z">
+<meta property="article:modified_time" content="2022-08-29T02:26:56.902Z">
+<meta property="article:author" content="Paneer &amp; Emily">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://paneersblog.github.io/41781.html">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Panner&Emily’s paradise!" type="application/atom+xml">
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/paneersblog" target="_blank">
+          <img class="img-circle img-rotate" src="/images/IMG_4556.JPG" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Paneer</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">一个成熟稳重的沙雕网友</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shandong, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-播放列表">
+          <a href="/playlist">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">menu.播放列表</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/paneersblog" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6203293798" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Paneer_007" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%94%BB%E7%95%A5/">攻略</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%A1%B5/">测试页</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/">英语学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AD%A6%E4%B9%A0/">软件学习</a><span class="category-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOS/" rel="tag">DOS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MCNP5/" rel="tag">MCNP5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/" rel="tag">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SRIM/" rel="tag">SRIM</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Trip/" rel="tag">Trip</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordList-E/" rel="tag">WordList_E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WordList-P/" rel="tag">WordList_P</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/DOS/" style="font-size: 13.33px;">DOS</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/MCNP5/" style="font-size: 13px;">MCNP5</a> <a href="/tags/Markdown/" style="font-size: 13px;">Markdown</a> <a href="/tags/Matlab/" style="font-size: 13px;">Matlab</a> <a href="/tags/Photo/" style="font-size: 13px;">Photo</a> <a href="/tags/Python/" style="font-size: 14px;">Python</a> <a href="/tags/SRIM/" style="font-size: 13.67px;">SRIM</a> <a href="/tags/Trip/" style="font-size: 13.33px;">Trip</a> <a href="/tags/WordList-E/" style="font-size: 13px;">WordList_E</a> <a href="/tags/WordList-P/" style="font-size: 13px;">WordList_P</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+              </p>
+              <p class="item-title">
+                <a href="/41781.html" class="title">Python入门笔记（11）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-08-04T12:31:21.000Z" itemprop="datePublished">2022-08-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+              </p>
+              <p class="item-title">
+                <a href="/34793.html" class="title">Pyhton入门笔记（十）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-08-03T07:08:20.000Z" itemprop="datePublished">2022-08-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+              </p>
+              <p class="item-title">
+                <a href="/21165.html" class="title">Python入门笔记（九）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-23T13:30:18.000Z" itemprop="datePublished">2022-07-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+              </p>
+              <p class="item-title">
+                <a href="/3827.html" class="title">Python入门笔记（八）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-23T08:43:13.000Z" itemprop="datePublished">2022-07-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+              </p>
+              <p class="item-title">
+                <a href="/47766.html" class="title">Python入门笔记（七）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-22T06:20:09.000Z" itemprop="datePublished">2022-07-22</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Python入门笔记（11）" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python入门笔记（11）
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/41781.html" class="article-date">
+	  <time datetime="2022-08-04T12:31:21.000Z" itemprop="datePublished">2022-08-04</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Python/" rel="tag">Python</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/41781.html#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.3k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>人生苦短 我用Python</p>
+<span id="more"></span>
+<h2 id="序列-amp-索引"><a href="#序列-amp-索引" class="headerlink" title="序列&amp;索引"></a>序列&amp;索引</h2><p>序列是一个用于存储多个值的连续空间，每个值都对应一个整数的编号，称为索引<br>序列结构主要有列表、元组、集合、字典和字符串</p>
+<p>索引有正向递增索引，取值范围为[0，N-1]<br>反向递减索引，取值范围[-1,-N]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">&#x27;helloworld&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(s)):</span><br><span class="line">    <span class="built_in">print</span>(i,s[i]) <span class="comment"># 正向递增索引</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(-<span class="number">10</span>,<span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(i,s[i]) <span class="comment"># 反向递减索引</span></span><br><span class="line"><span class="comment"># 上述语句会输出字符串s中每一个元素以及其索引，索引在前</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="序列的相关操作"><a href="#序列的相关操作" class="headerlink" title="序列的相关操作"></a>序列的相关操作</h3><p>使用“+”来实现两个同类型序列的相加操作，不会去除重复元素</p>
+<blockquote>
+<p>序列的类型要求是相同的，但序列中元素的类型可以是不同的</p>
+</blockquote>
+<p>使用数字n乘以一个序列，将生成一个新的序列，新序列中的内容将会被重复n次</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">&#x27;hello&#x27;</span></span><br><span class="line">s1=<span class="string">&#x27;world&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(s+s1) <span class="comment"># 产生一个新的字符串</span></span><br><span class="line"><span class="comment"># -----------</span></span><br><span class="line">lst=[<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(s+lst)</span><br><span class="line"><span class="comment"># 此时会报错“TypeError”，因为序列类型不同，lst序列为列表</span></span><br><span class="line"><span class="comment"># -----------</span></span><br><span class="line"><span class="built_in">print</span>(s*<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span>*<span class="number">8</span>) <span class="comment"># 序列相乘</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>序列的相关操作符与函数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">操作符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x in s</td>
+<td align="left">如果x为s中的元素，结果为True，否则为False</td>
+</tr>
+<tr>
+<td align="center">x not in s</td>
+<td align="left">如果x不是s中的元素，结果为True，否则为False</td>
+</tr>
+<tr>
+<td align="center">len(s)</td>
+<td align="left">序列s中元素的个数</td>
+</tr>
+<tr>
+<td align="center">max(s)</td>
+<td align="left">序列s元素中的最大值</td>
+</tr>
+<tr>
+<td align="center">min(s)</td>
+<td align="left">序列s元素中的最小值</td>
+</tr>
+<tr>
+<td align="center">s.index(x)</td>
+<td align="left">序列s中第一次出现元素x的位置</td>
+</tr>
+<tr>
+<td align="center">s.count(x)</td>
+<td align="left">序列s中出现x的总次数</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">&#x27;helloworld&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;e在hello world中存在吗&#x27;</span>,(<span class="string">&#x27;e&#x27;</span> <span class="keyword">in</span> s)) <span class="comment"># 输出为True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;e不在hello world中存在吗&#x27;</span>,(<span class="string">&#x27;e&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> s)) <span class="comment"># 输出为False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
+<li>一系列的按特定顺序排列的元素组成</li>
+<li>Python中内置的可变序列</li>
+<li>使用[]定义列表，元素之间使用逗号分隔</li>
+<li>元素可以是任意的数据类型</li>
+</ul>
+<h3 id="列表的创建"><a href="#列表的创建" class="headerlink" title="列表的创建"></a>列表的创建</h3><ol>
+<li>使用[]直接创建列表</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># List_name=[element1,element2,...elementN]</span></span><br><span class="line">lst=[<span class="string">&#x27;hello&#x27;</span>,<span class="string">&#x27;world&#x27;</span>,<span class="number">99.8</span>,<span class="number">100</span>]</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用内置方法list()创建列表</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># List_name=list(序列)</span></span><br><span class="line">lst=<span class="built_in">list</span>(<span class="string">&#x27;hellloworld&#x27;</span>)</span><br><span class="line">lst1=<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10</span>,<span class="number">2</span>)) <span class="comment"># 输出1-10（不包含），步长为2的列表</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>列表是序列的一种，对序列可操作的运算符、函数等均能用于列表 </p>
+</blockquote>
+<h3 id="列表的删除"><a href="#列表的删除" class="headerlink" title="列表的删除"></a>列表的删除</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> List_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="列表元素的遍历"><a href="#列表元素的遍历" class="headerlink" title="列表元素的遍历"></a>列表元素的遍历</h3><ol>
+<li>使用遍历循环for</li>
+<li>遍历循环for与range()函数和len()函数组合遍历</li>
+<li>遍历循环for与enumerate()函数组合遍历元素和索引</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">lst=[<span class="string">&#x27;hello&#x27;</span>,<span class="string">&#x27;world&#x27;</span>,<span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;html&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> lst:</span><br><span class="line">    <span class="built_in">print</span>(item)</span><br><span class="line"><span class="comment"># ----------</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(lst)):</span><br><span class="line">    <span class="built_in">print</span>(i,<span class="string">&#x27;--&gt;&#x27;</span>,lst[i])</span><br><span class="line"><span class="comment"># ----------</span></span><br><span class="line"><span class="keyword">for</span> index,item <span class="keyword">in</span> <span class="built_in">enumerate</span>(lst): <span class="comment"># 序号从0开始</span></span><br><span class="line">    <span class="built_in">print</span>(index,item)</span><br><span class="line"><span class="comment"># -----</span></span><br><span class="line"><span class="keyword">for</span> index,item <span class="keyword">in</span> <span class="built_in">enumerate</span>(lst,<span class="number">10</span>): <span class="comment"># 序号从10开始</span></span><br><span class="line">    <span class="built_in">print</span>(index,item)</span><br><span class="line"><span class="comment"># index：用于保存元素的索引(序号)</span></span><br><span class="line"><span class="comment"># item：用于保存获取到的元素值</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="列表的相关操作方法"><a href="#列表的相关操作方法" class="headerlink" title="列表的相关操作方法"></a>列表的相关操作方法</h3><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">lst.append(x)</td>
+<td align="left">在列表lst最后增加一个元素</td>
+</tr>
+<tr>
+<td align="center">lst.insert(index,x)</td>
+<td align="left">在列表lst中第index位置增加一个元素</td>
+</tr>
+<tr>
+<td align="center">lst.clear()</td>
+<td align="left">清除列表lst中所有元素</td>
+</tr>
+<tr>
+<td align="center">lst.pop(index)</td>
+<td align="left">将列表lst中第index位置的元素取出，并从列表中将其删除</td>
+</tr>
+<tr>
+<td align="center">lst.remove(x)</td>
+<td align="left">将列表lst中出现的第一个元素x删除</td>
+</tr>
+<tr>
+<td align="center">lst.reverse(x)</td>
+<td align="left">将列表lst中的元素反转</td>
+</tr>
+<tr>
+<td align="center">lst.copy()</td>
+<td align="left">拷贝列表lst中的所有元素，生成一个新的列表</td>
+</tr>
+</tbody></table>
+<h3 id="列表排序"><a href="#列表排序" class="headerlink" title="列表排序"></a>列表排序</h3><ol>
+<li>列表对象的sort()方法<br>对原列表中的元素进行排序，排序之后原列表中元素的顺序将发生改变</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lst.sort(key=<span class="literal">None</span>,reverse=<span class="literal">False</span>)</span><br><span class="line"><span class="comment"># reverse的值为False时为升序排序，为True时降序排序，默认值为False</span></span><br><span class="line"><span class="comment"># key的值为&#x27;str.lower&#x27;时，对英文字母排序时将忽略大小写（默认排序时按照字母对应的ASC II进行排序）。</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>内置的sorted()函数<br>使用sorted()函数排序后，原列表不变，排序后产生一个新的列表对象</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sorted(iterable,key=None,reverse=False)</span></span><br><span class="line">lst=[Cat,apple,Orange,banana]</span><br><span class="line"><span class="built_in">sorted</span>(lst,key=<span class="built_in">str</span>.lower)</span><br><span class="line"><span class="comment"># 此时为忽略大小写的排序</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="列表生成式"><a href="#列表生成式" class="headerlink" title="列表生成式"></a>列表生成式</h3><ul>
+<li>生成指定范围的数值列表</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lst=[expression for item in range]</span></span><br><span class="line">lst=[item <span class="keyword">for</span> item <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">11</span>)]</span><br><span class="line"><span class="comment"># 得到[1,2,3,4,5,6,7,8,9,10]</span></span><br><span class="line">lst=[item*item <span class="keyword">for</span> item <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">11</span>)]</span><br><span class="line"><span class="comment"># 得到[1,4,9,16,25,36,49,64,81,100]</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line">lst=[random.randint(<span class="number">1</span>,<span class="number">100</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line"><span class="comment"># 此时会得到10个1-100之间的随机数，for in在这里的作用仅仅是确定次数</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>从列表中选择符合条件的元素组成新的列表</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lst=[expression for item in 列表 if condition]</span></span><br><span class="line">lst=[i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>) <span class="keyword">if</span> i%<span class="number">2</span>==<span class="number">0</span>]</span><br><span class="line"><span class="comment"># 此时会得到列表[0,2,4,6,8]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="二维列表"><a href="#二维列表" class="headerlink" title="二维列表"></a>二维列表</h3><p>二维列表也称为表格数据，由行和列组成</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 建立一个二维列表</span></span><br><span class="line">lst=[</span><br><span class="line">    [<span class="string">&#x27;city&#x27;</span>,<span class="string">&#x27;环比&#x27;</span>,<span class="string">&#x27;同比&#x27;</span>],</span><br><span class="line">    [<span class="string">&#x27;北京&#x27;</span>,<span class="number">101</span>,<span class="number">103</span>],</span><br><span class="line">    [<span class="string">&#x27;上海&#x27;</span>,<span class="number">101</span>,<span class="number">103</span>],</span><br><span class="line">    [<span class="string">&#x27;深圳&#x27;</span>,<span class="number">101</span>,<span class="number">103</span>]</span><br><span class="line">]</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> lst:</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> row:</span><br><span class="line">        <span class="built_in">print</span>(item,end=<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line"><span class="comment"># 外层循环为行，内层循环为列</span></span><br></pre></td></tr></table></figure>
+
+<p>列表生成一个四行五列的列表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lst=[(j <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>)) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>)]</span><br><span class="line"><span class="built_in">print</span>(lst)</span><br></pre></td></tr></table></figure>
+
+<h2 id="组合数据类型——元组"><a href="#组合数据类型——元组" class="headerlink" title="组合数据类型——元组"></a>组合数据类型——元组</h2><p>元组：  </p>
+<ul>
+<li>一系列按特定顺序排列的元素组成</li>
+<li>Python中的不可变序列</li>
+<li>使用()定义，元素之间使用逗号分隔</li>
+<li>元组中的数据可以是任意数据类型</li>
+</ul>
+<p>元组的创建：</p>
+<ul>
+<li>使用()直接创建元组</li>
+<li>使用内置函数tuple()创建元组</li>
+</ul>
+<p>元组的删除：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> 元组名</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用()创建元组</span></span><br><span class="line">t=(<span class="string">&#x27;hello&#x27;</span>,[<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>],<span class="string">&#x27;python&#x27;</span>,<span class="string">&#x27;world&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(t)</span><br><span class="line"><span class="comment"># 此时会得到：(&#x27;hello&#x27;,[10,20,30],&#x27;python&#x27;,&#x27;world&#x27;)</span></span><br><span class="line"><span class="comment"># ------------</span></span><br><span class="line"><span class="comment"># 使用tuple()创建元组</span></span><br><span class="line">t=<span class="built_in">tuple</span>(<span class="string">&#x27;helloworld&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(t)</span><br><span class="line"><span class="comment"># 此时会得到：(&#x27;h&#x27;,&#x27;e&#x27;,&#x27;l&#x27;,&#x27;l&#x27;,&#x27;o&#x27;,&#x27;w&#x27;,&#x27;o&#x27;,&#x27;r&#x27;,&#x27;l&#x27;,&#x27;d&#x27;)</span></span><br><span class="line"><span class="comment"># ------------</span></span><br><span class="line">t=<span class="built_in">tuple</span>([<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>])</span><br><span class="line"><span class="built_in">print</span>(t)</span><br><span class="line"><span class="comment"># 此时会得到：(10,20,30,40)</span></span><br><span class="line"><span class="comment"># ------------</span></span><br><span class="line">t=<span class="built_in">tuple</span>(<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10</span>))</span><br><span class="line"><span class="built_in">print</span>(t)</span><br><span class="line"><span class="comment"># 此时会得到：(1,2,3,4,5,6,7,8,9)</span></span><br><span class="line"><span class="comment"># ************</span></span><br><span class="line"><span class="comment"># 元组也是一种序列，也可以使用序列的相关操作。如：</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;10在元组中是否存在：&#x27;</span>,(<span class="number">10</span> <span class="keyword">in</span> t))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;10在元组中不存在：&#x27;</span>,(<span class="number">10</span> <span class="keyword">not</span> <span class="keyword">in</span> t))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;max:&#x27;</span>,<span class="built_in">max</span>(t))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;min:&#x27;</span>,<span class="built_in">min</span>(t))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;len:&#x27;</span>,<span class="built_in">len</span>(t))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;t.index:&#x27;</span>,t.index(<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;t.count:&#x27;</span>,t.count(<span class="number">3</span>))</span><br><span class="line"><span class="comment"># ************</span></span><br><span class="line"><span class="comment"># 元组中只有一个元素时，应加上“,”</span></span><br><span class="line">x=(<span class="number">10</span>)</span><br><span class="line">y=(<span class="number">10</span>,)</span><br><span class="line"><span class="built_in">print</span>(x,<span class="built_in">type</span>(x))</span><br><span class="line"><span class="built_in">print</span>(y,<span class="built_in">type</span>(y))</span><br><span class="line"><span class="comment"># 会得到：</span></span><br><span class="line"><span class="comment"># 10 &lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="comment"># (10,) &lt;class &#x27;tuple&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="元组与列表的区别"><a href="#元组与列表的区别" class="headerlink" title="元组与列表的区别"></a>元组与列表的区别</h2><table>
+<thead>
+<tr>
+<th align="left">列表</th>
+<th align="left">元组</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">可变序列</td>
+<td align="left">不可变序列</td>
+</tr>
+<tr>
+<td align="left">append(),inset(),remove(),pop()等方法实现添加和删除列表元素</td>
+<td align="left">没有这几个方法，无法实现添加删除和修改元素等操作</td>
+</tr>
+<tr>
+<td align="left">支持切片访问和修改列表中的元素</td>
+<td align="left">支持切片访问元素，不支持修改操作</td>
+</tr>
+<tr>
+<td align="left">访问和处理速度慢</td>
+<td align="left">访问处理速度快</td>
+</tr>
+<tr>
+<td align="left">不能作为字典的键</td>
+<td align="left">可以作为字典的键</td>
+</tr>
+</tbody></table>
+<h2 id="组合数据类型——字典"><a href="#组合数据类型——字典" class="headerlink" title="组合数据类型——字典"></a>组合数据类型——字典</h2><ul>
+<li><p>键对值<br>根据一个信息查找另一个信息的方式构成了“键对值”，它对表示索引用的的键和对应的值构成的成对关系</p>
+</li>
+<li><p>字典的特征</p>
+<ul>
+<li>通过键从字典中获取指定的项，但不能通过索引来获取</li>
+<li>字典是无序的，也被称为hash表（散列表）</li>
+<li>是Python中的可变序列</li>
+<li>字典中的键必须唯一，如果出现两次，后出现的将覆盖先出现的</li>
+<li>字典中的键要求是不可变序列</li>
+</ul>
+</li>
+<li><p>字典的创建</p>
+</li>
+</ul>
+<ol>
+<li>使用{}直接创建字典</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d=&#123;key1:value1,key2:value2......&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用内置函数dict()创建字典</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过映射函数创建字典</span></span><br><span class="line"><span class="built_in">zip</span>(lst1,lst2)</span><br><span class="line"><span class="comment"># 通过给定关键字创建字典</span></span><br><span class="line"><span class="built_in">dict</span>(key1=value1,key2=value2......)</span><br></pre></td></tr></table></figure>
+
+<p>demo</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接使用&#123;&#125;创建</span></span><br><span class="line">d=&#123;<span class="number">10</span>:<span class="string">&#x27;cat&#x27;</span>,<span class="number">20</span>:<span class="string">&#x27;dog&#x27;</span>,<span class="number">30</span>:<span class="string">&#x27;pet&#x27;</span>,<span class="number">20</span>:<span class="string">&#x27;zoo&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"><span class="comment"># 输出结果：&#123;10:&#x27;cat&#x27;,20:&#x27;zoo&#x27;,30:&#x27;pet&#x27;&#125;</span></span><br><span class="line"><span class="comment"># -----------</span></span><br><span class="line"><span class="comment"># 使用内置函数dict()创建</span></span><br><span class="line"><span class="comment"># zip函数</span></span><br><span class="line">lst1=[<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>]</span><br><span class="line">lst2=[<span class="string">&#x27;cat&#x27;</span>,<span class="string">&#x27;dog&#x27;</span>,<span class="string">&#x27;car&#x27;</span>,<span class="string">&#x27;zoo&#x27;</span>]</span><br><span class="line">zipobj=<span class="built_in">zip</span>(lst1,lst2)</span><br><span class="line"><span class="built_in">print</span>(zipobj) </span><br><span class="line"><span class="comment"># 此时会得到一个zipobject，我理解为一个压缩包</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(zipobj)) </span><br><span class="line"><span class="comment"># 将zipobj转化为列表去查看，just like 解压</span></span><br><span class="line"><span class="comment"># 会得到[(10,&#x27;cat&#x27;),(20,&#x27;dog&#x27;),(30,&#x27;car&#x27;),(40,&#x27;zoo&#x27;)]</span></span><br><span class="line">d=<span class="built_in">dict</span>(zipobj)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"><span class="comment"># 此时会输出字典d</span></span><br><span class="line"><span class="comment"># -----------</span></span><br><span class="line"><span class="comment"># 使用参数创建字典</span></span><br><span class="line">d=<span class="built_in">dict</span>(cat=<span class="number">10</span>,dog=<span class="number">20</span>) <span class="comment"># 参数相当于变量，变量名不加引号</span></span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"><span class="comment"># 输出结果：&#123;&#x27;cat&#x27;:10,&#x27;dog&#x27;:20&#125;</span></span><br><span class="line"><span class="comment"># ***********</span></span><br><span class="line"><span class="comment"># 元组可做键</span></span><br><span class="line">t=(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(&#123;t:<span class="number">10</span>&#125;)</span><br><span class="line"><span class="comment"># 输出结果为：&#123;(10,20,30):10&#125;</span></span><br><span class="line"><span class="comment"># 列表不可做键</span></span><br><span class="line">lst=[<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>]</span><br><span class="line"><span class="built_in">print</span>(&#123;lst:<span class="number">10</span>&#125;)</span><br><span class="line"><span class="comment"># TypeError</span></span><br><span class="line"><span class="comment"># ***********</span></span><br><span class="line"><span class="comment"># 字典属于序列类型，可以使用序列的相关操作</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://paneersblog.github.io/41781.html" title="Python入门笔记（11）" target="_blank" rel="external">http://paneersblog.github.io/41781.html</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/paneersblog" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/IMG_4556.JPG" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/paneersblog" target="_blank"><span class="text-dark">Paneer</span><small class="ml-1x">一个成熟稳重的沙雕网友</small></a></h3>
+        <div>搬砖永无止境</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/34793.html" title="Pyhton入门笔记（十）"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/paneersblog" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6203293798" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/Paneer_007" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2022 Paneer &amp; Emily
+        
+        <!-- <div class="publishby"> 
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>-->
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'IhVNOCA6KMiSCGQQEJHuNj18-gzGzoHsz',
+    appKey: 'M7KF1RwFGcFcF2RThCWkSCOj',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
+
+
+
+
+</body>
+</html>
